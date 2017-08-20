@@ -1,0 +1,111 @@
+<%
+//Les variables globals
+def belongToString = 'static belongsTo = ['
+def staticMappingString = 'static mapping = { '
+def belongToFirst = false
+def hasManyString = 'static hasMany = ['
+def hasManyFirst = false
+%>
+<% if (getPackageName(currentModelElement) != "") { %>
+package ${getPackageName(currentModelElement)}
+<% } %>
+/**
+ * ${currentModelElement.name} Domain Object
+ */
+class ${currentModelElement.name} {
+    <%		
+    getAttributes(currentModelElement).each { attribute ->
+	    def attributeName = attribute.name
+		def attributeSqlName = javaToSql(attributeName)
+	    def attributeTypes = javaType(attribute.type).tokenize('.')
+        def attributeType = attributeTypes[attributeTypes.size() - 1]
+	    def attributeTags = taggedValues(attribute)
+		staticMappingString = staticMappingString + '\n' + attributeName + ' index : "'+attributeSqlName+'"'
+	%>	
+    ${attributeType} ${attributeName}	
+    <% 
+	} 
+	%>   		   
+    <%
+    getAssociationEnds(model, currentModelElement).each { sourceEnd ->
+	    def association = sourceEnd.association
+	    def targetEnd = association.connection.find { end -> end != sourceEnd }
+	    if (targetEnd.isNavigable()) {
+            def sourceName = getEndName(sourceEnd)
+            def attributeTypes = getEndType(targetEnd).tokenize('.')
+            def targetType = attributeTypes[attributeTypes.size() - 1]
+            def targetName = getEndName(targetEnd)
+            def targetTags = taggedValues(targetEnd)
+            if (isOneToOne(sourceEnd, targetEnd)) {  
+				staticMappingString = staticMappingString + '\n' + targetName + ' cascade:"all"'
+    %>                   
+    ${targetType} ${targetName}
+    <%
+            }
+            else if (isOneToMany(sourceEnd, targetEnd)) {
+                //TODO chager en seulement firstCharUpper(targetName) - 's'
+                def nomClassDest1 = (firstCharUpper(targetName) + 'oso') - 'soso'
+                if(!hasManyFirst) {
+                    hasManyFirst = true
+                    hasManyString = hasManyString + targetName + ' : ' + nomClassDest1
+				} else {
+                    hasManyString = hasManyString + ' , ' + targetName + ' : ' + nomClassDest1
+				}
+				staticMappingString = staticMappingString + '\n' + targetName + ' lazy : false'
+            }
+            else if (isManyToOne(sourceEnd, targetEnd)) {
+                def typeClassDest_tab = targetType.tokenize('.')
+                if(!belongToFirst) {
+                    belongToFirst = true
+                    belongToString = belongToString + targetName + ' : ' + typeClassDest_tab[typeClassDest_tab.size() - 1]
+                } else {
+                    belongToString = belongToString + ' , ' + targetName + ' : ' + typeClassDest_tab[typeClassDest_tab.size() - 1]
+				}  
+				staticMappingString = staticMappingString + '\n' + targetName + ' lazy : false'
+            }
+            else if (isManyToMany(sourceEnd, targetEnd)) {
+                //TODO chager en seulement firstCharUpper(targetName) - 's'
+                def nomClassDest2 = (firstCharUpper(targetName) + 'oso') - 'soso'
+				if(!hasManyFirst) {
+                    hasManyFirst = true
+                    hasManyString = hasManyString + targetName + ' : ' + nomClassDest2
+                } else {
+                    hasManyString = hasManyString + ' , ' + targetName + ' : ' + nomClassDest2
+                }
+				staticMappingString = staticMappingString + '\n' + targetName + ' lazy : false'
+            }
+        }
+    }
+    if(belongToFirst) {
+        belongToString = belongToString + ']'
+    %>
+    ${belongToString}
+    <%
+    }
+    if(hasManyFirst) {
+        hasManyString = hasManyString + ']'
+    %>
+    ${hasManyString}
+    <%
+    }
+    staticMappingString = staticMappingString + '\n batchSize: 14 \n}'
+    %>
+    ${staticMappingString}
+    static constraints = {
+    <%
+    getAttributes(currentModelElement).each { attribute ->
+        def attributeName = attribute.name
+        def attributeType = attribute.type
+        def attributeTags = taggedValues(attribute)
+    %>
+        ${attributeName}()
+    <% 
+    }
+    %>
+    }
+	
+	String toString() {
+		return this.toString()
+	}
+}
+

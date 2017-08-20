@@ -1,0 +1,888 @@
+<?xml version="1.1" encoding="UTF-8" ?>
+
+<Form version="1.5" maxVersion="1.7" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
+  <NonVisualComponents>
+    <Component class="javax.swing.ButtonGroup" name="buttonGroupViewsChoice">
+    </Component>
+    <Component class="javax.swing.ButtonGroup" name="buttonGroupSecurityTechnologie">
+    </Component>
+    <Component class="javax.swing.ButtonGroup" name="buttonGroupWsChoice">
+    </Component>
+    <Component class="javax.swing.ButtonGroup" name="buttonGroupDiagrammeChooser">
+    </Component>
+    <Component class="javax.swing.ButtonGroup" name="buttonGroupJasperChooser">
+    </Component>
+    <Component class="javax.swing.ButtonGroup" name="buttonGroupWorkflowChooser">
+    </Component>
+    <Component class="javax.swing.ButtonGroup" name="buttonGroupFunctionalTestChooser">
+    </Component>
+  </NonVisualComponents>
+  <Properties>
+    <Property name="name" type="java.lang.String" value="Form" noResource="true"/>
+    <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+      <Dimension value="[600, 500]"/>
+    </Property>
+  </Properties>
+  <AuxValues>
+    <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="2"/>
+    <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateFQN" type="java.lang.Boolean" value="true"/>
+    <AuxValue name="FormSettings_generateMnemonicsCode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_i18nAutoMode" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_layoutCodeTarget" type="java.lang.Integer" value="2"/>
+    <AuxValue name="FormSettings_listenerGenerationStyle" type="java.lang.Integer" value="0"/>
+    <AuxValue name="FormSettings_variablesLocal" type="java.lang.Boolean" value="false"/>
+    <AuxValue name="FormSettings_variablesModifier" type="java.lang.Integer" value="2"/>
+    <AuxValue name="designerSize" type="java.awt.Dimension" value="-84,-19,0,5,115,114,0,18,106,97,118,97,46,97,119,116,46,68,105,109,101,110,115,105,111,110,65,-114,-39,-41,-84,95,68,20,2,0,2,73,0,6,104,101,105,103,104,116,73,0,5,119,105,100,116,104,120,112,0,0,1,55,0,0,2,-123"/>
+  </AuxValues>
+
+  <Layout class="org.netbeans.modules.form.compat2.layouts.DesignFlowLayout"/>
+  <SubComponents>
+    <Container class="javax.swing.JTabbedPane" name="jTabbedPane1">
+      <Properties>
+        <Property name="tabPlacement" type="int" value="2"/>
+        <Property name="name" type="java.lang.String" value="jTabbedPanelBT" noResource="true"/>
+        <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
+          <Dimension value="[600, 300]"/>
+        </Property>
+      </Properties>
+
+      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout"/>
+      <SubComponents>
+        <Container class="javax.swing.JPanel" name="jPanelView">
+          <Properties>
+            <Property name="name" type="java.lang.String" value="jPanelView" noResource="true"/>
+          </Properties>
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
+              <JTabbedPaneConstraints tabName="Couche vue">
+                <Property name="tabTitle" type="java.lang.String" resourceKey="jPanelView.TabConstraints.tabTitle"/>
+              </JTabbedPaneConstraints>
+            </Constraint>
+          </Constraints>
+
+          <Layout class="org.netbeans.modules.form.compat2.layouts.DesignFlowLayout"/>
+          <SubComponents>
+            <Component class="javax.swing.JRadioButton" name="jRadioButtonGSP">
+              <Properties>
+                <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                  <ComponentRef name="buttonGroupViewsChoice"/>
+                </Property>
+                <Property name="selected" type="boolean" value="true"/>
+                <Property name="text" type="java.lang.String" resourceKey="jRadioButtonGSP.text"/>
+                <Property name="name" type="java.lang.String" value="jRadioButtonGSP" noResource="true"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jRadioButtonGSPActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JRadioButton" name="jRadioButtonZK">
+              <Properties>
+                <Property name="model" type="javax.swing.ButtonModel" editor="org.netbeans.modules.form.ComponentChooserEditor">
+                  <ComponentRef name="null"/>
+                </Property>
+                <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                  <ComponentRef name="buttonGroupViewsChoice"/>
+                </Property>
+                <Property name="text" type="java.lang.String" resourceKey="jRadioButtonZK.text"/>
+                <Property name="name" type="java.lang.String" value="jRadioButtonZK" noResource="true"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jRadioButtonZKActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JRadioButton" name="jRadioButtonFLEX">
+              <Properties>
+                <Property name="model" type="javax.swing.ButtonModel" editor="org.netbeans.modules.form.ComponentChooserEditor">
+                  <ComponentRef name="null"/>
+                </Property>
+                <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                  <ComponentRef name="buttonGroupViewsChoice"/>
+                </Property>
+                <Property name="text" type="java.lang.String" resourceKey="jRadioButtonFLEX.text"/>
+                <Property name="name" type="java.lang.String" value="jRadioButtonFLEX" noResource="true"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jRadioButtonFLEXActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JRadioButton" name="jRadioButtonOpenLaszlo">
+              <Properties>
+                <Property name="model" type="javax.swing.ButtonModel" editor="org.netbeans.modules.form.ComponentChooserEditor">
+                  <ComponentRef name="null"/>
+                </Property>
+                <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                  <ComponentRef name="buttonGroupViewsChoice"/>
+                </Property>
+                <Property name="text" type="java.lang.String" resourceKey="jRadioButtonOpenLaszlo.text"/>
+                <Property name="name" type="java.lang.String" value="jRadioButtonOpenLaszlo" noResource="true"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jRadioButtonOpenLaszloActionPerformed"/>
+              </Events>
+            </Component>
+          </SubComponents>
+        </Container>
+        <Container class="javax.swing.JPanel" name="jPanelSecurity">
+          <Properties>
+            <Property name="name" type="java.lang.String" value="jPanelSecurity" noResource="true"/>
+          </Properties>
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
+              <JTabbedPaneConstraints tabName="Securit&#xe9;">
+                <Property name="tabTitle" type="java.lang.String" resourceKey="jPanelSecurity.TabConstraints.tabTitle"/>
+              </JTabbedPaneConstraints>
+            </Constraint>
+          </Constraints>
+
+          <Layout class="org.netbeans.modules.form.compat2.layouts.DesignFlowLayout"/>
+          <SubComponents>
+            <Component class="javax.swing.JRadioButton" name="jRadioButtonAcegi">
+              <Properties>
+                <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                  <ComponentRef name="buttonGroupSecurityTechnologie"/>
+                </Property>
+                <Property name="text" type="java.lang.String" resourceKey="jRadioButtonAcegi.text"/>
+                <Property name="name" type="java.lang.String" value="jRadioButtonAcegi" noResource="true"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jRadioButtonAcegiActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JRadioButton" name="jRadioButtonJsecurity">
+              <Properties>
+                <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                  <ComponentRef name="buttonGroupSecurityTechnologie"/>
+                </Property>
+                <Property name="text" type="java.lang.String" resourceKey="jRadioButtonJsecurity.text"/>
+                <Property name="name" type="java.lang.String" value="jRadioButtonJsecurity" noResource="true"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jRadioButtonJsecurityActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JRadioButton" name="jRadioButtonSpringSecurityCore">
+              <Properties>
+                <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                  <ComponentRef name="buttonGroupSecurityTechnologie"/>
+                </Property>
+                <Property name="text" type="java.lang.String" resourceKey="jRadioButtonSpringSecurityCore.text"/>
+                <Property name="name" type="java.lang.String" value="jRadioButtonSpringSecurityCore" noResource="true"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jRadioButtonSpringSecurityCoreActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JCheckBox" name="jCheckBoxEncryption">
+              <Properties>
+                <Property name="text" type="java.lang.String" resourceKey="jCheckBoxEncryption.text"/>
+                <Property name="name" type="java.lang.String" value="jCheckBoxEncryption" noResource="true"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jCheckBoxEncryptionActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JCheckBox" name="jCheckBoxLdap">
+              <Properties>
+                <Property name="text" type="java.lang.String" resourceKey="jCheckBoxLdap.text"/>
+                <Property name="name" type="java.lang.String" value="jCheckBoxLdap" noResource="true"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jCheckBoxLdapActionPerformed"/>
+              </Events>
+            </Component>
+          </SubComponents>
+        </Container>
+        <Container class="javax.swing.JPanel" name="jPanelReporting">
+          <Properties>
+            <Property name="name" type="java.lang.String" value="jPanelReporting" noResource="true"/>
+          </Properties>
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
+              <JTabbedPaneConstraints tabName="Reporting">
+                <Property name="tabTitle" type="java.lang.String" resourceKey="jPanelReporting.TabConstraints.tabTitle"/>
+              </JTabbedPaneConstraints>
+            </Constraint>
+          </Constraints>
+
+          <Layout class="org.netbeans.modules.form.compat2.layouts.DesignFlowLayout"/>
+          <SubComponents>
+            <Component class="javax.swing.JCheckBox" name="jCheckBoxExport">
+              <Properties>
+                <Property name="text" type="java.lang.String" resourceKey="jCheckBoxExport.text"/>
+                <Property name="name" type="java.lang.String" value="jCheckBoxExport" noResource="true"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jCheckBoxExportActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JRadioButton" name="jRadioButtonJasper">
+              <Properties>
+                <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                  <ComponentRef name="buttonGroupJasperChooser"/>
+                </Property>
+                <Property name="text" type="java.lang.String" resourceKey="jRadioButtonJasper.text"/>
+                <Property name="name" type="java.lang.String" value="jRadioButtonJasper" noResource="true"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jRadioButtonJasperActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JRadioButton" name="jRadioButtonDynamicJasperReport">
+              <Properties>
+                <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                  <ComponentRef name="buttonGroupJasperChooser"/>
+                </Property>
+                <Property name="text" type="java.lang.String" resourceKey="jRadioButtonDynamicJasperReport.text"/>
+                <Property name="name" type="java.lang.String" value="jRadioButtonDynamicJasperReport" noResource="true"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jRadioButtonDynamicJasperReportActionPerformed"/>
+              </Events>
+            </Component>
+          </SubComponents>
+        </Container>
+        <Container class="javax.swing.JPanel" name="jPanelCharting">
+          <Properties>
+            <Property name="name" type="java.lang.String" value="jPanelCharting" noResource="true"/>
+          </Properties>
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
+              <JTabbedPaneConstraints tabName="Charts">
+                <Property name="tabTitle" type="java.lang.String" resourceKey="jPanelCharting.TabConstraints.tabTitle"/>
+              </JTabbedPaneConstraints>
+            </Constraint>
+          </Constraints>
+
+          <Layout class="org.netbeans.modules.form.compat2.layouts.DesignFlowLayout"/>
+          <SubComponents>
+            <Component class="javax.swing.JRadioButton" name="jRadioButtonGoogleChart">
+              <Properties>
+                <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                  <ComponentRef name="buttonGroupDiagrammeChooser"/>
+                </Property>
+                <Property name="text" type="java.lang.String" resourceKey="jRadioButtonGoogleChart.text"/>
+                <Property name="name" type="java.lang.String" value="jRadioButtonGoogleChart" noResource="true"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jRadioButtonGoogleChartActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JRadioButton" name="jRadioButtonOpenFlashChart">
+              <Properties>
+                <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                  <ComponentRef name="buttonGroupDiagrammeChooser"/>
+                </Property>
+                <Property name="text" type="java.lang.String" resourceKey="jRadioButtonOpenFlashChart.text"/>
+                <Property name="name" type="java.lang.String" value="jRadioButtonOpenFlashChart" noResource="true"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jRadioButtonOpenFlashChartActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JRadioButton" name="jRadioButtonJfreeChart">
+              <Properties>
+                <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                  <ComponentRef name="buttonGroupDiagrammeChooser"/>
+                </Property>
+                <Property name="text" type="java.lang.String" resourceKey="jRadioButtonJfreeChart.text"/>
+                <Property name="name" type="java.lang.String" value="jRadioButtonJfreeChart" noResource="true"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jRadioButtonJfreeChartActionPerformed"/>
+              </Events>
+            </Component>
+          </SubComponents>
+        </Container>
+        <Container class="javax.swing.JPanel" name="jPanelRecherche">
+          <Properties>
+            <Property name="name" type="java.lang.String" value="jPanelRecherche" noResource="true"/>
+          </Properties>
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
+              <JTabbedPaneConstraints tabName="Engins recherche">
+                <Property name="tabTitle" type="java.lang.String" resourceKey="jPanelRecherche.TabConstraints.tabTitle"/>
+              </JTabbedPaneConstraints>
+            </Constraint>
+          </Constraints>
+
+          <Layout class="org.netbeans.modules.form.compat2.layouts.DesignFlowLayout"/>
+          <SubComponents>
+            <Component class="javax.swing.JCheckBox" name="jCheckBoxSearchable">
+              <Properties>
+                <Property name="text" type="java.lang.String" resourceKey="jCheckBoxSearchable.text"/>
+                <Property name="name" type="java.lang.String" value="jCheckBoxSearchable" noResource="true"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jCheckBoxSearchableActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JCheckBox" name="jCheckBoxWebSearch">
+              <Properties>
+                <Property name="text" type="java.lang.String" resourceKey="jCheckBoxWebSearch.text"/>
+                <Property name="name" type="java.lang.String" value="jCheckBoxWebSearch" noResource="true"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jCheckBoxWebSearchActionPerformed"/>
+              </Events>
+            </Component>
+          </SubComponents>
+        </Container>
+        <Container class="javax.swing.JPanel" name="jPanelWorkflow">
+          <Properties>
+            <Property name="name" type="java.lang.String" value="jPanelWorkflow" noResource="true"/>
+          </Properties>
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
+              <JTabbedPaneConstraints tabName="Workflow">
+                <Property name="tabTitle" type="java.lang.String" resourceKey="jPanelWorkflow.TabConstraints.tabTitle"/>
+              </JTabbedPaneConstraints>
+            </Constraint>
+          </Constraints>
+
+          <Layout class="org.netbeans.modules.form.compat2.layouts.DesignFlowLayout"/>
+          <SubComponents>
+            <Component class="javax.swing.JRadioButton" name="jRadioButtonActivitiBpm">
+              <Properties>
+                <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                  <ComponentRef name="buttonGroupWorkflowChooser"/>
+                </Property>
+                <Property name="text" type="java.lang.String" resourceKey="jRadioButtonActivitiBpm.text"/>
+                <Property name="name" type="java.lang.String" value="jRadioButtonActivitiBpm" noResource="true"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jRadioButtonActivitiBpmActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JRadioButton" name="jRadioButtonAjaxflox">
+              <Properties>
+                <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                  <ComponentRef name="buttonGroupWorkflowChooser"/>
+                </Property>
+                <Property name="text" type="java.lang.String" resourceKey="jRadioButtonAjaxflox.text"/>
+                <Property name="name" type="java.lang.String" value="jRadioButtonAjaxflox" noResource="true"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jRadioButtonAjaxfloxActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JRadioButton" name="jRadioButtonGrailsFlow">
+              <Properties>
+                <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                  <ComponentRef name="buttonGroupWorkflowChooser"/>
+                </Property>
+                <Property name="text" type="java.lang.String" resourceKey="jRadioButtonGrailsFlow.text"/>
+                <Property name="name" type="java.lang.String" value="jRadioButtonGrailsFlow" noResource="true"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jRadioButtonGrailsFlowActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JRadioButton" name="jRadioButtonOsWorkflow">
+              <Properties>
+                <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                  <ComponentRef name="buttonGroupWorkflowChooser"/>
+                </Property>
+                <Property name="text" type="java.lang.String" resourceKey="jRadioButtonOsWorkflow.text"/>
+                <Property name="name" type="java.lang.String" value="jRadioButtonOsWorkflow" noResource="true"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jRadioButtonOsWorkflowActionPerformed"/>
+              </Events>
+            </Component>
+          </SubComponents>
+        </Container>
+        <Container class="javax.swing.JPanel" name="jPanelRichClient">
+          <Properties>
+            <Property name="name" type="java.lang.String" value="jPanelRichClient" noResource="true"/>
+          </Properties>
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
+              <JTabbedPaneConstraints tabName="Client riche">
+                <Property name="tabTitle" type="java.lang.String" resourceKey="jPanelRichClient.TabConstraints.tabTitle"/>
+              </JTabbedPaneConstraints>
+            </Constraint>
+          </Constraints>
+
+          <Layout class="org.netbeans.modules.form.compat2.layouts.DesignFlowLayout"/>
+          <SubComponents>
+            <Component class="javax.swing.JCheckBox" name="jCheckBoxYahooui">
+              <Properties>
+                <Property name="text" type="java.lang.String" resourceKey="jCheckBoxYahooui.text"/>
+                <Property name="name" type="java.lang.String" value="jCheckBoxYahooui" noResource="true"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jCheckBoxYahoouiActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JCheckBox" name="jCheckBoxApplet">
+              <Properties>
+                <Property name="text" type="java.lang.String" resourceKey="jCheckBoxApplet.text"/>
+                <Property name="name" type="java.lang.String" value="jCheckBoxApplet" noResource="true"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jCheckBoxAppletActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JCheckBox" name="jCheckBoxRichUi">
+              <Properties>
+                <Property name="text" type="java.lang.String" resourceKey="jCheckBoxRichUi.text"/>
+                <Property name="name" type="java.lang.String" value="jCheckBoxRichUi" noResource="true"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jCheckBoxRichUiActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JCheckBox" name="jCheckBoxFileUploader">
+              <Properties>
+                <Property name="text" type="java.lang.String" resourceKey="jCheckBoxFileUploader.text"/>
+                <Property name="name" type="java.lang.String" value="jCheckBoxFileUploader" noResource="true"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jCheckBoxFileUploaderActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JCheckBox" name="jCheckBoxCaptcha">
+              <Properties>
+                <Property name="text" type="java.lang.String" resourceKey="jCheckBoxCaptcha.text"/>
+                <Property name="name" type="java.lang.String" value="jCheckBoxCaptcha" noResource="true"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jCheckBoxCaptchaActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JCheckBox" name="jCheckBoxFormHelper">
+              <Properties>
+                <Property name="text" type="java.lang.String" resourceKey="jCheckBoxFormHelper.text"/>
+                <Property name="name" type="java.lang.String" value="jCheckBoxFormHelper" noResource="true"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jCheckBoxFormHelperActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JCheckBox" name="jCheckBoxFCKeditor">
+              <Properties>
+                <Property name="text" type="java.lang.String" resourceKey="jCheckBoxFCKeditor.text"/>
+                <Property name="name" type="java.lang.String" value="jCheckBoxFCKeditor" noResource="true"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jCheckBoxFCKeditorActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JCheckBox" name="jCheckBoxWebcamSnaps">
+              <Properties>
+                <Property name="text" type="java.lang.String" resourceKey="jCheckBoxWebcamSnaps.text"/>
+                <Property name="name" type="java.lang.String" value="jCheckBoxWebcamSnaps" noResource="true"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jCheckBoxWebcamSnapsActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JCheckBox" name="jCheckBoxImagezoom">
+              <Properties>
+                <Property name="text" type="java.lang.String" resourceKey="jCheckBoxImagezoom.text"/>
+                <Property name="name" type="java.lang.String" value="jCheckBoxImagezoom" noResource="true"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jCheckBoxImagezoomActionPerformed"/>
+              </Events>
+            </Component>
+          </SubComponents>
+        </Container>
+        <Container class="javax.swing.JPanel" name="jPanelWs">
+          <Properties>
+            <Property name="name" type="java.lang.String" value="jPanelWs" noResource="true"/>
+          </Properties>
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
+              <JTabbedPaneConstraints tabName="Web service">
+                <Property name="tabTitle" type="java.lang.String" resourceKey="jPanelWs.TabConstraints.tabTitle"/>
+              </JTabbedPaneConstraints>
+            </Constraint>
+          </Constraints>
+
+          <Layout class="org.netbeans.modules.form.compat2.layouts.DesignFlowLayout"/>
+          <SubComponents>
+            <Component class="javax.swing.JCheckBox" name="jCheckBoxWsClient">
+              <Properties>
+                <Property name="text" type="java.lang.String" resourceKey="jCheckBoxWsClient.text"/>
+                <Property name="name" type="java.lang.String" value="jCheckBoxWsClient" noResource="true"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jCheckBoxWsClientActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JCheckBox" name="jCheckBoxRestClient">
+              <Properties>
+                <Property name="text" type="java.lang.String" resourceKey="jCheckBoxRestClient.text"/>
+                <Property name="name" type="java.lang.String" value="jCheckBoxRestClient" noResource="true"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jCheckBoxRestClientActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JSeparator" name="jSeparator1">
+              <Properties>
+                <Property name="name" type="java.lang.String" value="jSeparator1" noResource="true"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JRadioButton" name="jRadioButtonCxf">
+              <Properties>
+                <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                  <ComponentRef name="buttonGroupWsChoice"/>
+                </Property>
+                <Property name="text" type="java.lang.String" resourceKey="jRadioButtonCxf.text"/>
+                <Property name="name" type="java.lang.String" value="jRadioButtonCxf" noResource="true"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jRadioButtonCxfActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JRadioButton" name="jRadioButtonSpringWs">
+              <Properties>
+                <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                  <ComponentRef name="buttonGroupWsChoice"/>
+                </Property>
+                <Property name="text" type="java.lang.String" resourceKey="jRadioButtonSpringWs.text"/>
+                <Property name="name" type="java.lang.String" value="jRadioButtonSpringWs" noResource="true"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jRadioButtonSpringWsActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JRadioButton" name="jRadioButtonApacheAxis2">
+              <Properties>
+                <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                  <ComponentRef name="buttonGroupWsChoice"/>
+                </Property>
+                <Property name="text" type="java.lang.String" resourceKey="jRadioButtonApacheAxis2.text"/>
+                <Property name="name" type="java.lang.String" value="jRadioButtonApacheAxis2" noResource="true"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jRadioButtonApacheAxis2ActionPerformed"/>
+              </Events>
+            </Component>
+          </SubComponents>
+        </Container>
+        <Container class="javax.swing.JPanel" name="jPanelUml">
+          <Properties>
+            <Property name="name" type="java.lang.String" value="jPanelUml" noResource="true"/>
+          </Properties>
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
+              <JTabbedPaneConstraints tabName="Uml">
+                <Property name="tabTitle" type="java.lang.String" resourceKey="jPanelUml.TabConstraints.tabTitle"/>
+              </JTabbedPaneConstraints>
+            </Constraint>
+          </Constraints>
+
+          <Layout class="org.netbeans.modules.form.compat2.layouts.DesignFlowLayout"/>
+          <SubComponents>
+            <Component class="javax.swing.JCheckBox" name="jCheckBoxClassDiagram">
+              <Properties>
+                <Property name="text" type="java.lang.String" resourceKey="jCheckBoxClassDiagram.text"/>
+                <Property name="name" type="java.lang.String" value="jCheckBoxClassDiagram" noResource="true"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jCheckBoxClassDiagramActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JCheckBox" name="jCheckBoxCreateDomainUml">
+              <Properties>
+                <Property name="text" type="java.lang.String" resourceKey="jCheckBoxCreateDomainUml.text"/>
+                <Property name="name" type="java.lang.String" value="jCheckBoxCreateDomainUml" noResource="true"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jCheckBoxCreateDomainUmlActionPerformed"/>
+              </Events>
+            </Component>
+          </SubComponents>
+        </Container>
+        <Container class="javax.swing.JPanel" name="jPanelAudit">
+          <Properties>
+            <Property name="name" type="java.lang.String" value="jPanelAudit" noResource="true"/>
+          </Properties>
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
+              <JTabbedPaneConstraints tabName="Audit">
+                <Property name="tabTitle" type="java.lang.String" resourceKey="jPanelAudit.TabConstraints.tabTitle"/>
+              </JTabbedPaneConstraints>
+            </Constraint>
+          </Constraints>
+
+          <Layout class="org.netbeans.modules.form.compat2.layouts.DesignFlowLayout"/>
+          <SubComponents>
+            <Component class="javax.swing.JCheckBox" name="jCheckBoxAuditTrail">
+              <Properties>
+                <Property name="text" type="java.lang.String" resourceKey="jCheckBoxAuditTrail.text"/>
+                <Property name="name" type="java.lang.String" value="jCheckBoxAuditTrail" noResource="true"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jCheckBoxAuditTrailActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JCheckBox" name="jCheckBoxAudit">
+              <Properties>
+                <Property name="text" type="java.lang.String" resourceKey="jCheckBoxAudit.text"/>
+                <Property name="name" type="java.lang.String" value="jCheckBoxAudit" noResource="true"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jCheckBoxAuditActionPerformed"/>
+              </Events>
+            </Component>
+          </SubComponents>
+        </Container>
+        <Container class="javax.swing.JPanel" name="jPanelArchitectureDistribue">
+          <Properties>
+            <Property name="name" type="java.lang.String" value="jPanelArchitectureDistribue" noResource="true"/>
+          </Properties>
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
+              <JTabbedPaneConstraints tabName="Architecture distribu&#xe9;e">
+                <Property name="tabTitle" type="java.lang.String" resourceKey="jPanelArchitectureDistribue.TabConstraints.tabTitle"/>
+              </JTabbedPaneConstraints>
+            </Constraint>
+          </Constraints>
+
+          <Layout class="org.netbeans.modules.form.compat2.layouts.DesignFlowLayout"/>
+          <SubComponents>
+            <Component class="javax.swing.JCheckBox" name="jCheckBoxJms">
+              <Properties>
+                <Property name="text" type="java.lang.String" resourceKey="jCheckBoxJms.text"/>
+                <Property name="name" type="java.lang.String" value="jCheckBoxJms" noResource="true"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jCheckBoxJmsActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JCheckBox" name="jCheckBoxActiveMQ">
+              <Properties>
+                <Property name="text" type="java.lang.String" resourceKey="jCheckBoxActiveMQ.text"/>
+                <Property name="name" type="java.lang.String" value="jCheckBoxActiveMQ" noResource="true"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jCheckBoxActiveMQActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JCheckBox" name="jCheckBoxJmx">
+              <Properties>
+                <Property name="text" type="java.lang.String" resourceKey="jCheckBoxJmx.text"/>
+                <Property name="name" type="java.lang.String" value="jCheckBoxJmx" noResource="true"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jCheckBoxJmxActionPerformed"/>
+              </Events>
+            </Component>
+          </SubComponents>
+        </Container>
+        <Container class="javax.swing.JPanel" name="jPanelTestingUtilites">
+          <Properties>
+            <Property name="name" type="java.lang.String" value="jPanelTestingUtilites" noResource="true"/>
+          </Properties>
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
+              <JTabbedPaneConstraints tabName="Utilitaires de tests">
+                <Property name="tabTitle" type="java.lang.String" resourceKey="jPanelTestingUtilites.TabConstraints.tabTitle"/>
+              </JTabbedPaneConstraints>
+            </Constraint>
+          </Constraints>
+
+          <Layout class="org.netbeans.modules.form.compat2.layouts.DesignFlowLayout"/>
+          <SubComponents>
+            <Component class="javax.swing.JRadioButton" name="jRadioButtonWebtest">
+              <Properties>
+                <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                  <ComponentRef name="buttonGroupFunctionalTestChooser"/>
+                </Property>
+                <Property name="text" type="java.lang.String" resourceKey="jRadioButtonWebtest.text"/>
+                <Property name="name" type="java.lang.String" value="jRadioButtonWebtest" noResource="true"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jRadioButtonWebtestActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JRadioButton" name="jRadioButtonFunctionalTesting">
+              <Properties>
+                <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                  <ComponentRef name="buttonGroupFunctionalTestChooser"/>
+                </Property>
+                <Property name="text" type="java.lang.String" resourceKey="jRadioButtonFunctionalTesting.text"/>
+                <Property name="name" type="java.lang.String" value="jRadioButtonFunctionalTesting" noResource="true"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jRadioButtonFunctionalTestingActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JCheckBox" name="jCheckBoxSelenium">
+              <Properties>
+                <Property name="text" type="java.lang.String" resourceKey="jCheckBoxSelenium.text"/>
+                <Property name="name" type="java.lang.String" value="jCheckBoxSelenium" noResource="true"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jCheckBoxSeleniumActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JCheckBox" name="jCheckBoxFitnesse">
+              <Properties>
+                <Property name="text" type="java.lang.String" resourceKey="jCheckBoxFitnesse.text"/>
+                <Property name="name" type="java.lang.String" value="jCheckBoxFitnesse" noResource="true"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jCheckBoxFitnesseActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JCheckBox" name="jCheckBoxDbUnit">
+              <Properties>
+                <Property name="text" type="java.lang.String" resourceKey="jCheckBoxDbUnit.text"/>
+                <Property name="name" type="java.lang.String" value="jCheckBoxDbUnit" noResource="true"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jCheckBoxDbUnitActionPerformed"/>
+              </Events>
+            </Component>
+          </SubComponents>
+        </Container>
+        <Container class="javax.swing.JPanel" name="jPanelUtilitairesBdD">
+          <Properties>
+            <Property name="name" type="java.lang.String" value="jPanelUtilitairesBdD" noResource="true"/>
+          </Properties>
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
+              <JTabbedPaneConstraints tabName="Utilitaires Bdd">
+                <Property name="tabTitle" type="java.lang.String" resourceKey="jPanelUtilitairesBdD.TabConstraints.tabTitle"/>
+              </JTabbedPaneConstraints>
+            </Constraint>
+          </Constraints>
+
+          <Layout class="org.netbeans.modules.form.compat2.layouts.DesignFlowLayout"/>
+          <SubComponents>
+            <Component class="javax.swing.JCheckBox" name="jCheckBoxDynamicDomainClass">
+              <Properties>
+                <Property name="text" type="java.lang.String" resourceKey="jCheckBoxDynamicDomainClass.text"/>
+                <Property name="name" type="java.lang.String" value="jCheckBoxDynamicDomainClass" noResource="true"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jCheckBoxDynamicDomainClassActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JCheckBox" name="jCheckBoxDbUtil">
+              <Properties>
+                <Property name="text" type="java.lang.String" resourceKey="jCheckBoxDbUtil.text"/>
+                <Property name="name" type="java.lang.String" value="jCheckBoxDbUtil" noResource="true"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jCheckBoxDbUtilActionPerformed"/>
+              </Events>
+            </Component>
+          </SubComponents>
+        </Container>
+        <Container class="javax.swing.JPanel" name="jPanelUtilitaires">
+          <Properties>
+            <Property name="name" type="java.lang.String" value="jPanelUtilitaires" noResource="true"/>
+          </Properties>
+          <Constraints>
+            <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
+              <JTabbedPaneConstraints tabName="Utilitaires">
+                <Property name="tabTitle" type="java.lang.String" resourceKey="jPanelUtilitaires.TabConstraints.tabTitle"/>
+              </JTabbedPaneConstraints>
+            </Constraint>
+          </Constraints>
+
+          <Layout class="org.netbeans.modules.form.compat2.layouts.DesignFlowLayout"/>
+          <SubComponents>
+            <Component class="javax.swing.JCheckBox" name="jCheckBoxLicence">
+              <Properties>
+                <Property name="text" type="java.lang.String" resourceKey="jCheckBoxLicence.text"/>
+                <Property name="name" type="java.lang.String" value="jCheckBoxLicence" noResource="true"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jCheckBoxLicenceActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JCheckBox" name="jCheckBoxQuartz">
+              <Properties>
+                <Property name="text" type="java.lang.String" resourceKey="jCheckBoxQuartz.text"/>
+                <Property name="name" type="java.lang.String" value="jCheckBoxQuartz" noResource="true"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jCheckBoxQuartzActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JCheckBox" name="jCheckBoxReverseEngineering">
+              <Properties>
+                <Property name="text" type="java.lang.String" resourceKey="jCheckBoxReverseEngineering.text"/>
+                <Property name="name" type="java.lang.String" value="jCheckBoxReverseEngineering" noResource="true"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jCheckBoxReverseEngineeringActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JCheckBox" name="jCheckBoxApplicationInfo">
+              <Properties>
+                <Property name="text" type="java.lang.String" resourceKey="jCheckBoxApplicationInfo.text"/>
+                <Property name="name" type="java.lang.String" value="jCheckBoxApplicationInfo" noResource="true"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jCheckBoxApplicationInfoActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JCheckBox" name="jCheckBoxClamAv">
+              <Properties>
+                <Property name="text" type="java.lang.String" resourceKey="jCheckBoxClamAv.text"/>
+                <Property name="name" type="java.lang.String" value="jCheckBoxClamAv" noResource="true"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jCheckBoxClamAvActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JCheckBox" name="jCheckBoxOsgi">
+              <Properties>
+                <Property name="text" type="java.lang.String" resourceKey="jCheckBoxOsgi.text"/>
+                <Property name="name" type="java.lang.String" value="jCheckBoxOsgi" noResource="true"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jCheckBoxOsgiActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JCheckBox" name="jCheckBoxMail">
+              <Properties>
+                <Property name="text" type="java.lang.String" resourceKey="jCheckBoxMail.text"/>
+                <Property name="name" type="java.lang.String" value="jCheckBoxMail" noResource="true"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jCheckBoxMailActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JCheckBox" name="jCheckBoxCsvParser">
+              <Properties>
+                <Property name="text" type="java.lang.String" resourceKey="jCheckBoxCsvParser.text"/>
+                <Property name="name" type="java.lang.String" value="jCheckBoxCsvParser" noResource="true"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jCheckBoxCsvParserActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JCheckBox" name="jCheckBoxExcelImport">
+              <Properties>
+                <Property name="text" type="java.lang.String" resourceKey="jCheckBoxExcelImport.text"/>
+                <Property name="name" type="java.lang.String" value="jCheckBoxExcelImport" noResource="true"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jCheckBoxExcelImportActionPerformed"/>
+              </Events>
+            </Component>
+            <Component class="javax.swing.JCheckBox" name="jCheckBoxI18nTemplates">
+              <Properties>
+                <Property name="text" type="java.lang.String" resourceKey="jCheckBoxI18nTemplates.text"/>
+                <Property name="name" type="java.lang.String" value="jCheckBoxI18nTemplates" noResource="true"/>
+              </Properties>
+              <Events>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jCheckBoxI18nTemplatesActionPerformed"/>
+              </Events>
+            </Component>
+          </SubComponents>
+        </Container>
+      </SubComponents>
+    </Container>
+  </SubComponents>
+</Form>

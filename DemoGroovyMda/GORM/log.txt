@@ -1,0 +1,48 @@
+I:\Projets\Demos\DemoGroovyMda\GORM\runControllerViewGenerator.cmd
+4442
+I:\Projets\Demos\DemoGroovyMda\GORM\run.cmd
+59
+Welcome to Grails 1.1 - http://grails.org/
+Licensed under Apache Standard License 2.0
+Grails home is set to: E:\grails-1.1
+
+Base Directory: I:\Projets\Demos\DemoGroovyMda\GORM
+Running script E:\grails-1.1\scripts\CreateApp_.groovy
+Environment set to development
+    [mkdir] Created dir: I:\Projets\Demos\DemoGroovyMda\GORM\vovo\src
+    [mkdir] Created dir: I:\Projets\Demos\DemoGroovyMda\GORM\vovo\src\java
+    [mkdir] Created dir: I:\Projets\Demos\DemoGroovyMda\GORM\vovo\src\groovy
+    [mkdir] Created dir: I:\Projets\Demos\DemoGroovyMda\GORM\vovo\grails-app\controllers
+    [mkdir] Created dir: I:\Projets\Demos\DemoGroovyMda\GORM\vovo\grails-app\services
+    [mkdir] Created dir: I:\Projets\Demos\DemoGroovyMda\GORM\vovo\grails-app\taglib
+    [mkdir] Created dir: I:\Projets\Demos\DemoGroovyMda\GORM\vovo\grails-app\utils
+    [mkdir] Created dir: I:\Projets\Demos\DemoGroovyMda\GORM\vovo\grails-app\views
+    [mkdir] Created dir: I:\Projets\Demos\DemoGroovyMda\GORM\vovo\grails-app\views\layouts
+    [mkdir] Created dir: I:\Projets\Demos\DemoGroovyMda\GORM\vovo\grails-app\i18n
+    [mkdir] Created dir: I:\Projets\Demos\DemoGroovyMda\GORM\vovo\grails-app\conf
+    [mkdir] Created dir: I:\Projets\Demos\DemoGroovyMda\GORM\vovo\test\integration
+    [mkdir] Created dir: I:\Projets\Demos\DemoGroovyMda\GORM\vovo\scripts
+    [mkdir] Created dir: I:\Projets\Demos\DemoGroovyMda\GORM\vovo\web-app
+    [mkdir] Created dir: I:\Projets\Demos\DemoGroovyMda\GORM\vovo\web-app\js
+    [mkdir] Created dir: I:\Projets\Demos\DemoGroovyMda\GORM\vovo\web-app\css
+    [mkdir] Created dir: I:\Projets\Demos\DemoGroovyMda\GORM\vovo\web-app\images
+    [mkdir] Created dir: I:\Projets\Demos\DemoGroovyMda\GORM\vovo\web-app\META-INF
+    [mkdir] Created dir: I:\Projets\Demos\DemoGroovyMda\GORM\vovo\lib
+    [mkdir] Created dir: I:\Projets\Demos\DemoGroovyMda\GORM\vovo\grails-app\conf\spring
+    [mkdir] Created dir: I:\Projets\Demos\DemoGroovyMda\GORM\vovo\grails-app\conf\hibernate
+[propertyfile] Creating new property file: I:\Projets\Demos\DemoGroovyMda\GORM\vovo\application.properties
+     [copy] Copying 1 resource to I:\Projets\Demos\DemoGroovyMda\GORM\vovo
+    [unjar] Expanding: I:\Projets\Demos\DemoGroovyMda\GORM\vovo\grails-shared-files.jar into I:\Projets\Demos\DemoGroovyMda\GORM\vovo
+   [delete] Deleting: I:\Projets\Demos\DemoGroovyMda\GORM\vovo\grails-shared-files.jar
+     [copy] Copying 1 resource to I:\Projets\Demos\DemoGroovyMda\GORM\vovo
+    [unjar] Expanding: I:\Projets\Demos\DemoGroovyMda\GORM\vovo\grails-app-files.jar into I:\Projets\Demos\DemoGroovyMda\GORM\vovo
+   [delete] Deleting: I:\Projets\Demos\DemoGroovyMda\GORM\vovo\grails-app-files.jar
+     [move] Moving 1 file to I:\Projets\Demos\DemoGroovyMda\GORM\vovo
+     [move] Moving 1 file to I:\Projets\Demos\DemoGroovyMda\GORM\vovo
+     [move] Moving 1 file to I:\Projets\Demos\DemoGroovyMda\GORM\vovo
+Installing plug-in hibernate-1.1
+    [mkdir] Created dir: C:\Documents and Settings\rabbah\.grails\1.1\projects\vovo\plugins\hibernate-1.1
+    [unzip] Expanding: C:\Documents and Settings\rabbah\.grails\1.1\plugins\grails-hibernate-1.1.zip into C:\Documents and Settings\rabbah\.grails\1.1\projects\vovo\plugins\hibernate-1.1
+Executing hibernate-1.1 plugin post-install script ...
+Plugin hibernate-1.1 installed
+Created Grails Application at I:\Projets\Demos\DemoGroovyMda\GORM/vovo

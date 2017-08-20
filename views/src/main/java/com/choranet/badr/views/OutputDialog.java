@@ -1,0 +1,148 @@
+/*
+ ================= IMPORTANT - READ CAREFULLY BEFORE USING =====================
+ THE SOFTWARE PRODUCT. The SOFTWARE PRODUCT is owned by CHORA INFORMATIQUE and
+ is copyrighted and licensed, not sold. The SOFTWARE PRODUCT is protected by
+ copyright law and international copyright treaties, as well as other
+ intellectual property laws and treaties. By installing, copying or otherwise
+ using this SOFTWARE PRODUCT, you agree to be bound by the terms of CHORA
+ INFORMATIQUE's General Terms and Conditions in relation to the type of license
+ you have acquired. (See your Contract Administrator for complete details of
+ your license agreement with CHORA INFORMATIQUE).
+ If you do not agree to the terms of CHORA INFORMATIQUE's License Agreement,
+ do not install or use the SOFTWARE PRODUCT. The term "SOFTWARE PRODUCT" means
+ the original program and all whole or partial copies of it. A Program consists
+ of machine-readable instructions, its associated media, printed materials, and
+ "online" or electronic documentation and related licensed materials
+ ("SOFTWARE PRODUCT").
+ COPYRIGHT. All title and copyrights in and to this SOFTWARE PRODUCT (including
+ but not limited to any images, photographs, video, audio, text and "applets"
+ incorporated into the SOFTWARE PRODUCT), the accompanying printed materials,
+ and any copies of the SOFTWARE PRODUCT are owned by CHORA INFORMATIQUE or its
+ suppliers. The SOFTWARE PRODUCT is protected by copyright law and international
+ treaty provisions. Therefore, you must treat the SOFTWARE PRODUCT like any
+ other copyrighted material except that you may install the SOFTWARE PRODUCT
+ on a single computer provided you keep the original solely for backup or
+ archival purposes. Should you have any questions, please contact your local
+ CHORA INFORMATIQUE Office or Distributor.
+ */
+
+/*
+ * OutputDialog.java
+ *
+ * Created on 23 mars 2011, 17:22:05
+ */
+
+package com.choranet.badr.views;
+
+import com.choranet.badr.core.Controlleur;
+import com.choranet.badr.views.panel.OutputPanel;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+
+/**
+ *
+ * @author rabbah
+ */
+public class OutputDialog extends javax.swing.JDialog {
+
+    private Controlleur controlleur;
+    private OutputPanel outputPanel;
+
+    /** Creates new form OutputDialog */
+    public OutputDialog(Controlleur controlleur, java.awt.Frame parent, boolean modal) {
+        super(parent, modal);
+        this.controlleur = controlleur;
+        initComponents();
+        outputPanel = new OutputPanel(controlleur, this);
+        this.add(outputPanel);
+        validate();
+    }
+
+    public void lancerGeneration() {
+        try {
+            outputPanel.addTextOutput("Lancement de la génération");
+            outputPanel.addTextOutput("Création du projet : " + controlleur.
+                    getViewToCoreDTO().getProjectName());
+            controlleur.creerGrailsProjet();
+            outputPanel.addTextOutput("Fin création du projet");
+            outputPanel.addTextOutput("Génération de la couche mapping");
+            controlleur.genererGormDomainClasses();
+            outputPanel.addTextOutput("Fin de la génération de la couche mapping");
+            outputPanel.addTextOutput("Ajout des contraintes aux classes métier");
+            controlleur.ajouterGroovyContraintesClassDomaine();
+            outputPanel.addTextOutput("Fin de l'ajout des contraintes métiers aux classes");
+            outputPanel.addTextOutput("Installation des briques techniques");
+            controlleur.installerLesBriquesTechniques();
+            outputPanel.addTextOutput("Fin de l'installation des briques techniques");
+            outputPanel.addTextOutput("Génération des controlleurs et des vues");
+            switch(controlleur.getViewToCoreDTO().getCoucheVue()) {
+                case GSP: {
+                    controlleur.lancerScaffoldingGrails();
+                    break;
+                }
+                case FLEX: {
+                    controlleur.lancerScaffoldingFlex();
+                    break;
+                }
+                case OPENLASZLO: {
+                    controlleur.lancerScaffoldingOpenLaszlo();
+                    break;
+                }
+                case ZK: {
+                    controlleur.lancerScaffoldingZk();
+                    break;
+                }
+            }
+            outputPanel.addTextOutput("Fin de la génération du contrelleur et des vues");
+            outputPanel.addTextOutput("Félicitation votre projet est prêt à être utilisé !!!!");
+            outputPanel.addTextOutput("Fin de la génération avec succès");
+        } catch (Exception ex) {
+            Logger.getLogger(OutputDialog.class.getName()).log(Level.SEVERE, null, ex);
+            outputPanel.addTextOutput(ex.getMessage());
+        }
+    }
+    /** This method is called from within the constructor to
+     * initialize the form.
+     * WARNING: Do NOT modify this code. The content of this method is
+     * always regenerated by the Form Editor.
+     */
+    @SuppressWarnings("unchecked")
+    // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
+    private void initComponents() {
+
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        org.jdesktop.application.ResourceMap resourceMap = org.jdesktop.application.Application.getInstance(com.choranet.badr.views.Run.class).getContext().getResourceMap(OutputDialog.class);
+        setTitle(resourceMap.getString("Form.title")); // NOI18N
+        setAlwaysOnTop(true);
+        setMinimumSize(new java.awt.Dimension(400, 300));
+        setName("Form"); // NOI18N
+        getContentPane().setLayout(new java.awt.FlowLayout());
+
+        pack();
+    }// </editor-fold>//GEN-END:initComponents
+
+    /**
+    * @param args the command line arguments
+    */
+//    public static void main(String args[]) {
+//        java.awt.EventQueue.invokeLater(new Runnable() {
+//            public void run() {
+//                OutputDialog dialog = new OutputDialog(null,new javax.swing.JFrame(), false);
+//                dialog.addWindowListener(new java.awt.event.WindowAdapter() {
+//                    public void windowClosing(java.awt.event.WindowEvent e) {
+//                        System.exit(0);
+//                    }
+//                });
+//                dialog.setSize(600, 500);
+//                dialog.setVisible(true);
+//                dialog.lancerGeneration();
+//                dialog.repaint();
+//            }
+//        });
+//    }
+
+    // Variables declaration - do not modify//GEN-BEGIN:variables
+    // End of variables declaration//GEN-END:variables
+
+}

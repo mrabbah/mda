@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?init class="org.zkoss.zkplus.databind.AnnotateDataBinderInit" ?>
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+<?page zscriptLanguage="GroovyGrails"?>
+
+<zk xmlns="http://www.zkoss.org/2005/zul"
+    xmlns:h="http://www.w3.org/1999/xhtml"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+
+    <window id="risqueWin" border="normal" height="550px" width="800px" style="margin:auto;" use="${risqueWindow}">
+    <!-- <zscript src="/zs/risque.zs"/> -->
+        <borderlayout>
+            <north size="40px" flex="true">
+                
+            </north>
+            <west id="westPanel" title="CRUD" size="40%" flex="true" splittable="true" collapsible="true" open="false">
+                <groupbox id="gbCrud" width="100%" height="100%">
+                    <grid fixedLayout="true">
+                        <rows>
+						
+							<row>
+                                <label value="ApprocheMitigation"/>
+								 
+								<textbox id="fieldApprocheMitigation" constraint="" value="@{risqueWin.risque.approcheMitigation, save-when='triggerBtn.onClick'}" onBindingSave='if(self.value == null)throw new WrongValueException(self, "Vous devriez indiquer une valeur");'/>
+                            </row>												
+						
+							<row>
+                                <label value="Categorie"/>
+								 
+								<textbox id="fieldCategorie" constraint="" value="@{risqueWin.risque.categorie, save-when='triggerBtn.onClick'}" onBindingSave='if(self.value == null)throw new WrongValueException(self, "Vous devriez indiquer une valeur");'/>
+                            </row>												
+						
+							<row>
+                                <label value="Intitule"/>
+								 
+								<textbox id="fieldIntitule" constraint="" value="@{risqueWin.risque.intitule, save-when='triggerBtn.onClick'}" onBindingSave='if(self.value == null)throw new WrongValueException(self, "Vous devriez indiquer une valeur");'/>
+                            </row>												
+						
+							<row>
+                                <label value="Probabilite"/>
+								 
+								<textbox id="fieldProbabilite" constraint="" value="@{risqueWin.risque.probabilite, save-when='triggerBtn.onClick'}" onBindingSave='if(self.value == null)throw new WrongValueException(self, "Vous devriez indiquer une valeur");'/>
+                            </row>												
+						                              
+                        </rows>
+                    </grid>					
+					
+					<separator />
+					<combobox id="coprojets" model="@{risqueWin.projets}" selectedItem="@{risqueWin.projetSelected}">
+						<comboitem self="@{each=elementprojet}" label="@{elementprojet}"/>
+					</combobox>
+					
+                    <separator />
+                    <button id="btnSave" onClick="Events.sendEvent(new Event(Events.ON_CLICK,triggerBtn));risqueWin.add()" label="Sauveguarder" image="/images/skin/database_save.png"/>
+                    <button id="btnUpdate" onClick="Events.sendEvent(new Event(Events.ON_CLICK,triggerBtn));risqueWin.update()" label="Modifier" image="/images/skin/database_edit.png" visible="false"/>
+                    <button id="btnDelete" onClick="Events.sendEvent(new Event(Events.ON_CLICK,triggerBtn));risqueWin.delete()" label="Supprimer" image="/images/skin/database_delete.png" visible="false"/>
+                    <!-- <button id="btnNew" onClick="risqueWin.newRecord()" label="Nouveau enregistrement" image="/images/skin/database_add.png"/> -->
+                    <button id="btnCancel" onClick="risqueWin.cancel()" label="Annuler" image="/images/skin/cancel.png" visible="false"/>
+                    <button visible="false" id="triggerBtn" onBindingValidate=""/>
+                </groupbox>
+            </west>
+            <center border="none" flex="true">
+                <groupbox width="100%" height="100%">
+                    <listbox id="lstRisque" onSelect="risqueWin.select()" model="@{risqueWin.risques}" selectedItem="@{risqueWin.risqueSelected}"  width="100%" height="100%" mold="paging" pageSize="25">
+                        <listhead sizable="true">
+                            <listheader label="ID" sort="auto(id)"/>
+							
+							<listheader label="ApprocheMitigation" sort="auto(approcheMitigation)"/>	
+							
+							<listheader label="Categorie" sort="auto(categorie)"/>	
+							
+							<listheader label="Intitule" sort="auto(intitule)"/>	
+							
+							<listheader label="Probabilite" sort="auto(probabilite)"/>	
+							                                 
+                        </listhead>
+                        <listitem self="@{each=element}">
+                            <listcell label="@{element.id}"/>                            
+                            
+							<listcell label="@{element.approcheMitigation}"/>
+							
+							<listcell label="@{element.categorie}"/>
+							
+							<listcell label="@{element.intitule}"/>
+							
+							<listcell label="@{element.probabilite}"/>
+							     
+                        </listitem>
+                    </listbox>
+                    <separator/>
+                    <button id="btnNew" onClick="risqueWin.newRecord()" label="Nouveau" image="/images/skin/database_add.png"/>
+                </groupbox>
+            </center>
+            <south size="40px" flex="true">
+            </south>
+        </borderlayout>
+    </window>
+</zk>

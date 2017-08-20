@@ -1,0 +1,107 @@
+/**
+ * ${currentModelElement.name} Window Object
+ */
+import org.zkoss.zul.*
+import org.zkoss.zkplus.databind.*
+<% if (getPackageName(currentModelElement) != "") { %>
+import ${getPackageName(currentModelElement)}.*
+<% } %>
+
+class ${currentModelElement.name}Window extends Window{
+	<%
+		def chars = currentModelElement.name.toCharArray()
+		chars[0] = Character.toLowerCase(chars[0])
+		def lowerNomClass = new String(chars)
+	%>
+	def ${lowerNomClass}s
+	def ${lowerNomClass}Selected
+	def ${lowerNomClass}
+	
+	public ${currentModelElement.name}Window () {
+        ${lowerNomClass}s = ${currentModelElement.name}.list()
+        ${lowerNomClass}Selected = null
+        ${lowerNomClass} = new ${currentModelElement.name}()
+    }   
+    
+	def select() {                    
+        ${lowerNomClass} = ${lowerNomClass}Selected
+        //${lowerNomClass}.lock()
+        rafraichirField()
+        activerBoutons(true)
+    }
+    def add() {
+        ${lowerNomClass}.validate()        
+        if(!${lowerNomClass}.hasErrors()) {
+            ${lowerNomClass}.save(flush:true)
+            ${lowerNomClass} = new ${currentModelElement.name}()
+            rafraichirField()
+            rafraichirList()
+            activerBoutons(false)
+        } else {
+            Messagebox.show("Echec de l'opération", "Error", Messagebox.OK, Messagebox.ERROR)
+        }        
+    }
+    def cancel() {        
+        ${lowerNomClass} = new ${currentModelElement.name}()
+        rafraichirField()
+        activerBoutons(false)
+        annulerSelection()
+    }
+    def update() {
+        ${lowerNomClass}.validate()
+        if(!${lowerNomClass}.hasErrors()) {
+            try {
+                //${lowerNomClass}.save()
+                ${lowerNomClass}.merge(flush:true)
+            }
+            catch(org.springframework.dao.OptimisticLockingFailureException e) {
+                Messagebox.show("Problème d'accès concurrent", "Error", Messagebox.OK, Messagebox.ERROR)
+            } finally {
+                activerBoutons(false)
+                ${lowerNomClass} = new ${currentModelElement.name}()                
+                rafraichirField()
+                rafraichirList()
+            }
+        } else {
+            Messagebox.show("Echec de l'opération", "Error", Messagebox.OK, Messagebox.ERROR);
+        }        
+    }
+    def delete() {
+        ${lowerNomClass}.delete(flush:true)
+        activerBoutons(false)
+        ${lowerNomClass} = new ${currentModelElement.name}()
+        rafraichirField()
+        rafraichirList()
+    }
+    def newRecord(){
+        this.getFellow("westPanel").open = visible
+    }
+
+    def activerBoutons(visible) {
+        this.getFellow("btnUpdate").visible = visible
+        this.getFellow("btnDelete").visible = visible
+        this.getFellow("btnCancel").visible = visible
+        this.getFellow("btnSave").visible = !visible
+        this.getFellow("btnNew").visible = !visible
+        this.getFellow("westPanel").open = visible        
+    }
+    def rafraichirField() {
+        this.getFellows().each { co ->
+            if(co.getId() != null && co.getId().startsWith("field")) {
+                def binder = new AnnotateDataBinder(co)
+                binder.loadAll()
+            }
+        }
+    }
+    def rafraichirList() {
+        ${lowerNomClass}s = ${currentModelElement.name}.list()
+        def binder = new AnnotateDataBinder(this.getFellow("lst${currentModelElement.name}"))
+        binder.loadAll()
+        annulerSelection()
+    }
+    def annulerSelection() {
+        this.getFellow("lst${currentModelElement.name}").clearSelection()
+        ${lowerNomClass}Selected = null
+    }
+}
+

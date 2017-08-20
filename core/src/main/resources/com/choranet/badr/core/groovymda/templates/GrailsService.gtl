@@ -1,0 +1,16 @@
+<% if (getPackageName(currentModelElement) != "") { %>
+package ${getPackageName(currentModelElement)};
+<% } %>
+
+/**
+ * ${currentModelElement.name}Service Service pour la gestion des opérations
+ * transactionnelles pour l'objet ${currentModelElement.name}
+ */
+class ${currentModelElement.name}Service extends SuperService {
+
+        static transactional = true
+
+        def list() throws Exception {
+            return super.list(${currentModelElement.name}.class)
+        }
+}

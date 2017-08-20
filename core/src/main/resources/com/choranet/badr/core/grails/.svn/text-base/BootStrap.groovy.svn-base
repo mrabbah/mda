@@ -1,0 +1,151 @@
+class BootStrap {
+
+    def authenticateService
+    
+    def init = { servletContext ->
+        environments {
+            development {
+                def roleAdmin = new com.choranet.pmcatalogue.GroupeUtilisateur(authority:'ROLE_ADMIN', description:'Administrateur').save() 
+                def roleGestion = new com.choranet.pmcatalogue.GroupeUtilisateur(authority:'ROLE_GESTION', description:'Gestion du catalogue').save() 
+                def roleUtilisateur = new com.choranet.pmcatalogue.GroupeUtilisateur(authority:'ROLE_UTILISATEUR', description:'Utilisateur').save()
+        
+                def userRoot = new com.choranet.pmcatalogue.Utilisateur(username:'root',
+                    userRealName:'root',
+                    enabled: true,
+                    emailShow: true,
+                    email: 'admin@polymoto.com',
+                    passwd: authenticateService.encodePassword('root')).save()
+                
+                def userAdmin = new com.choranet.pmcatalogue.Utilisateur(username:'admin',
+                    userRealName:'admin',
+                    enabled: true,
+                    emailShow: true,
+                    email: 'admin@polymoto.com',
+                    passwd: authenticateService.encodePassword('admin')).save()
+        
+                def userGestion = new com.choranet.pmcatalogue.Utilisateur(username:'gestion',
+                    userRealName:'gestion',
+                    enabled: true,
+                    emailShow: true,
+                    email: 'gestion@polymoto.com',
+                    passwd: authenticateService.encodePassword('gestion')).save()
+               
+                def userUtilisateur = new com.choranet.pmcatalogue.Utilisateur(username:'utilisateur',
+                    userRealName:'utilisateur',
+                    enabled: true,
+                    emailShow: true,
+                    email: 'user@polymoto.com',
+                    passwd: authenticateService.encodePassword('utilisateur')).save()
+         
+                def secureAdmin = new com.choranet.pmcatalogue.DroitUtilisateur(url: '/zul/root/**',
+                    configAttribute:'ROLE_ADMIN').save()
+                def secureGestion1 = new com.choranet.pmcatalogue.DroitUtilisateur(url: '/zul/marque/**',
+                    configAttribute:'ROLE_GESTION').save()
+                def secureGestion2 = new com.choranet.pmcatalogue.DroitUtilisateur(url: '/zul/article/**',
+                    configAttribute:'ROLE_GESTION').save()
+                def secureGestion3 = new com.choranet.pmcatalogue.DroitUtilisateur(url: '/zul/famille/**',
+                    configAttribute:'ROLE_GESTION').save()
+                def secureGestion4 = new com.choranet.pmcatalogue.DroitUtilisateur(url: '/zul/sousfamille/**',
+                    configAttribute:'ROLE_GESTION').save()
+                
+                def secureUtilisateur1 = new com.choranet.pmcatalogue.DroitUtilisateur(url: '/zul/recherche/**',
+                    configAttribute:'ROLE_UTILISATEUR').save()
+                def secureUtilisateur2 = new com.choranet.pmcatalogue.DroitUtilisateur(url: '/zul/commande/**',
+                    configAttribute:'ROLE_UTILISATEUR').save()
+                userRoot.addToAuthorities(roleAdmin)    
+                userRoot.addToAuthorities(roleGestion)
+                userRoot.addToAuthorities(roleUtilisateur)
+                userAdmin.addToAuthorities(roleAdmin)  
+                userGestion.addToAuthorities(roleGestion)
+                userUtilisateur.addToAuthorities(roleUtilisateur)
+      
+                //initialisation de la demo
+                def marque1 = new com.choranet.pmcatalogue.Marque(intitule:'Malaguti').save()
+                def marque2 = new com.choranet.pmcatalogue.Marque(intitule:'skygomaroc').save()
+                def marque3 = new com.choranet.pmcatalogue.Marque(intitule:'300').save()
+        
+                def famille1 = new com.choranet.pmcatalogue.Famille(code:23, intitule:"Moto cycle").save()
+                def famille2 = new com.choranet.pmcatalogue.Famille(code:56, intitule:"Pièces détachées").save()
+        
+                def sousFamille1 = new com.choranet.pmcatalogue.SousFamille(code:233, intitule:'scooter').save()
+                def sousFamille2 = new com.choranet.pmcatalogue.SousFamille(code:235, intitule:'velos').save()
+                def sousFamille3 = new com.choranet.pmcatalogue.SousFamille(code:561, intitule:'Pièces détachées').save()
+        
+                def article1 = new com.choranet.pmcatalogue.Article(code:'P001', 
+                    designation_fr:'50 cc scooter', designation_en:'50 cc scooter',
+                    caracteristiques : 'Vitesse max 50km/h', quantiteDisponible : false,
+                    binaryData:null, sousFamille:sousFamille1, quantiteACommander: 0,
+                    marque:marque1, famille: famille1)
+                article1.setTrans_image(null)
+                article1.save()
+                def article2 = new com.choranet.pmcatalogue.Article(code:'P002', 
+                    designation_fr:'125-300 cc scooter', designation_en:'125-300 cc scooter', 
+                    caracteristiques : 'Freins huile', quantiteDisponible : true,
+                    binaryData:null, sousFamille:sousFamille1, quantiteACommander: 3,
+                    marque:marque2, famille: famille2)
+                article2.setTrans_image(null)
+                article2.save()
+                def article3 = new com.choranet.pmcatalogue.Article(code:'P003', 
+                    designation_fr:'Over 300 cc scooter', designation_en:'Over 300 cc scooter', 
+                    caracteristiques : '250 cylindres', quantiteDisponible : true,
+                    binaryData:null, sousFamille:sousFamille1, quantiteACommander: 0,
+                    marque:null, famille: famille1)
+                article3.setTrans_image(null)
+                article3.save()
+                
+                def article4 = new com.choranet.pmcatalogue.Article(code:'P004', 
+                    designation_fr:'50 cc scooter', designation_en:'50 cc scooter',
+                    caracteristiques : 'Vitesse max 50km/h', quantiteDisponible : true,
+                    binaryData:null, sousFamille:sousFamille1, quantiteACommander: 0,
+                    marque:marque1, famille: famille1)
+                article4.setTrans_image(null)
+                article4.save()
+                def article5 = new com.choranet.pmcatalogue.Article(code:'P005', 
+                    designation_fr:'125-300 cc scooter', designation_en:'125-300 cc scooter', 
+                    caracteristiques : 'Freins huile', quantiteDisponible : true,
+                    binaryData:null, sousFamille:sousFamille1, quantiteACommander: 3,
+                    marque:marque2, famille: famille2)
+                article5.setTrans_image(null)
+                article5.save()
+                def article6 = new com.choranet.pmcatalogue.Article(code:'P006', 
+                    designation_fr:'Over 300 cc scooter', designation_en:'Over 300 cc scooter', 
+                    caracteristiques : '250 cylindres', quantiteDisponible : true,
+                    binaryData:null, sousFamille:sousFamille1, quantiteACommander: 0,
+                    marque:null, famille: famille1)
+                article6.setTrans_image(null)
+                article6.save()
+                
+                def article7 = new com.choranet.pmcatalogue.Article(code:'P007', 
+                    designation_fr:'50 cc scooter', designation_en:'50 cc scooter',
+                    caracteristiques : 'Vitesse max 50km/h', quantiteDisponible : true,
+                    binaryData:null, sousFamille:sousFamille1, quantiteACommander: 0,
+                    marque:marque1, famille: famille1)
+                article7.setTrans_image(null)
+                article7.save()
+                def article8 = new com.choranet.pmcatalogue.Article(code:'P008', 
+                    designation_fr:'125-300 cc scooter', designation_en:'125-300 cc scooter', 
+                    caracteristiques : 'Freins huile', quantiteDisponible : true,
+                    binaryData:null, sousFamille:sousFamille1, quantiteACommander: 3,
+                    marque:marque2, famille: famille2)
+                article8.setTrans_image(null)
+                article8.save()
+                def article9 = new com.choranet.pmcatalogue.Article(code:'P009', 
+                    designation_fr:'Over 300 cc scooter', designation_en:'Over 300 cc scooter', 
+                    caracteristiques : '250 cylindres', quantiteDisponible : true,
+                    binaryData:null, sousFamille:sousFamille1, quantiteACommander: 0,
+                    marque:null, famille: famille1)
+                article9.setTrans_image(null)
+                article9.save()
+            }
+            test {
+        
+            }
+            production {
+        
+            }
+        }
+                
+    }
+    def destroy = {
+    }
+}

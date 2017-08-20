@@ -1,0 +1,2384 @@
+<?xml version="1.0" encoding="windows-1252"?>
+<XMI xmi.version="1.2" xmlns:UML="org.omg.xmi.namespace.UML" timestamp="2009-07-02 09:05:24">
+	<XMI.header>
+		<XMI.documentation>
+			<XMI.exporter>Enterprise Architect</XMI.exporter>
+			<XMI.exporterVersion>4.1</XMI.exporterVersion>
+		</XMI.documentation>
+		<XMI.metamodel XMI.name="UML" XMI.version="1.4"/>
+	</XMI.header>
+	<XMI.content>
+		<UML:Model name="root" xmi.id="MX_EAID_E96CDD18_8E47_4e0c_99C6_85B713417A4D" isRoot="true" isLeaf="false" isAbstract="false" isSpecification="false" visibility="public">
+			<UML:Namespace.ownedElement>
+				<UML:Package name="ma" xmi.id="EAPK_F15D9189_3E65_4e86_B81D_74AA8AE2AE61" isRoot="true" isLeaf="false" isAbstract="false" visibility="public">
+					<UML:Namespace.ownedElement>
+						<UML:Package name="rcar" xmi.id="EAPK_12B940FE_C012_496b_8EDF_0C93145A81DB" isRoot="true" isLeaf="false" isAbstract="false" visibility="public">
+							<UML:Namespace.ownedElement>
+								<UML:Package name="g3p" xmi.id="EAPK_29F065CB_77F9_4116_85F0_DC11B3DF334F" isRoot="true" isLeaf="false" isAbstract="false" visibility="public">
+									<UML:Namespace.ownedElement>
+										<UML:Package name="mapping" xmi.id="EAPK_2E11C095_F253_4f14_B960_56721031FFE1" isRoot="true" isLeaf="false" isAbstract="false" visibility="public">
+											<UML:Namespace.ownedElement>
+												<UML:Class name="Ressource" xmi.id="EAID_0139F83C_1DCB_4d48_BF48_41280429A19E" visibility="public" isSpecification="false" isRoot="false" isLeaf="false" isAbstract="false" isActive="false">
+													<UML:Classifier.feature>
+														<UML:Attribute name="coutUtilisation" xmi.id="EAID_263CD64A_4AB3_49e5_AAF6_A2BC44C85011" visibility="private" ownerScope="instance" changeability="changeable" ordering="unordered" targetScope="instance">
+															<UML:StructuralFeature.type>
+																<UML:DataType xmi.idref="eaxmiid0"/>
+															</UML:StructuralFeature.type>
+															<UML:StructuralFeature.multiplicity>
+																<UML:Multiplicity xmi.id="EAID_44823E7A_E909_49bd_BC37_740A1C43E4D3">
+																	<UML:Multiplicity.range>
+																		<UML:MultiplicityRange xmi.id="EAID_2E0C373F_43A2_4c9f_83BA_A9CB5FFDBB5C" lower="1" upper="1"/>
+																	</UML:Multiplicity.range>
+																</UML:Multiplicity>
+															</UML:StructuralFeature.multiplicity>
+															<UML:Attribute.initialValue>
+																<UML:Expression xmi.id="EAID_FEF8BD01_EF6E_49d9_B958_F7AE0AED70D1"/>
+															</UML:Attribute.initialValue>
+															<UML:ModelElement.taggedValue/>
+														</UML:Attribute>
+														<UML:Attribute name="nomPrenom" xmi.id="EAID_D5151714_C66C_4c21_AE61_0A5FD588D7F2" visibility="private" ownerScope="instance" changeability="changeable" ordering="unordered" targetScope="instance">
+															<UML:StructuralFeature.type>
+																<UML:DataType xmi.idref="eaxmiid1"/>
+															</UML:StructuralFeature.type>
+															<UML:StructuralFeature.multiplicity>
+																<UML:Multiplicity xmi.id="EAID_3E860CBD_F6CD_4558_B1BB_B881FDF7D098">
+																	<UML:Multiplicity.range>
+																		<UML:MultiplicityRange xmi.id="EAID_82864AE2_AF7E_41a5_AD11_ECF1A70CD923" lower="1" upper="1"/>
+																	</UML:Multiplicity.range>
+																</UML:Multiplicity>
+															</UML:StructuralFeature.multiplicity>
+															<UML:Attribute.initialValue>
+																<UML:Expression xmi.id="EAID_B3F5252E_9D09_42de_9986_B636A2FD8F81"/>
+															</UML:Attribute.initialValue>
+															<UML:ModelElement.taggedValue/>
+														</UML:Attribute>
+														<UML:Attribute name="role" xmi.id="EAID_F8A62B35_0DD4_405e_9146_5319EE7BE068" visibility="private" ownerScope="instance" changeability="changeable" ordering="unordered" targetScope="instance">
+															<UML:StructuralFeature.type>
+																<UML:DataType xmi.idref="eaxmiid1"/>
+															</UML:StructuralFeature.type>
+															<UML:StructuralFeature.multiplicity>
+																<UML:Multiplicity xmi.id="EAID_719A302A_4299_4a14_BFD4_584F5BF3B1E2">
+																	<UML:Multiplicity.range>
+																		<UML:MultiplicityRange xmi.id="EAID_917A1281_08D2_4f8d_874F_57141F06EEDA" lower="1" upper="1"/>
+																	</UML:Multiplicity.range>
+																</UML:Multiplicity>
+															</UML:StructuralFeature.multiplicity>
+															<UML:Attribute.initialValue>
+																<UML:Expression xmi.id="EAID_0D263E21_D442_4fd7_B1DC_72452993225C"/>
+															</UML:Attribute.initialValue>
+															<UML:ModelElement.taggedValue/>
+														</UML:Attribute>
+														<UML:Attribute name="tauxTravail" xmi.id="EAID_DCC7E33F_A3D2_4d52_941C_BFCA323E5F2B" visibility="private" ownerScope="instance" changeability="changeable" ordering="unordered" targetScope="instance">
+															<UML:StructuralFeature.type>
+																<UML:DataType xmi.idref="eaxmiid0"/>
+															</UML:StructuralFeature.type>
+															<UML:StructuralFeature.multiplicity>
+																<UML:Multiplicity xmi.id="EAID_F071FD56_8F2F_4fad_AE15_EE3635314F01">
+																	<UML:Multiplicity.range>
+																		<UML:MultiplicityRange xmi.id="EAID_52BB631C_7369_425a_871F_5C37140AB43E" lower="1" upper="1"/>
+																	</UML:Multiplicity.range>
+																</UML:Multiplicity>
+															</UML:StructuralFeature.multiplicity>
+															<UML:Attribute.initialValue>
+																<UML:Expression xmi.id="EAID_61C3FB4D_673A_4b58_9677_FEE0E48F90C4"/>
+															</UML:Attribute.initialValue>
+															<UML:ModelElement.taggedValue/>
+														</UML:Attribute>
+														<UML:Attribute name="type" xmi.id="EAID_71FD90FA_5182_4049_8814_DD6ABDD7F900" visibility="private" ownerScope="instance" changeability="changeable" ordering="unordered" targetScope="instance">
+															<UML:StructuralFeature.type>
+																<UML:DataType xmi.idref="eaxmiid1"/>
+															</UML:StructuralFeature.type>
+															<UML:StructuralFeature.multiplicity>
+																<UML:Multiplicity xmi.id="EAID_AB5BE348_629A_4464_8A48_E718B0B9E992">
+																	<UML:Multiplicity.range>
+																		<UML:MultiplicityRange xmi.id="EAID_ADB4B499_60C0_4472_9623_8FDFDCD3A0BF" lower="1" upper="1"/>
+																	</UML:Multiplicity.range>
+																</UML:Multiplicity>
+															</UML:StructuralFeature.multiplicity>
+															<UML:Attribute.initialValue>
+																<UML:Expression xmi.id="EAID_767434B7_F744_4178_8481_5980048AA764"/>
+															</UML:Attribute.initialValue>
+															<UML:ModelElement.taggedValue/>
+														</UML:Attribute>
+													</UML:Classifier.feature>
+												</UML:Class>
+												<UML:Association xmi.id="EAID_7FDE2A15_CE19_49f7_BC95_12EA733D0145" visibility="public" isRoot="false" isLeaf="false" isAbstract="false">
+													<UML:Association.connection>
+														<UML:AssociationEnd visibility="public" aggregation="none" isOrdered="false" isNavigable="false" type="EAID_0139F83C_1DCB_4d48_BF48_41280429A19E">
+															<UML:AssociationEnd.multiplicity>
+																<UML:Multiplicity>
+																	<UML:Multiplicity.range>
+																		<UML:MultiplicityRange lower="0" upper="1"/>
+																	</UML:Multiplicity.range>
+																</UML:Multiplicity>
+															</UML:AssociationEnd.multiplicity>
+															<UML:AssociationEnd.participant>
+																<UML:Class xmi.idref="EAID_0139F83C_1DCB_4d48_BF48_41280429A19E"/>
+															</UML:AssociationEnd.participant>
+														</UML:AssociationEnd>
+														<UML:AssociationEnd visibility="public" aggregation="none" isOrdered="false" isNavigable="true" type="EAID_58DBFEA3_C49C_46fc_95EB_EAC13748013D">
+															<UML:AssociationEnd.multiplicity>
+																<UML:Multiplicity>
+																	<UML:Multiplicity.range>
+																		<UML:MultiplicityRange lower="1" upper="1"/>
+																	</UML:Multiplicity.range>
+																</UML:Multiplicity>
+															</UML:AssociationEnd.multiplicity>
+															<UML:AssociationEnd.participant>
+																<UML:Class xmi.idref="EAID_58DBFEA3_C49C_46fc_95EB_EAC13748013D"/>
+															</UML:AssociationEnd.participant>
+														</UML:AssociationEnd>
+													</UML:Association.connection>
+												</UML:Association>
+												<UML:Association xmi.id="EAID_9C7A69CC_87E5_45c2_A075_DEB865CC12A2" visibility="public" isRoot="false" isLeaf="false" isAbstract="false">
+													<UML:Association.connection>
+														<UML:AssociationEnd visibility="public" aggregation="none" isOrdered="false" isNavigable="true" type="EAID_0139F83C_1DCB_4d48_BF48_41280429A19E">
+															<UML:AssociationEnd.multiplicity>
+																<UML:Multiplicity>
+																	<UML:Multiplicity.range>
+																		<UML:MultiplicityRange lower="0" upper="-1"/>
+																	</UML:Multiplicity.range>
+																</UML:Multiplicity>
+															</UML:AssociationEnd.multiplicity>
+															<UML:AssociationEnd.participant>
+																<UML:Class xmi.idref="EAID_0139F83C_1DCB_4d48_BF48_41280429A19E"/>
+															</UML:AssociationEnd.participant>
+														</UML:AssociationEnd>
+														<UML:AssociationEnd visibility="public" aggregation="none" isOrdered="false" isNavigable="false" type="EAID_544578D4_2C08_4037_A067_BCA976539776">
+															<UML:AssociationEnd.multiplicity>
+																<UML:Multiplicity>
+																	<UML:Multiplicity.range>
+																		<UML:MultiplicityRange lower="0" upper="-1"/>
+																	</UML:Multiplicity.range>
+																</UML:Multiplicity>
+															</UML:AssociationEnd.multiplicity>
+															<UML:AssociationEnd.participant>
+																<UML:Class xmi.idref="EAID_544578D4_2C08_4037_A067_BCA976539776"/>
+															</UML:AssociationEnd.participant>
+														</UML:AssociationEnd>
+													</UML:Association.connection>
+												</UML:Association>
+												<UML:Association xmi.id="EAID_B3DA45D6_5AED_46c9_90AF_4B6FA0AC8E4A" visibility="public" isRoot="false" isLeaf="false" isAbstract="false">
+													<UML:Association.connection>
+														<UML:AssociationEnd visibility="public" aggregation="none" isOrdered="false" isNavigable="true" type="EAID_0139F83C_1DCB_4d48_BF48_41280429A19E">
+															<UML:AssociationEnd.multiplicity>
+																<UML:Multiplicity>
+																	<UML:Multiplicity.range>
+																		<UML:MultiplicityRange lower="0" upper="-1"/>
+																	</UML:Multiplicity.range>
+																</UML:Multiplicity>
+															</UML:AssociationEnd.multiplicity>
+															<UML:AssociationEnd.participant>
+																<UML:Class xmi.idref="EAID_0139F83C_1DCB_4d48_BF48_41280429A19E"/>
+															</UML:AssociationEnd.participant>
+														</UML:AssociationEnd>
+														<UML:AssociationEnd visibility="public" aggregation="none" isOrdered="false" isNavigable="true" type="EAID_452D29C1_7238_44cd_B01C_F282FC396AC7">
+															<UML:AssociationEnd.multiplicity>
+																<UML:Multiplicity>
+																	<UML:Multiplicity.range>
+																		<UML:MultiplicityRange lower="0" upper="1"/>
+																	</UML:Multiplicity.range>
+																</UML:Multiplicity>
+															</UML:AssociationEnd.multiplicity>
+															<UML:AssociationEnd.participant>
+																<UML:Class xmi.idref="EAID_452D29C1_7238_44cd_B01C_F282FC396AC7"/>
+															</UML:AssociationEnd.participant>
+														</UML:AssociationEnd>
+													</UML:Association.connection>
+												</UML:Association>
+												<UML:Association xmi.id="EAID_67224500_A63D_410c_A3D1_9BE38BB9AABA" visibility="public" isRoot="false" isLeaf="false" isAbstract="false">
+													<UML:Association.connection>
+														<UML:AssociationEnd visibility="public" aggregation="none" isOrdered="false" isNavigable="false" type="EAID_1E92A6B6_AFB7_4cbc_9ED9_CB7A1E71A18B">
+															<UML:AssociationEnd.multiplicity>
+																<UML:Multiplicity>
+																	<UML:Multiplicity.range>
+																		<UML:MultiplicityRange lower="0" upper="-1"/>
+																	</UML:Multiplicity.range>
+																</UML:Multiplicity>
+															</UML:AssociationEnd.multiplicity>
+															<UML:AssociationEnd.participant>
+																<UML:Class xmi.idref="EAID_1E92A6B6_AFB7_4cbc_9ED9_CB7A1E71A18B"/>
+															</UML:AssociationEnd.participant>
+														</UML:AssociationEnd>
+														<UML:AssociationEnd visibility="public" aggregation="none" isOrdered="false" isNavigable="true" type="EAID_0139F83C_1DCB_4d48_BF48_41280429A19E">
+															<UML:AssociationEnd.multiplicity>
+																<UML:Multiplicity>
+																	<UML:Multiplicity.range>
+																		<UML:MultiplicityRange lower="0" upper="-1"/>
+																	</UML:Multiplicity.range>
+																</UML:Multiplicity>
+															</UML:AssociationEnd.multiplicity>
+															<UML:AssociationEnd.participant>
+																<UML:Class xmi.idref="EAID_0139F83C_1DCB_4d48_BF48_41280429A19E"/>
+															</UML:AssociationEnd.participant>
+														</UML:AssociationEnd>
+													</UML:Association.connection>
+												</UML:Association>
+												<UML:Association xmi.id="EAID_CD6C87A8_87E3_4012_A5A7_A16147D6711A" visibility="public" isRoot="false" isLeaf="false" isAbstract="false">
+													<UML:Association.connection>
+														<UML:AssociationEnd visibility="public" aggregation="none" isOrdered="false" isNavigable="true" type="EAID_D2A0EB48_35BE_489a_9F7A_99B1228BC5DD">
+															<UML:AssociationEnd.multiplicity>
+																<UML:Multiplicity>
+																	<UML:Multiplicity.range>
+																		<UML:MultiplicityRange lower="0" upper="1"/>
+																	</UML:Multiplicity.range>
+																</UML:Multiplicity>
+															</UML:AssociationEnd.multiplicity>
+															<UML:AssociationEnd.participant>
+																<UML:Class xmi.idref="EAID_D2A0EB48_35BE_489a_9F7A_99B1228BC5DD"/>
+															</UML:AssociationEnd.participant>
+														</UML:AssociationEnd>
+														<UML:AssociationEnd visibility="public" aggregation="none" isOrdered="false" isNavigable="true" type="EAID_0139F83C_1DCB_4d48_BF48_41280429A19E">
+															<UML:AssociationEnd.multiplicity>
+																<UML:Multiplicity>
+																	<UML:Multiplicity.range>
+																		<UML:MultiplicityRange lower="0" upper="-1"/>
+																	</UML:Multiplicity.range>
+																</UML:Multiplicity>
+															</UML:AssociationEnd.multiplicity>
+															<UML:AssociationEnd.participant>
+																<UML:Class xmi.idref="EAID_0139F83C_1DCB_4d48_BF48_41280429A19E"/>
+															</UML:AssociationEnd.participant>
+														</UML:AssociationEnd>
+													</UML:Association.connection>
+												</UML:Association>
+												<UML:Class name="ChefProjet" xmi.id="EAID_04A21963_2D31_46ce_81B6_4F9CD495ED42" visibility="public" isSpecification="false" isRoot="false" isLeaf="false" isAbstract="false" isActive="false">
+													<UML:Classifier.feature>
+														<UML:Attribute name="tauxTravail" xmi.id="EAID_87AA8340_3AB2_4b67_88EB_7292025B7FA0" visibility="private" ownerScope="instance" changeability="changeable" ordering="unordered" targetScope="instance">
+															<UML:StructuralFeature.type>
+																<UML:DataType xmi.idref="eaxmiid0"/>
+															</UML:StructuralFeature.type>
+															<UML:StructuralFeature.multiplicity>
+																<UML:Multiplicity xmi.id="EAID_FF8A92FD_F890_4554_A9DB_10BA88810547">
+																	<UML:Multiplicity.range>
+																		<UML:MultiplicityRange xmi.id="EAID_4E84BAE3_7069_4a17_8368_17F6545DE3C4" lower="1" upper="1"/>
+																	</UML:Multiplicity.range>
+																</UML:Multiplicity>
+															</UML:StructuralFeature.multiplicity>
+															<UML:Attribute.initialValue>
+																<UML:Expression xmi.id="EAID_14F502C9_E009_44f9_872F_11ECAA20DB15"/>
+															</UML:Attribute.initialValue>
+															<UML:ModelElement.taggedValue/>
+														</UML:Attribute>
+													</UML:Classifier.feature>
+												</UML:Class>
+												<UML:Association xmi.id="EAID_2424E7D1_56AD_43b7_98DB_22ED4A18B0B3" visibility="public" isRoot="false" isLeaf="false" isAbstract="false">
+													<UML:Association.connection>
+														<UML:AssociationEnd visibility="public" aggregation="none" isOrdered="false" isNavigable="true" type="EAID_04A21963_2D31_46ce_81B6_4F9CD495ED42">
+															<UML:AssociationEnd.multiplicity>
+																<UML:Multiplicity>
+																	<UML:Multiplicity.range>
+																		<UML:MultiplicityRange lower="0" upper="1"/>
+																	</UML:Multiplicity.range>
+																</UML:Multiplicity>
+															</UML:AssociationEnd.multiplicity>
+															<UML:AssociationEnd.participant>
+																<UML:Class xmi.idref="EAID_04A21963_2D31_46ce_81B6_4F9CD495ED42"/>
+															</UML:AssociationEnd.participant>
+														</UML:AssociationEnd>
+														<UML:AssociationEnd visibility="public" aggregation="none" isOrdered="false" isNavigable="false" type="EAID_544578D4_2C08_4037_A067_BCA976539776">
+															<UML:AssociationEnd.multiplicity>
+																<UML:Multiplicity>
+																	<UML:Multiplicity.range>
+																		<UML:MultiplicityRange lower="0" upper="-1"/>
+																	</UML:Multiplicity.range>
+																</UML:Multiplicity>
+															</UML:AssociationEnd.multiplicity>
+															<UML:AssociationEnd.participant>
+																<UML:Class xmi.idref="EAID_544578D4_2C08_4037_A067_BCA976539776"/>
+															</UML:AssociationEnd.participant>
+														</UML:AssociationEnd>
+													</UML:Association.connection>
+												</UML:Association>
+												<UML:Association xmi.id="EAID_4BB3F88D_133A_40f0_9656_0AC2044A53B5" visibility="public" isRoot="false" isLeaf="false" isAbstract="false">
+													<UML:Association.connection>
+														<UML:AssociationEnd visibility="public" aggregation="none" isOrdered="false" isNavigable="false" type="EAID_04A21963_2D31_46ce_81B6_4F9CD495ED42">
+															<UML:AssociationEnd.multiplicity>
+																<UML:Multiplicity>
+																	<UML:Multiplicity.range>
+																		<UML:MultiplicityRange lower="0" upper="1"/>
+																	</UML:Multiplicity.range>
+																</UML:Multiplicity>
+															</UML:AssociationEnd.multiplicity>
+															<UML:AssociationEnd.participant>
+																<UML:Class xmi.idref="EAID_04A21963_2D31_46ce_81B6_4F9CD495ED42"/>
+															</UML:AssociationEnd.participant>
+														</UML:AssociationEnd>
+														<UML:AssociationEnd visibility="public" aggregation="none" isOrdered="false" isNavigable="true" type="EAID_58DBFEA3_C49C_46fc_95EB_EAC13748013D">
+															<UML:AssociationEnd.multiplicity>
+																<UML:Multiplicity>
+																	<UML:Multiplicity.range>
+																		<UML:MultiplicityRange lower="1" upper="1"/>
+																	</UML:Multiplicity.range>
+																</UML:Multiplicity>
+															</UML:AssociationEnd.multiplicity>
+															<UML:AssociationEnd.participant>
+																<UML:Class xmi.idref="EAID_58DBFEA3_C49C_46fc_95EB_EAC13748013D"/>
+															</UML:AssociationEnd.participant>
+														</UML:AssociationEnd>
+													</UML:Association.connection>
+												</UML:Association>
+												<UML:Association xmi.id="EAID_E864F295_891B_437b_83AF_2E4C22232878" visibility="public" isRoot="false" isLeaf="false" isAbstract="false">
+													<UML:Association.connection>
+														<UML:AssociationEnd visibility="public" aggregation="none" isOrdered="false" isNavigable="true" type="EAID_04A21963_2D31_46ce_81B6_4F9CD495ED42">
+															<UML:AssociationEnd.multiplicity>
+																<UML:Multiplicity>
+																	<UML:Multiplicity.range>
+																		<UML:MultiplicityRange lower="0" upper="1"/>
+																	</UML:Multiplicity.range>
+																</UML:Multiplicity>
+															</UML:AssociationEnd.multiplicity>
+															<UML:AssociationEnd.participant>
+																<UML:Class xmi.idref="EAID_04A21963_2D31_46ce_81B6_4F9CD495ED42"/>
+															</UML:AssociationEnd.participant>
+														</UML:AssociationEnd>
+														<UML:AssociationEnd visibility="public" aggregation="none" isOrdered="false" isNavigable="true" type="EAID_1E92A6B6_AFB7_4cbc_9ED9_CB7A1E71A18B">
+															<UML:AssociationEnd.multiplicity>
+																<UML:Multiplicity>
+																	<UML:Multiplicity.range>
+																		<UML:MultiplicityRange lower="0" upper="-1"/>
+																	</UML:Multiplicity.range>
+																</UML:Multiplicity>
+															</UML:AssociationEnd.multiplicity>
+															<UML:AssociationEnd.participant>
+																<UML:Class xmi.idref="EAID_1E92A6B6_AFB7_4cbc_9ED9_CB7A1E71A18B"/>
+															</UML:AssociationEnd.participant>
+														</UML:AssociationEnd>
+													</UML:Association.connection>
+												</UML:Association>
+												<UML:Class name="Pmo" xmi.id="EAID_08CFBF0D_C7D1_4a3d_A670_E5084B05F9A4" visibility="public" isSpecification="false" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
+												<UML:Association xmi.id="EAID_77960CDC_4F6F_42e5_B422_ED759FD95FB7" visibility="public" isRoot="false" isLeaf="false" isAbstract="false">
+													<UML:Association.connection>
+														<UML:AssociationEnd visibility="public" aggregation="none" isOrdered="false" isNavigable="false" type="EAID_08CFBF0D_C7D1_4a3d_A670_E5084B05F9A4">
+															<UML:AssociationEnd.multiplicity>
+																<UML:Multiplicity>
+																	<UML:Multiplicity.range>
+																		<UML:MultiplicityRange lower="0" upper="1"/>
+																	</UML:Multiplicity.range>
+																</UML:Multiplicity>
+															</UML:AssociationEnd.multiplicity>
+															<UML:AssociationEnd.participant>
+																<UML:Class xmi.idref="EAID_08CFBF0D_C7D1_4a3d_A670_E5084B05F9A4"/>
+															</UML:AssociationEnd.participant>
+														</UML:AssociationEnd>
+														<UML:AssociationEnd visibility="public" aggregation="none" isOrdered="false" isNavigable="true" type="EAID_58DBFEA3_C49C_46fc_95EB_EAC13748013D">
+															<UML:AssociationEnd.multiplicity>
+																<UML:Multiplicity>
+																	<UML:Multiplicity.range>
+																		<UML:MultiplicityRange lower="1" upper="1"/>
+																	</UML:Multiplicity.range>
+																</UML:Multiplicity>
+															</UML:AssociationEnd.multiplicity>
+															<UML:AssociationEnd.participant>
+																<UML:Class xmi.idref="EAID_58DBFEA3_C49C_46fc_95EB_EAC13748013D"/>
+															</UML:AssociationEnd.participant>
+														</UML:AssociationEnd>
+													</UML:Association.connection>
+												</UML:Association>
+												<UML:Class name="HeuresTravail" xmi.id="EAID_090DCF54_FB5F_42c0_944A_44A8FE687C08" visibility="public" isSpecification="false" isRoot="false" isLeaf="false" isAbstract="false" isActive="false">
+													<UML:Classifier.feature>
+														<UML:Attribute name="heureDebut" xmi.id="EAID_BF897730_7575_4b25_8F28_DC68832870E4" visibility="private" ownerScope="instance" changeability="changeable" ordering="unordered" targetScope="instance">
+															<UML:StructuralFeature.type>
+																<UML:DataType xmi.idref="eaxmiid2"/>
+															</UML:StructuralFeature.type>
+															<UML:StructuralFeature.multiplicity>
+																<UML:Multiplicity xmi.id="EAID_C202A5B9_FAEF_4b11_8C92_E4EEA8311CE6">
+																	<UML:Multiplicity.range>
+																		<UML:MultiplicityRange xmi.id="EAID_0BD901DD_E4A8_4535_9B1E_FAB2BE3138AD" lower="1" upper="1"/>
+																	</UML:Multiplicity.range>
+																</UML:Multiplicity>
+															</UML:StructuralFeature.multiplicity>
+															<UML:Attribute.initialValue>
+																<UML:Expression xmi.id="EAID_3E1B6605_7A6F_43a3_ACCC_75C33DF5BD93"/>
+															</UML:Attribute.initialValue>
+															<UML:ModelElement.taggedValue/>
+														</UML:Attribute>
+														<UML:Attribute name="heureFin" xmi.id="EAID_EC22D945_3827_4941_BA60_036DF2602CAA" visibility="private" ownerScope="instance" changeability="changeable" ordering="unordered" targetScope="instance">
+															<UML:StructuralFeature.type>
+																<UML:DataType xmi.idref="eaxmiid2"/>
+															</UML:StructuralFeature.type>
+															<UML:StructuralFeature.multiplicity>
+																<UML:Multiplicity xmi.id="EAID_4CA2FAF5_13F0_423f_90D9_A0E66B5D9162">
+																	<UML:Multiplicity.range>
+																		<UML:MultiplicityRange xmi.id="EAID_36A579D1_D4E3_4018_99AA_7AE933D73525" lower="1" upper="1"/>
+																	</UML:Multiplicity.range>
+																</UML:Multiplicity>
+															</UML:StructuralFeature.multiplicity>
+															<UML:Attribute.initialValue>
+																<UML:Expression xmi.id="EAID_87130732_F6D3_4265_B4BC_33472064AA0D"/>
+															</UML:Attribute.initialValue>
+															<UML:ModelElement.taggedValue/>
+														</UML:Attribute>
+														<UML:Attribute name="minuteDebut" xmi.id="EAID_8CE27613_2FCB_4a6e_A43F_88DFEF2877A2" visibility="private" ownerScope="instance" changeability="changeable" ordering="unordered" targetScope="instance">
+															<UML:StructuralFeature.type>
+																<UML:DataType xmi.idref="eaxmiid2"/>
+															</UML:StructuralFeature.type>
+															<UML:StructuralFeature.multiplicity>
+																<UML:Multiplicity xmi.id="EAID_8BFBB125_1E93_438b_BEBD_268EA0D0FBD2">
+																	<UML:Multiplicity.range>
+																		<UML:MultiplicityRange xmi.id="EAID_8ECB9499_A22B_4aa4_8774_AB8A91B3591F" lower="1" upper="1"/>
+																	</UML:Multiplicity.range>
+																</UML:Multiplicity>
+															</UML:StructuralFeature.multiplicity>
+															<UML:Attribute.initialValue>
+																<UML:Expression xmi.id="EAID_9B02B24D_0362_4c92_8721_6414E6FA8865"/>
+															</UML:Attribute.initialValue>
+															<UML:ModelElement.taggedValue/>
+														</UML:Attribute>
+														<UML:Attribute name="minuteFin" xmi.id="EAID_FA3E80D7_3E62_46ba_A5DF_5690BA9E7369" visibility="private" ownerScope="instance" changeability="changeable" ordering="unordered" targetScope="instance">
+															<UML:StructuralFeature.type>
+																<UML:DataType xmi.idref="eaxmiid2"/>
+															</UML:StructuralFeature.type>
+															<UML:StructuralFeature.multiplicity>
+																<UML:Multiplicity xmi.id="EAID_3DFA30F6_D5B2_4607_83AF_30421BC28418">
+																	<UML:Multiplicity.range>
+																		<UML:MultiplicityRange xmi.id="EAID_A0C19FA4_4C3B_4761_831F_2403E1BDF2B2" lower="1" upper="1"/>
+																	</UML:Multiplicity.range>
+																</UML:Multiplicity>
+															</UML:StructuralFeature.multiplicity>
+															<UML:Attribute.initialValue>
+																<UML:Expression xmi.id="EAID_E69E3FDC_727F_4bbb_BA19_F2F596A3D20F"/>
+															</UML:Attribute.initialValue>
+															<UML:ModelElement.taggedValue/>
+														</UML:Attribute>
+													</UML:Classifier.feature>
+												</UML:Class>
+												<UML:Association xmi.id="EAID_422D06DA_C0CD_490f_91C6_33582699D0C3" visibility="public" isRoot="false" isLeaf="false" isAbstract="false">
+													<UML:Association.connection>
+														<UML:AssociationEnd visibility="public" aggregation="none" isOrdered="false" isNavigable="true" type="EAID_090DCF54_FB5F_42c0_944A_44A8FE687C08">
+															<UML:AssociationEnd.multiplicity>
+																<UML:Multiplicity>
+																	<UML:Multiplicity.range>
+																		<UML:MultiplicityRange lower="0" upper="-1"/>
+																	</UML:Multiplicity.range>
+																</UML:Multiplicity>
+															</UML:AssociationEnd.multiplicity>
+															<UML:AssociationEnd.participant>
+																<UML:Class xmi.idref="EAID_090DCF54_FB5F_42c0_944A_44A8FE687C08"/>
+															</UML:AssociationEnd.participant>
+														</UML:AssociationEnd>
+														<UML:AssociationEnd visibility="public" aggregation="none" isOrdered="false" isNavigable="true" type="EAID_DC707B1B_6058_4329_9744_2785998888DA">
+															<UML:AssociationEnd.multiplicity>
+																<UML:Multiplicity>
+																	<UML:Multiplicity.range>
+																		<UML:MultiplicityRange lower="1" upper="1"/>
+																	</UML:Multiplicity.range>
+																</UML:Multiplicity>
+															</UML:AssociationEnd.multiplicity>
+															<UML:AssociationEnd.participant>
+																<UML:Class xmi.idref="EAID_DC707B1B_6058_4329_9744_2785998888DA"/>
+															</UML:AssociationEnd.participant>
+														</UML:AssociationEnd>
+													</UML:Association.connection>
+												</UML:Association>
+												<UML:Class name="Phase" xmi.id="EAID_14405E90_B100_448c_9DCD_B16AB1D6D13B" visibility="public" isSpecification="false" isRoot="false" isLeaf="false" isAbstract="false" isActive="false">
+													<UML:Classifier.feature>
+														<UML:Attribute name="chargeExterne" xmi.id="EAID_9C9D2C8F_39A1_4ab2_B720_6E8EFF813EE8" visibility="private" ownerScope="instance" changeability="changeable" ordering="unordered" targetScope="instance">
+															<UML:StructuralFeature.type>
+																<UML:DataType xmi.idref="eaxmiid0"/>
+															</UML:StructuralFeature.type>
+															<UML:StructuralFeature.multiplicity>
+																<UML:Multiplicity xmi.id="EAID_49BEDE6D_7AB7_48e0_ACC2_D5E695FA6D35">
+																	<UML:Multiplicity.range>
+																		<UML:MultiplicityRange xmi.id="EAID_81193F3A_A193_43a3_8C9B_34ED60B89EE4" lower="1" upper="1"/>
+																	</UML:Multiplicity.range>
+																</UML:Multiplicity>
+															</UML:StructuralFeature.multiplicity>
+															<UML:Attribute.initialValue>
+																<UML:Expression xmi.id="EAID_D51A8DA2_D3AC_4487_B379_DA866C054571"/>
+															</UML:Attribute.initialValue>
+															<UML:ModelElement.taggedValue/>
+														</UML:Attribute>
+														<UML:Attribute name="chargeInterne" xmi.id="EAID_E276E01E_FEC6_4c28_B36C_8E63BDCF0655" visibility="private" ownerScope="instance" changeability="changeable" ordering="unordered" targetScope="instance">
+															<UML:StructuralFeature.type>
+																<UML:DataType xmi.idref="eaxmiid0"/>
+															</UML:StructuralFeature.type>
+															<UML:StructuralFeature.multiplicity>
+																<UML:Multiplicity xmi.id="EAID_0162D247_8CCE_4e89_B339_7713906918D6">
+																	<UML:Multiplicity.range>
+																		<UML:MultiplicityRange xmi.id="EAID_090A3E6A_C50B_4d87_8FCD_D05C1C5BE745" lower="1" upper="1"/>
+																	</UML:Multiplicity.range>
+																</UML:Multiplicity>
+															</UML:StructuralFeature.multiplicity>
+															<UML:Attribute.initialValue>
+																<UML:Expression xmi.id="EAID_7D05C79A_60D3_4cb6_B618_72827EAE5A18"/>
+															</UML:Attribute.initialValue>
+															<UML:ModelElement.taggedValue/>
+														</UML:Attribute>
+														<UML:Attribute name="dateDebut" xmi.id="EAID_DC0EF960_AD93_439b_B1C7_2863F85545BE" visibility="private" ownerScope="instance" changeability="changeable" ordering="unordered" targetScope="instance">
+															<UML:StructuralFeature.type>
+																<UML:DataType xmi.idref="eaxmiid3"/>
+															</UML:StructuralFeature.type>
+															<UML:StructuralFeature.multiplicity>
+																<UML:Multiplicity xmi.id="EAID_3C29FCD3_A6FA_4ebe_9096_354580D99C3B">
+																	<UML:Multiplicity.range>
+																		<UML:MultiplicityRange xmi.id="EAID_95B10191_51FA_478a_BDD8_B95BFAF36EB8" lower="1" upper="1"/>
+																	</UML:Multiplicity.range>
+																</UML:Multiplicity>
+															</UML:StructuralFeature.multiplicity>
+															<UML:Attribute.initialValue>
+																<UML:Expression xmi.id="EAID_A713B477_A694_4089_AE80_1714D313A690"/>
+															</UML:Attribute.initialValue>
+															<UML:ModelElement.taggedValue/>
+														</UML:Attribute>
+														<UML:Attribute name="dateFin" xmi.id="EAID_2F383C10_D394_4ed1_A03B_792CBDAD3FC5" visibility="private" ownerScope="instance" changeability="changeable" ordering="unordered" targetScope="instance">
+															<UML:StructuralFeature.type>
+																<UML:DataType xmi.idref="eaxmiid3"/>
+															</UML:StructuralFeature.type>
+															<UML:StructuralFeature.multiplicity>
+																<UML:Multiplicity xmi.id="EAID_C918803A_FEA9_4bdb_BC80_445ACE89DDA7">
+																	<UML:Multiplicity.range>
+																		<UML:MultiplicityRange xmi.id="EAID_C39034CA_A8B5_499c_8148_77C46BC1DAF3" lower="1" upper="1"/>
+																	</UML:Multiplicity.range>
+																</UML:Multiplicity>
+															</UML:StructuralFeature.multiplicity>
+															<UML:Attribute.initialValue>
+																<UML:Expression xmi.id="EAID_B25C0984_1B6A_4e49_A013_21FA3AAB43E0"/>
+															</UML:Attribute.initialValue>
+															<UML:ModelElement.taggedValue/>
+														</UML:Attribute>
+														<UML:Attribute name="intitule" xmi.id="EAID_97551AF7_4346_487d_BF46_B0C66EEA5441" visibility="private" ownerScope="instance" changeability="changeable" ordering="unordered" targetScope="instance">
+															<UML:StructuralFeature.type>
+																<UML:DataType xmi.idref="eaxmiid1"/>
+															</UML:StructuralFeature.type>
+															<UML:StructuralFeature.multiplicity>
+																<UML:Multiplicity xmi.id="EAID_2431740C_8E49_4840_B7CB_45D24B802C67">
+																	<UML:Multiplicity.range>
+																		<UML:MultiplicityRange xmi.id="EAID_E511FC5D_EA60_4952_84F6_35E4276AED3A" lower="1" upper="1"/>
+																	</UML:Multiplicity.range>
+																</UML:Multiplicity>
+															</UML:StructuralFeature.multiplicity>
+															<UML:Attribute.initialValue>
+																<UML:Expression xmi.id="EAID_E7669D55_56E2_4e18_8BD0_DB4D4860A9B4"/>
+															</UML:Attribute.initialValue>
+															<UML:ModelElement.taggedValue/>
+														</UML:Attribute>
+													</UML:Classifier.feature>
+												</UML:Class>
+												<UML:Association xmi.id="EAID_3EE8DE7B_5E87_4626_8568_47C186318CE3" visibility="public" isRoot="false" isLeaf="false" isAbstract="false">
+													<UML:Association.connection>
+														<UML:AssociationEnd visibility="public" aggregation="none" isOrdered="false" isNavigable="true" type="EAID_14405E90_B100_448c_9DCD_B16AB1D6D13B">
+															<UML:AssociationEnd.multiplicity>
+																<UML:Multiplicity>
+																	<UML:Multiplicity.range>
+																		<UML:MultiplicityRange lower="0" upper="1"/>
+																	</UML:Multiplicity.range>
+																</UML:Multiplicity>
+															</UML:AssociationEnd.multiplicity>
+															<UML:AssociationEnd.participant>
+																<UML:Class xmi.idref="EAID_14405E90_B100_448c_9DCD_B16AB1D6D13B"/>
+															</UML:AssociationEnd.participant>
+														</UML:AssociationEnd>
+														<UML:AssociationEnd visibility="public" aggregation="none" isOrdered="false" isNavigable="true" type="EAID_1E92A6B6_AFB7_4cbc_9ED9_CB7A1E71A18B">
+															<UML:AssociationEnd.multiplicity>
+																<UML:Multiplicity>
+																	<UML:Multiplicity.range>
+																		<UML:MultiplicityRange lower="0" upper="-1"/>
+																	</UML:Multiplicity.range>
+																</UML:Multiplicity>
+															</UML:AssociationEnd.multiplicity>
+															<UML:AssociationEnd.participant>
+																<UML:Class xmi.idref="EAID_1E92A6B6_AFB7_4cbc_9ED9_CB7A1E71A18B"/>
+															</UML:AssociationEnd.participant>
+														</UML:AssociationEnd>
+													</UML:Association.connection>
+												</UML:Association>
+												<UML:Association xmi.id="EAID_D1EC468D_2BAC_456f_A00D_B1BE8DCFEBAA" visibility="public" isRoot="false" isLeaf="false" isAbstract="false">
+													<UML:Association.connection>
+														<UML:AssociationEnd visibility="public" aggregation="none" isOrdered="false" isNavigable="true" type="EAID_14405E90_B100_448c_9DCD_B16AB1D6D13B">
+															<UML:AssociationEnd.multiplicity>
+																<UML:Multiplicity>
+																	<UML:Multiplicity.range>
+																		<UML:MultiplicityRange lower="0" upper="-1"/>
+																	</UML:Multiplicity.range>
+																</UML:Multiplicity>
+															</UML:AssociationEnd.multiplicity>
+															<UML:AssociationEnd.participant>
+																<UML:Class xmi.idref="EAID_14405E90_B100_448c_9DCD_B16AB1D6D13B"/>
+															</UML:AssociationEnd.participant>
+														</UML:AssociationEnd>
+														<UML:AssociationEnd visibility="public" aggregation="none" isOrdered="false" isNavigable="true" type="EAID_544578D4_2C08_4037_A067_BCA976539776">
+															<UML:AssociationEnd.multiplicity>
+																<UML:Multiplicity>
+																	<UML:Multiplicity.range>
+																		<UML:MultiplicityRange lower="1" upper="1"/>
+																	</UML:Multiplicity.range>
+																</UML:Multiplicity>
+															</UML:AssociationEnd.multiplicity>
+															<UML:AssociationEnd.participant>
+																<UML:Class xmi.idref="EAID_544578D4_2C08_4037_A067_BCA976539776"/>
+															</UML:AssociationEnd.participant>
+														</UML:AssociationEnd>
+													</UML:Association.connection>
+												</UML:Association>
+												<UML:Class name="Tache" xmi.id="EAID_1E92A6B6_AFB7_4cbc_9ED9_CB7A1E71A18B" visibility="public" isSpecification="false" isRoot="false" isLeaf="false" isAbstract="false" isActive="false">
+													<UML:Classifier.feature>
+														<UML:Attribute name="avancementP" xmi.id="EAID_022A7F40_66CB_43fe_B9FE_47D2D96F906F" visibility="private" ownerScope="instance" changeability="changeable" ordering="unordered" targetScope="instance">
+															<UML:StructuralFeature.type>
+																<UML:DataType xmi.idref="eaxmiid0"/>
+															</UML:StructuralFeature.type>
+															<UML:StructuralFeature.multiplicity>
+																<UML:Multiplicity xmi.id="EAID_227C32FB_1DE2_4fc0_BF44_ADFFFB57A265">
+																	<UML:Multiplicity.range>
+																		<UML:MultiplicityRange xmi.id="EAID_689BBBA6_D428_49b0_916E_F236944E83CC" lower="1" upper="1"/>
+																	</UML:Multiplicity.range>
+																</UML:Multiplicity>
+															</UML:StructuralFeature.multiplicity>
+															<UML:Attribute.initialValue>
+																<UML:Expression xmi.id="EAID_BBC876CF_E072_49e6_B14E_EA99366F0444"/>
+															</UML:Attribute.initialValue>
+															<UML:ModelElement.taggedValue/>
+														</UML:Attribute>
+														<UML:Attribute name="avancementR" xmi.id="EAID_568DEDF3_9779_455d_AD80_45D186A7B586" visibility="private" ownerScope="instance" changeability="changeable" ordering="unordered" targetScope="instance">
+															<UML:StructuralFeature.type>
+																<UML:DataType xmi.idref="eaxmiid0"/>
+															</UML:StructuralFeature.type>
+															<UML:StructuralFeature.multiplicity>
+																<UML:Multiplicity xmi.id="EAID_046519C9_4817_4faf_B2BA_8813916A5BEE">
+																	<UML:Multiplicity.range>
+																		<UML:MultiplicityRange xmi.id="EAID_723E534E_E2EE_4aa5_9114_5B223F3A263D" lower="1" upper="1"/>
+																	</UML:Multiplicity.range>
+																</UML:Multiplicity>
+															</UML:StructuralFeature.multiplicity>
+															<UML:Attribute.initialValue>
+																<UML:Expression xmi.id="EAID_F0E391F8_03A8_4416_8EF5_321FC843219C"/>
+															</UML:Attribute.initialValue>
+															<UML:ModelElement.taggedValue/>
+														</UML:Attribute>
+														<UML:Attribute name="chargeP" xmi.id="EAID_9E387C4C_89AF_4ec6_BCAA_DB8692EC1722" visibility="private" ownerScope="instance" changeability="changeable" ordering="unordered" targetScope="instance">
+															<UML:StructuralFeature.type>
+																<UML:DataType xmi.idref="eaxmiid0"/>
+															</UML:StructuralFeature.type>
+															<UML:StructuralFeature.multiplicity>
+																<UML:Multiplicity xmi.id="EAID_75A3B67A_DBBD_4c5d_A1B1_B3B1AEFD6A43">
+																	<UML:Multiplicity.range>
+																		<UML:MultiplicityRange xmi.id="EAID_64C62F64_1316_47e4_811D_41A53D6F4C17" lower="1" upper="1"/>
+																	</UML:Multiplicity.range>
+																</UML:Multiplicity>
+															</UML:StructuralFeature.multiplicity>
+															<UML:Attribute.initialValue>
+																<UML:Expression xmi.id="EAID_C1752784_F04D_4765_BA75_917F653CF7FE"/>
+															</UML:Attribute.initialValue>
+															<UML:ModelElement.taggedValue/>
+														</UML:Attribute>
+														<UML:Attribute name="chargeR" xmi.id="EAID_D649DADD_9348_4c96_8F14_B1EA07EB2FC3" visibility="private" ownerScope="instance" changeability="changeable" ordering="unordered" targetScope="instance">
+															<UML:StructuralFeature.type>
+																<UML:DataType xmi.idref="eaxmiid0"/>
+															</UML:StructuralFeature.type>
+															<UML:StructuralFeature.multiplicity>
+																<UML:Multiplicity xmi.id="EAID_A9185D8A_2AF4_44ae_AF2A_D92C1A605A9B">
+																	<UML:Multiplicity.range>
+																		<UML:MultiplicityRange xmi.id="EAID_5951BB81_75F0_48f4_A116_D1539D216C08" lower="1" upper="1"/>
+																	</UML:Multiplicity.range>
+																</UML:Multiplicity>
+															</UML:StructuralFeature.multiplicity>
+															<UML:Attribute.initialValue>
+																<UML:Expression xmi.id="EAID_B6FFD68F_D3DD_4428_B39F_54440BD94327"/>
+															</UML:Attribute.initialValue>
+															<UML:ModelElement.taggedValue/>
+														</UML:Attribute>
+														<UML:Attribute name="dateDebutP" xmi.id="EAID_064EAB4E_02F7_4c85_994A_F29C570993C1" visibility="private" ownerScope="instance" changeability="changeable" ordering="unordered" targetScope="instance">
+															<UML:StructuralFeature.type>
+																<UML:DataType xmi.idref="eaxmiid3"/>
+															</UML:StructuralFeature.type>
+															<UML:StructuralFeature.multiplicity>
+																<UML:Multiplicity xmi.id="EAID_585B9AFB_173D_4744_8F1B_DA8FC5FF5895">
+																	<UML:Multiplicity.range>
+																		<UML:MultiplicityRange xmi.id="EAID_4177F2C7_5F40_404a_AB6C_7307FD98EC99" lower="1" upper="1"/>
+																	</UML:Multiplicity.range>
+																</UML:Multiplicity>
+															</UML:StructuralFeature.multiplicity>
+															<UML:Attribute.initialValue>
+																<UML:Expression xmi.id="EAID_1C3C39EC_07C7_4a7b_ACA0_B1BEA3204268"/>
+															</UML:Attribute.initialValue>
+															<UML:ModelElement.taggedValue/>
+														</UML:Attribute>
+														<UML:Attribute name="dateDebutR" xmi.id="EAID_D89BCB74_6D5B_474e_AC7C_53B7E0C0D8E4" visibility="private" ownerScope="instance" changeability="changeable" ordering="unordered" targetScope="instance">
+															<UML:StructuralFeature.type>
+																<UML:DataType xmi.idref="eaxmiid3"/>
+															</UML:StructuralFeature.type>
+															<UML:StructuralFeature.multiplicity>
+																<UML:Multiplicity xmi.id="EAID_DF0BCEB9_62F0_4d0e_A5C1_F4FBDBFF33A1">
+																	<UML:Multiplicity.range>
+																		<UML:MultiplicityRange xmi.id="EAID_03693D51_F9B9_435a_86C1_64C4492E7405" lower="1" upper="1"/>
+																	</UML:Multiplicity.range>
+																</UML:Multiplicity>
+															</UML:StructuralFeature.multiplicity>
+															<UML:Attribute.initialValue>
+																<UML:Expression xmi.id="EAID_143B893F_04A1_4543_B299_EBB9EAF946B4"/>
+															</UML:Attribute.initialValue>
+															<UML:ModelElement.taggedValue/>
+														</UML:Attribute>
+														<UML:Attribute name="dateFinP" xmi.id="EAID_CDD3D6EC_474C_44f9_A3DD_70AC43509920" visibility="private" ownerScope="instance" changeability="changeable" ordering="unordered" targetScope="instance">
+															<UML:StructuralFeature.type>
+																<UML:DataType xmi.idref="eaxmiid3"/>
+															</UML:StructuralFeature.type>
+															<UML:StructuralFeature.multiplicity>
+																<UML:Multiplicity xmi.id="EAID_35574911_22C9_4ff9_8F84_264C75145E18">
+																	<UML:Multiplicity.range>
+																		<UML:MultiplicityRange xmi.id="EAID_75D8F7C8_6A6B_46dd_8289_4E355A182B5A" lower="1" upper="1"/>
+																	</UML:Multiplicity.range>
+																</UML:Multiplicity>
+															</UML:StructuralFeature.multiplicity>
+															<UML:Attribute.initialValue>
+																<UML:Expression xmi.id="EAID_4FE2CE63_014A_41ec_AEF3_4AF962914859"/>
+															</UML:Attribute.initialValue>
+															<UML:ModelElement.taggedValue/>
+														</UML:Attribute>
+														<UML:Attribute name="dateFinR" xmi.id="EAID_CA006695_7FAF_4b24_B57D_C6E72E5C8B5E" visibility="private" ownerScope="instance" changeability="changeable" ordering="unordered" targetScope="instance">
+															<UML:StructuralFeature.type>
+																<UML:DataType xmi.idref="eaxmiid0"/>
+															</UML:StructuralFeature.type>
+															<UML:StructuralFeature.multiplicity>
+																<UML:Multiplicity xmi.id="EAID_BD3A2728_10D9_4520_AFBD_4DB80614BD87">
+																	<UML:Multiplicity.range>
+																		<UML:MultiplicityRange xmi.id="EAID_3B771B32_4528_4749_9695_DFB6681EFBC6" lower="1" upper="1"/>
+																	</UML:Multiplicity.range>
+																</UML:Multiplicity>
+															</UML:StructuralFeature.multiplicity>
+															<UML:Attribute.initialValue>
+																<UML:Expression xmi.id="EAID_D0A282D7_6546_4cce_864D_249807FD1DEF"/>
+															</UML:Attribute.initialValue>
+															<UML:ModelElement.taggedValue/>
+														</UML:Attribute>
+														<UML:Attribute name="description" xmi.id="EAID_CA04F2D6_5C95_4209_911E_C8220617C810" visibility="private" ownerScope="instance" changeability="changeable" ordering="unordered" targetScope="instance">
+															<UML:StructuralFeature.type>
+																<UML:DataType xmi.idref="eaxmiid1"/>
+															</UML:StructuralFeature.type>
+															<UML:StructuralFeature.multiplicity>
+																<UML:Multiplicity xmi.id="EAID_94366420_8B90_4ca2_9E3A_14F13BD018BB">
+																	<UML:Multiplicity.range>
+																		<UML:MultiplicityRange xmi.id="EAID_C8EB9C92_66DE_4ec5_A424_B23094252C46" lower="1" upper="1"/>
+																	</UML:Multiplicity.range>
+																</UML:Multiplicity>
+															</UML:StructuralFeature.multiplicity>
+															<UML:Attribute.initialValue>
+																<UML:Expression xmi.id="EAID_AEFB0BD3_A512_47b9_84E7_D61A9BE0204A"/>
+															</UML:Attribute.initialValue>
+															<UML:ModelElement.taggedValue/>
+														</UML:Attribute>
+														<UML:Attribute name="intitule" xmi.id="EAID_4FA6EA51_64ED_4c64_98AA_C545073C63C4" visibility="private" ownerScope="instance" changeability="changeable" ordering="unordered" targetScope="instance">
+															<UML:StructuralFeature.type>
+																<UML:DataType xmi.idref="eaxmiid1"/>
+															</UML:StructuralFeature.type>
+															<UML:StructuralFeature.multiplicity>
+																<UML:Multiplicity xmi.id="EAID_F2CCF5D2_CD8F_4b1c_881B_F08CA4DC9D6B">
+																	<UML:Multiplicity.range>
+																		<UML:MultiplicityRange xmi.id="EAID_3AB2D79D_9F42_4da9_9B63_41A58F18C206" lower="1" upper="1"/>
+																	</UML:Multiplicity.range>
+																</UML:Multiplicity>
+															</UML:StructuralFeature.multiplicity>
+															<UML:Attribute.initialValue>
+																<UML:Expression xmi.id="EAID_F90CCF89_7AC3_4307_9440_812B995FCFA6"/>
+															</UML:Attribute.initialValue>
+															<UML:ModelElement.taggedValue/>
+														</UML:Attribute>
+														<UML:Attribute name="priorite" xmi.id="EAID_7B5B7D84_82BB_4ed7_9D1F_2BBC5AB8C2E7" visibility="private" ownerScope="instance" changeability="changeable" ordering="unordered" targetScope="instance">
+															<UML:StructuralFeature.type>
+																<UML:DataType xmi.idref="eaxmiid1"/>
+															</UML:StructuralFeature.type>
+															<UML:StructuralFeature.multiplicity>
+																<UML:Multiplicity xmi.id="EAID_F7EEE70B_FE1D_4a96_BDA6_1C674881D896">
+																	<UML:Multiplicity.range>
+																		<UML:MultiplicityRange xmi.id="EAID_49DEF79B_F856_451f_A88F_BB804A82B612" lower="1" upper="1"/>
+																	</UML:Multiplicity.range>
+																</UML:Multiplicity>
+															</UML:StructuralFeature.multiplicity>
+															<UML:Attribute.initialValue>
+																<UML:Expression xmi.id="EAID_A72F3E70_927F_4dca_8FF3_835D4F1BF3E0"/>
+															</UML:Attribute.initialValue>
+															<UML:ModelElement.taggedValue/>
+														</UML:Attribute>
+														<UML:Attribute name="status" xmi.id="EAID_6B03CAAF_7C93_4e2d_9A8D_51E4C1C24DBB" visibility="private" ownerScope="instance" changeability="changeable" ordering="unordered" targetScope="instance">
+															<UML:StructuralFeature.type>
+																<UML:DataType xmi.idref="eaxmiid1"/>
+															</UML:StructuralFeature.type>
+															<UML:StructuralFeature.multiplicity>
+																<UML:Multiplicity xmi.id="EAID_C802BA4C_9F9E_405a_8340_1C4913FFBCB4">
+																	<UML:Multiplicity.range>
+																		<UML:MultiplicityRange xmi.id="EAID_8A2F5F69_CB41_448d_97B9_2D73AD87727D" lower="1" upper="1"/>
+																	</UML:Multiplicity.range>
+																</UML:Multiplicity>
+															</UML:StructuralFeature.multiplicity>
+															<UML:Attribute.initialValue>
+																<UML:Expression xmi.id="EAID_94AC168B_0544_493f_A7A0_6C0AD6E28D47"/>
+															</UML:Attribute.initialValue>
+															<UML:ModelElement.taggedValue/>
+														</UML:Attribute>
+													</UML:Classifier.feature>
+												</UML:Class>
+												<UML:Association name="sousTaches" xmi.id="EAID_75C6C7E4_BE60_45a1_83AF_2FCC7D85A340" visibility="public" isRoot="false" isLeaf="false" isAbstract="false">
+													<UML:Association.connection>
+														<UML:AssociationEnd visibility="public" aggregation="none" isOrdered="false" isNavigable="true" type="EAID_1E92A6B6_AFB7_4cbc_9ED9_CB7A1E71A18B">
+															<UML:AssociationEnd.multiplicity>
+																<UML:Multiplicity>
+																	<UML:Multiplicity.range>
+																		<UML:MultiplicityRange lower="0" upper="-1"/>
+																	</UML:Multiplicity.range>
+																</UML:Multiplicity>
+															</UML:AssociationEnd.multiplicity>
+															<UML:AssociationEnd.participant>
+																<UML:Class xmi.idref="EAID_1E92A6B6_AFB7_4cbc_9ED9_CB7A1E71A18B"/>
+															</UML:AssociationEnd.participant>
+														</UML:AssociationEnd>
+														<UML:AssociationEnd visibility="public" aggregation="none" isOrdered="false" isNavigable="true" type="EAID_1E92A6B6_AFB7_4cbc_9ED9_CB7A1E71A18B">
+															<UML:AssociationEnd.multiplicity>
+																<UML:Multiplicity>
+																	<UML:Multiplicity.range>
+																		<UML:MultiplicityRange lower="0" upper="1"/>
+																	</UML:Multiplicity.range>
+																</UML:Multiplicity>
+															</UML:AssociationEnd.multiplicity>
+															<UML:AssociationEnd.participant>
+																<UML:Class xmi.idref="EAID_1E92A6B6_AFB7_4cbc_9ED9_CB7A1E71A18B"/>
+															</UML:AssociationEnd.participant>
+														</UML:AssociationEnd>
+													</UML:Association.connection>
+												</UML:Association>
+												<UML:Association name="predecesseurs" xmi.id="EAID_8567A179_7A4C_4462_BD04_2EC275A8BDB2" visibility="public" isRoot="false" isLeaf="false" isAbstract="false">
+													<UML:Association.connection>
+														<UML:AssociationEnd visibility="public" aggregation="none" isOrdered="false" isNavigable="false" type="EAID_1E92A6B6_AFB7_4cbc_9ED9_CB7A1E71A18B">
+															<UML:AssociationEnd.multiplicity>
+																<UML:Multiplicity>
+																	<UML:Multiplicity.range>
+																		<UML:MultiplicityRange lower="0" upper="-1"/>
+																	</UML:Multiplicity.range>
+																</UML:Multiplicity>
+															</UML:AssociationEnd.multiplicity>
+															<UML:AssociationEnd.participant>
+																<UML:Class xmi.idref="EAID_1E92A6B6_AFB7_4cbc_9ED9_CB7A1E71A18B"/>
+															</UML:AssociationEnd.participant>
+														</UML:AssociationEnd>
+														<UML:AssociationEnd visibility="public" aggregation="none" isOrdered="false" isNavigable="true" type="EAID_1E92A6B6_AFB7_4cbc_9ED9_CB7A1E71A18B">
+															<UML:AssociationEnd.multiplicity>
+																<UML:Multiplicity>
+																	<UML:Multiplicity.range>
+																		<UML:MultiplicityRange lower="0" upper="-1"/>
+																	</UML:Multiplicity.range>
+																</UML:Multiplicity>
+															</UML:AssociationEnd.multiplicity>
+															<UML:AssociationEnd.participant>
+																<UML:Class xmi.idref="EAID_1E92A6B6_AFB7_4cbc_9ED9_CB7A1E71A18B"/>
+															</UML:AssociationEnd.participant>
+														</UML:AssociationEnd>
+													</UML:Association.connection>
+												</UML:Association>
+												<UML:Class name="GroupeUtilisateur" xmi.id="EAID_23940AB3_81E2_403a_8798_30F30CC8BC92" visibility="public" isSpecification="false" isRoot="false" isLeaf="false" isAbstract="false" isActive="false">
+													<UML:Classifier.feature>
+														<UML:Attribute name="intitule" xmi.id="EAID_ABCBF8B6_84A6_4557_9724_3C287E09FF69" visibility="private" ownerScope="instance" changeability="changeable" ordering="unordered" targetScope="instance">
+															<UML:StructuralFeature.type>
+																<UML:DataType xmi.idref="eaxmiid1"/>
+															</UML:StructuralFeature.type>
+															<UML:StructuralFeature.multiplicity>
+																<UML:Multiplicity xmi.id="EAID_3A781973_3C52_408e_B202_29DBB15B312C">
+																	<UML:Multiplicity.range>
+																		<UML:MultiplicityRange xmi.id="EAID_89AF8290_A889_4c27_969E_2505867C8709" lower="1" upper="1"/>
+																	</UML:Multiplicity.range>
+																</UML:Multiplicity>
+															</UML:StructuralFeature.multiplicity>
+															<UML:Attribute.initialValue>
+																<UML:Expression xmi.id="EAID_5EB239AB_7F8E_4226_B92F_601067FBF4C3"/>
+															</UML:Attribute.initialValue>
+															<UML:ModelElement.taggedValue/>
+														</UML:Attribute>
+													</UML:Classifier.feature>
+												</UML:Class>
+												<UML:Association xmi.id="EAID_6DF340B4_D4D4_4539_9F58_AE07B376FCB8" visibility="public" isRoot="false" isLeaf="false" isAbstract="false">
+													<UML:Association.connection>
+														<UML:AssociationEnd visibility="public" aggregation="none" isOrdered="false" isNavigable="false" type="EAID_23940AB3_81E2_403a_8798_30F30CC8BC92">
+															<UML:AssociationEnd.multiplicity>
+																<UML:Multiplicity>
+																	<UML:Multiplicity.range>
+																		<UML:MultiplicityRange lower="0" upper="-1"/>
+																	</UML:Multiplicity.range>
+																</UML:Multiplicity>
+															</UML:AssociationEnd.multiplicity>
+															<UML:AssociationEnd.participant>
+																<UML:Class xmi.idref="EAID_23940AB3_81E2_403a_8798_30F30CC8BC92"/>
+															</UML:AssociationEnd.participant>
+														</UML:AssociationEnd>
+														<UML:AssociationEnd visibility="public" aggregation="none" isOrdered="false" isNavigable="true" type="EAID_9902BA32_8C09_4b3d_8B00_773D28AA328F">
+															<UML:AssociationEnd.multiplicity>
+																<UML:Multiplicity>
+																	<UML:Multiplicity.range>
+																		<UML:MultiplicityRange lower="0" upper="-1"/>
+																	</UML:Multiplicity.range>
+																</UML:Multiplicity>
+															</UML:AssociationEnd.multiplicity>
+															<UML:AssociationEnd.participant>
+																<UML:Class xmi.idref="EAID_9902BA32_8C09_4b3d_8B00_773D28AA328F"/>
+															</UML:AssociationEnd.participant>
+														</UML:AssociationEnd>
+													</UML:Association.connection>
+												</UML:Association>
+												<UML:Association xmi.id="EAID_2302B680_3503_4f24_B149_0E0E4602C541" visibility="public" isRoot="false" isLeaf="false" isAbstract="false">
+													<UML:Association.connection>
+														<UML:AssociationEnd visibility="public" aggregation="none" isOrdered="false" isNavigable="true" type="EAID_58DBFEA3_C49C_46fc_95EB_EAC13748013D">
+															<UML:AssociationEnd.multiplicity>
+																<UML:Multiplicity>
+																	<UML:Multiplicity.range>
+																		<UML:MultiplicityRange lower="0" upper="-1"/>
+																	</UML:Multiplicity.range>
+																</UML:Multiplicity>
+															</UML:AssociationEnd.multiplicity>
+															<UML:AssociationEnd.participant>
+																<UML:Class xmi.idref="EAID_58DBFEA3_C49C_46fc_95EB_EAC13748013D"/>
+															</UML:AssociationEnd.participant>
+														</UML:AssociationEnd>
+														<UML:AssociationEnd visibility="public" aggregation="none" isOrdered="false" isNavigable="true" type="EAID_23940AB3_81E2_403a_8798_30F30CC8BC92">
+															<UML:AssociationEnd.multiplicity>
+																<UML:Multiplicity>
+																	<UML:Multiplicity.range>
+																		<UML:MultiplicityRange lower="1" upper="1"/>
+																	</UML:Multiplicity.range>
+																</UML:Multiplicity>
+															</UML:AssociationEnd.multiplicity>
+															<UML:AssociationEnd.participant>
+																<UML:Class xmi.idref="EAID_23940AB3_81E2_403a_8798_30F30CC8BC92"/>
+															</UML:AssociationEnd.participant>
+														</UML:AssociationEnd>
+													</UML:Association.connection>
+												</UML:Association>
+												<UML:Class name="MembreComiteSuivi" xmi.id="EAID_2D328A19_1467_4dfe_97BD_722B15802556" visibility="public" isSpecification="false" isRoot="false" isLeaf="false" isAbstract="false" isActive="false">
+													<UML:Classifier.feature>
+														<UML:Attribute name="nomPrenom" xmi.id="EAID_B9914E08_4BB4_491f_8EFE_EDA5E4770327" visibility="private" ownerScope="instance" changeability="changeable" ordering="unordered" targetScope="instance">
+															<UML:StructuralFeature.type>
+																<UML:DataType xmi.idref="eaxmiid1"/>
+															</UML:StructuralFeature.type>
+															<UML:StructuralFeature.multiplicity>
+																<UML:Multiplicity xmi.id="EAID_A9D0823B_9B27_492e_9827_A2273064D592">
+																	<UML:Multiplicity.range>
+																		<UML:MultiplicityRange xmi.id="EAID_8DE3D0F8_5CF1_4529_8A67_2942A6D25FC3" lower="1" upper="1"/>
+																	</UML:Multiplicity.range>
+																</UML:Multiplicity>
+															</UML:StructuralFeature.multiplicity>
+															<UML:Attribute.initialValue>
+																<UML:Expression xmi.id="EAID_3361EFA1_5DEC_49fd_9992_696360B7387A"/>
+															</UML:Attribute.initialValue>
+															<UML:ModelElement.taggedValue/>
+														</UML:Attribute>
+														<UML:Attribute name="role" xmi.id="EAID_BE703D14_7FDC_49bc_9B7F_A43220EE5227" visibility="private" ownerScope="instance" changeability="changeable" ordering="unordered" targetScope="instance">
+															<UML:StructuralFeature.type>
+																<UML:DataType xmi.idref="eaxmiid1"/>
+															</UML:StructuralFeature.type>
+															<UML:StructuralFeature.multiplicity>
+																<UML:Multiplicity xmi.id="EAID_03DF231F_43FA_403b_84BE_D044414FB506">
+																	<UML:Multiplicity.range>
+																		<UML:MultiplicityRange xmi.id="EAID_C1D131D4_33BA_4727_B4D0_1D7E3F8CA900" lower="1" upper="1"/>
+																	</UML:Multiplicity.range>
+																</UML:Multiplicity>
+															</UML:StructuralFeature.multiplicity>
+															<UML:Attribute.initialValue>
+																<UML:Expression xmi.id="EAID_DB46D37D_F32C_4bd3_BD22_396429D6049A"/>
+															</UML:Attribute.initialValue>
+															<UML:ModelElement.taggedValue/>
+														</UML:Attribute>
+													</UML:Classifier.feature>
+												</UML:Class>
+												<UML:Association xmi.id="EAID_2C9EE3F2_AA6B_4f4d_8FAA_CB09DC0CCE4C" visibility="public" isRoot="false" isLeaf="false" isAbstract="false">
+													<UML:Association.connection>
+														<UML:AssociationEnd visibility="public" aggregation="none" isOrdered="false" isNavigable="true" type="EAID_2D328A19_1467_4dfe_97BD_722B15802556">
+															<UML:AssociationEnd.multiplicity>
+																<UML:Multiplicity>
+																	<UML:Multiplicity.range>
+																		<UML:MultiplicityRange lower="0" upper="-1"/>
+																	</UML:Multiplicity.range>
+																</UML:Multiplicity>
+															</UML:AssociationEnd.multiplicity>
+															<UML:AssociationEnd.participant>
+																<UML:Class xmi.idref="EAID_2D328A19_1467_4dfe_97BD_722B15802556"/>
+															</UML:AssociationEnd.participant>
+														</UML:AssociationEnd>
+														<UML:AssociationEnd visibility="public" aggregation="none" isOrdered="false" isNavigable="true" type="EAID_544578D4_2C08_4037_A067_BCA976539776">
+															<UML:AssociationEnd.multiplicity>
+																<UML:Multiplicity>
+																	<UML:Multiplicity.range>
+																		<UML:MultiplicityRange lower="1" upper="1"/>
+																	</UML:Multiplicity.range>
+																</UML:Multiplicity>
+															</UML:AssociationEnd.multiplicity>
+															<UML:AssociationEnd.participant>
+																<UML:Class xmi.idref="EAID_544578D4_2C08_4037_A067_BCA976539776"/>
+															</UML:AssociationEnd.participant>
+														</UML:AssociationEnd>
+													</UML:Association.connection>
+												</UML:Association>
+												<UML:Class name="Composant" xmi.id="EAID_40D0934A_E933_46c7_B7D5_7E97087ED00D" visibility="public" isSpecification="false" isRoot="false" isLeaf="false" isAbstract="false" isActive="false">
+													<UML:Classifier.feature>
+														<UML:Attribute name="intitule" xmi.id="EAID_C856F2AB_82FD_40f6_8F30_27D2C5DB7B30" visibility="private" ownerScope="instance" changeability="changeable" ordering="unordered" targetScope="instance">
+															<UML:StructuralFeature.type>
+																<UML:DataType xmi.idref="eaxmiid1"/>
+															</UML:StructuralFeature.type>
+															<UML:StructuralFeature.multiplicity>
+																<UML:Multiplicity xmi.id="EAID_E5EB40FF_69DE_4803_99CE_A9C6C5F97598">
+																	<UML:Multiplicity.range>
+																		<UML:MultiplicityRange xmi.id="EAID_17C81A40_E51B_4dea_A858_A425D9CD5AC8" lower="1" upper="1"/>
+																	</UML:Multiplicity.range>
+																</UML:Multiplicity>
+															</UML:StructuralFeature.multiplicity>
+															<UML:Attribute.initialValue>
+																<UML:Expression xmi.id="EAID_B702EC5A_0348_4c35_892C_26DCBE808CFA"/>
+															</UML:Attribute.initialValue>
+															<UML:ModelElement.taggedValue/>
+														</UML:Attribute>
+													</UML:Classifier.feature>
+												</UML:Class>
+												<UML:Association xmi.id="EAID_9D5159A5_AF3F_44ee_93D9_DD92B48D2629" visibility="public" isRoot="false" isLeaf="false" isAbstract="false">
+													<UML:Association.connection>
+														<UML:AssociationEnd visibility="public" aggregation="none" isOrdered="false" isNavigable="true" type="EAID_40D0934A_E933_46c7_B7D5_7E97087ED00D">
+															<UML:AssociationEnd.multiplicity>
+																<UML:Multiplicity>
+																	<UML:Multiplicity.range>
+																		<UML:MultiplicityRange lower="0" upper="-1"/>
+																	</UML:Multiplicity.range>
+																</UML:Multiplicity>
+															</UML:AssociationEnd.multiplicity>
+															<UML:AssociationEnd.participant>
+																<UML:Class xmi.idref="EAID_40D0934A_E933_46c7_B7D5_7E97087ED00D"/>
+															</UML:AssociationEnd.participant>
+														</UML:AssociationEnd>
+														<UML:AssociationEnd visibility="public" aggregation="none" isOrdered="false" isNavigable="true" type="EAID_544578D4_2C08_4037_A067_BCA976539776">
+															<UML:AssociationEnd.multiplicity>
+																<UML:Multiplicity>
+																	<UML:Multiplicity.range>
+																		<UML:MultiplicityRange lower="0" upper="1"/>
+																	</UML:Multiplicity.range>
+																</UML:Multiplicity>
+															</UML:AssociationEnd.multiplicity>
+															<UML:AssociationEnd.participant>
+																<UML:Class xmi.idref="EAID_544578D4_2C08_4037_A067_BCA976539776"/>
+															</UML:AssociationEnd.participant>
+														</UML:AssociationEnd>
+													</UML:Association.connection>
+												</UML:Association>
+												<UML:Association name="sousComposants" xmi.id="EAID_C8EA8627_DB70_4c25_94FC_B17722B7AECB" visibility="public" isRoot="false" isLeaf="false" isAbstract="false">
+													<UML:Association.connection>
+														<UML:AssociationEnd visibility="public" aggregation="none" isOrdered="false" isNavigable="true" type="EAID_40D0934A_E933_46c7_B7D5_7E97087ED00D">
+															<UML:AssociationEnd.multiplicity>
+																<UML:Multiplicity>
+																	<UML:Multiplicity.range>
+																		<UML:MultiplicityRange lower="0" upper="-1"/>
+																	</UML:Multiplicity.range>
+																</UML:Multiplicity>
+															</UML:AssociationEnd.multiplicity>
+															<UML:AssociationEnd.participant>
+																<UML:Class xmi.idref="EAID_40D0934A_E933_46c7_B7D5_7E97087ED00D"/>
+															</UML:AssociationEnd.participant>
+														</UML:AssociationEnd>
+														<UML:AssociationEnd visibility="public" aggregation="none" isOrdered="false" isNavigable="true" type="EAID_40D0934A_E933_46c7_B7D5_7E97087ED00D">
+															<UML:AssociationEnd.multiplicity>
+																<UML:Multiplicity>
+																	<UML:Multiplicity.range>
+																		<UML:MultiplicityRange lower="0" upper="1"/>
+																	</UML:Multiplicity.range>
+																</UML:Multiplicity>
+															</UML:AssociationEnd.multiplicity>
+															<UML:AssociationEnd.participant>
+																<UML:Class xmi.idref="EAID_40D0934A_E933_46c7_B7D5_7E97087ED00D"/>
+															</UML:AssociationEnd.participant>
+														</UML:AssociationEnd>
+													</UML:Association.connection>
+												</UML:Association>
+												<UML:Class name="Portefeuille" xmi.id="EAID_40EC0D15_02DA_4baf_9BEC_BC57A1D36EB7" visibility="public" isSpecification="false" isRoot="false" isLeaf="false" isAbstract="false" isActive="false">
+													<UML:Classifier.feature>
+														<UML:Attribute name="code" xmi.id="EAID_77A33803_0ECF_41b9_BBD2_C1F5B54A4411" visibility="private" ownerScope="instance" changeability="changeable" ordering="unordered" targetScope="instance">
+															<UML:StructuralFeature.type>
+																<UML:DataType xmi.idref="eaxmiid1"/>
+															</UML:StructuralFeature.type>
+															<UML:StructuralFeature.multiplicity>
+																<UML:Multiplicity xmi.id="EAID_341520F6_9411_455d_AB5D_6EB0793FD9A3">
+																	<UML:Multiplicity.range>
+																		<UML:MultiplicityRange xmi.id="EAID_25B2E9D3_5361_4be6_BAC8_2CCC829F03E1" lower="1" upper="1"/>
+																	</UML:Multiplicity.range>
+																</UML:Multiplicity>
+															</UML:StructuralFeature.multiplicity>
+															<UML:Attribute.initialValue>
+																<UML:Expression xmi.id="EAID_CDB93C56_497F_48fe_ADD0_C7994CB2FC14"/>
+															</UML:Attribute.initialValue>
+															<UML:ModelElement.taggedValue/>
+														</UML:Attribute>
+														<UML:Attribute name="intitule" xmi.id="EAID_954457CD_14C6_4131_AC4D_8E8C1C070C7D" visibility="private" ownerScope="instance" changeability="changeable" ordering="unordered" targetScope="instance">
+															<UML:StructuralFeature.type>
+																<UML:DataType xmi.idref="eaxmiid1"/>
+															</UML:StructuralFeature.type>
+															<UML:StructuralFeature.multiplicity>
+																<UML:Multiplicity xmi.id="EAID_F5EA36F1_D176_43a7_AE66_D29637A86FD8">
+																	<UML:Multiplicity.range>
+																		<UML:MultiplicityRange xmi.id="EAID_953975ED_B6AF_40d7_94E7_1EBB766EF76D" lower="1" upper="1"/>
+																	</UML:Multiplicity.range>
+																</UML:Multiplicity>
+															</UML:StructuralFeature.multiplicity>
+															<UML:Attribute.initialValue>
+																<UML:Expression xmi.id="EAID_20C2B50E_D146_490e_885D_1F9AC28DC990"/>
+															</UML:Attribute.initialValue>
+															<UML:ModelElement.taggedValue/>
+														</UML:Attribute>
+													</UML:Classifier.feature>
+												</UML:Class>
+												<UML:Association xmi.id="EAID_AA6A4038_E339_462c_92B2_BE7DAC99B0C7" visibility="public" isRoot="false" isLeaf="false" isAbstract="false">
+													<UML:Association.connection>
+														<UML:AssociationEnd visibility="public" aggregation="none" isOrdered="false" isNavigable="true" type="EAID_40EC0D15_02DA_4baf_9BEC_BC57A1D36EB7">
+															<UML:AssociationEnd.multiplicity>
+																<UML:Multiplicity>
+																	<UML:Multiplicity.range>
+																		<UML:MultiplicityRange lower="0" upper="1"/>
+																	</UML:Multiplicity.range>
+																</UML:Multiplicity>
+															</UML:AssociationEnd.multiplicity>
+															<UML:AssociationEnd.participant>
+																<UML:Class xmi.idref="EAID_40EC0D15_02DA_4baf_9BEC_BC57A1D36EB7"/>
+															</UML:AssociationEnd.participant>
+														</UML:AssociationEnd>
+														<UML:AssociationEnd visibility="public" aggregation="none" isOrdered="false" isNavigable="true" type="EAID_544578D4_2C08_4037_A067_BCA976539776">
+															<UML:AssociationEnd.multiplicity>
+																<UML:Multiplicity>
+																	<UML:Multiplicity.range>
+																		<UML:MultiplicityRange lower="0" upper="-1"/>
+																	</UML:Multiplicity.range>
+																</UML:Multiplicity>
+															</UML:AssociationEnd.multiplicity>
+															<UML:AssociationEnd.participant>
+																<UML:Class xmi.idref="EAID_544578D4_2C08_4037_A067_BCA976539776"/>
+															</UML:AssociationEnd.participant>
+														</UML:AssociationEnd>
+													</UML:Association.connection>
+												</UML:Association>
+												<UML:Association xmi.id="EAID_4DD81ECE_286B_4716_AE67_3BDCE9D20593" visibility="public" isRoot="false" isLeaf="false" isAbstract="false">
+													<UML:Association.connection>
+														<UML:AssociationEnd visibility="public" aggregation="none" isOrdered="false" isNavigable="true" type="EAID_704E032D_B0E0_480c_B4F4_CAE803F19199">
+															<UML:AssociationEnd.multiplicity>
+																<UML:Multiplicity>
+																	<UML:Multiplicity.range>
+																		<UML:MultiplicityRange lower="0" upper="-1"/>
+																	</UML:Multiplicity.range>
+																</UML:Multiplicity>
+															</UML:AssociationEnd.multiplicity>
+															<UML:AssociationEnd.participant>
+																<UML:Class xmi.idref="EAID_704E032D_B0E0_480c_B4F4_CAE803F19199"/>
+															</UML:AssociationEnd.participant>
+														</UML:AssociationEnd>
+														<UML:AssociationEnd visibility="public" aggregation="none" isOrdered="false" isNavigable="true" type="EAID_40EC0D15_02DA_4baf_9BEC_BC57A1D36EB7">
+															<UML:AssociationEnd.multiplicity>
+																<UML:Multiplicity>
+																	<UML:Multiplicity.range>
+																		<UML:MultiplicityRange lower="1" upper="1"/>
+																	</UML:Multiplicity.range>
+																</UML:Multiplicity>
+															</UML:AssociationEnd.multiplicity>
+															<UML:AssociationEnd.participant>
+																<UML:Class xmi.idref="EAID_40EC0D15_02DA_4baf_9BEC_BC57A1D36EB7"/>
+															</UML:AssociationEnd.participant>
+														</UML:AssociationEnd>
+													</UML:Association.connection>
+												</UML:Association>
+												<UML:Class name="Calendrier" xmi.id="EAID_452D29C1_7238_44cd_B01C_F282FC396AC7" visibility="public" isSpecification="false" isRoot="false" isLeaf="false" isAbstract="false" isActive="false">
+													<UML:Classifier.feature>
+														<UML:Attribute name="heuresParJour" xmi.id="EAID_F1F35551_92EF_4ec4_95FA_C44FB70A167A" visibility="private" ownerScope="instance" changeability="changeable" ordering="unordered" targetScope="instance">
+															<UML:StructuralFeature.type>
+																<UML:DataType xmi.idref="eaxmiid2"/>
+															</UML:StructuralFeature.type>
+															<UML:StructuralFeature.multiplicity>
+																<UML:Multiplicity xmi.id="EAID_E5597C9C_B4DD_4acd_B019_9102253410AE">
+																	<UML:Multiplicity.range>
+																		<UML:MultiplicityRange xmi.id="EAID_0C756227_7069_4b52_A73E_B3899C6876CF" lower="1" upper="1"/>
+																	</UML:Multiplicity.range>
+																</UML:Multiplicity>
+															</UML:StructuralFeature.multiplicity>
+															<UML:Attribute.initialValue>
+																<UML:Expression xmi.id="EAID_339F8D18_86D8_45f5_849B_C7FB2980FA72"/>
+															</UML:Attribute.initialValue>
+															<UML:ModelElement.taggedValue/>
+														</UML:Attribute>
+														<UML:Attribute name="heuresParSemaines" xmi.id="EAID_7A331D31_4C4B_45d5_A742_BC57E92DE1DD" visibility="private" ownerScope="instance" changeability="changeable" ordering="unordered" targetScope="instance">
+															<UML:StructuralFeature.type>
+																<UML:DataType xmi.idref="eaxmiid2"/>
+															</UML:StructuralFeature.type>
+															<UML:StructuralFeature.multiplicity>
+																<UML:Multiplicity xmi.id="EAID_1ACAAB5C_01E9_400e_A28D_9763E9DDCA0A">
+																	<UML:Multiplicity.range>
+																		<UML:MultiplicityRange xmi.id="EAID_74E54163_BD26_4df7_9750_F3569E58EA94" lower="1" upper="1"/>
+																	</UML:Multiplicity.range>
+																</UML:Multiplicity>
+															</UML:StructuralFeature.multiplicity>
+															<UML:Attribute.initialValue>
+																<UML:Expression xmi.id="EAID_A0E6C870_34AD_48a8_B0DE_0A8071C2B6CA"/>
+															</UML:Attribute.initialValue>
+															<UML:ModelElement.taggedValue/>
+														</UML:Attribute>
+														<UML:Attribute name="intitule" xmi.id="EAID_D23FDEF3_EAC3_43ce_95C0_93B4B018E428" visibility="private" ownerScope="instance" changeability="changeable" ordering="unordered" targetScope="instance">
+															<UML:StructuralFeature.type>
+																<UML:DataType xmi.idref="eaxmiid1"/>
+															</UML:StructuralFeature.type>
+															<UML:StructuralFeature.multiplicity>
+																<UML:Multiplicity xmi.id="EAID_6D58755D_A861_4d92_B607_091E6F3D7218">
+																	<UML:Multiplicity.range>
+																		<UML:MultiplicityRange xmi.id="EAID_A7FC5D47_2CBC_4911_9E0D_9C1AB30D21BD" lower="1" upper="1"/>
+																	</UML:Multiplicity.range>
+																</UML:Multiplicity>
+															</UML:StructuralFeature.multiplicity>
+															<UML:Attribute.initialValue>
+																<UML:Expression xmi.id="EAID_5FFDB931_BE95_4ee4_A19D_9092B2D761EA"/>
+															</UML:Attribute.initialValue>
+															<UML:ModelElement.taggedValue/>
+														</UML:Attribute>
+														<UML:Attribute name="joursParMois" xmi.id="EAID_0B2DE37C_52B7_460e_A4C3_6D1BEDA37F30" visibility="private" ownerScope="instance" changeability="changeable" ordering="unordered" targetScope="instance">
+															<UML:StructuralFeature.type>
+																<UML:DataType xmi.idref="eaxmiid2"/>
+															</UML:StructuralFeature.type>
+															<UML:StructuralFeature.multiplicity>
+																<UML:Multiplicity xmi.id="EAID_612F3C51_ED9A_48f7_8A03_708E45DE0319">
+																	<UML:Multiplicity.range>
+																		<UML:MultiplicityRange xmi.id="EAID_02097EAA_4C7E_478f_A12E_8BB4231E51C7" lower="1" upper="1"/>
+																	</UML:Multiplicity.range>
+																</UML:Multiplicity>
+															</UML:StructuralFeature.multiplicity>
+															<UML:Attribute.initialValue>
+																<UML:Expression xmi.id="EAID_84F428B8_AD7E_4a3f_9BAB_A7DC80430A3C"/>
+															</UML:Attribute.initialValue>
+															<UML:ModelElement.taggedValue/>
+														</UML:Attribute>
+													</UML:Classifier.feature>
+												</UML:Class>
+												<UML:Association xmi.id="EAID_BC1418F5_5D09_4eda_A907_6A76176E67CE" visibility="public" isRoot="false" isLeaf="false" isAbstract="false">
+													<UML:Association.connection>
+														<UML:AssociationEnd visibility="public" aggregation="none" isOrdered="false" isNavigable="true" type="EAID_452D29C1_7238_44cd_B01C_F282FC396AC7">
+															<UML:AssociationEnd.multiplicity>
+																<UML:Multiplicity>
+																	<UML:Multiplicity.range>
+																		<UML:MultiplicityRange lower="1" upper="1"/>
+																	</UML:Multiplicity.range>
+																</UML:Multiplicity>
+															</UML:AssociationEnd.multiplicity>
+															<UML:AssociationEnd.participant>
+																<UML:Class xmi.idref="EAID_452D29C1_7238_44cd_B01C_F282FC396AC7"/>
+															</UML:AssociationEnd.participant>
+														</UML:AssociationEnd>
+														<UML:AssociationEnd visibility="public" aggregation="none" isOrdered="false" isNavigable="true" type="EAID_AA15CDDB_054F_4372_8B68_BB2128EB7946">
+															<UML:AssociationEnd.multiplicity>
+																<UML:Multiplicity>
+																	<UML:Multiplicity.range>
+																		<UML:MultiplicityRange lower="0" upper="-1"/>
+																	</UML:Multiplicity.range>
+																</UML:Multiplicity>
+															</UML:AssociationEnd.multiplicity>
+															<UML:AssociationEnd.participant>
+																<UML:Class xmi.idref="EAID_AA15CDDB_054F_4372_8B68_BB2128EB7946"/>
+															</UML:AssociationEnd.participant>
+														</UML:AssociationEnd>
+													</UML:Association.connection>
+												</UML:Association>
+												<UML:Association xmi.id="EAID_E2F0338E_8889_4332_92EE_C03D67F0B978" visibility="public" isRoot="false" isLeaf="false" isAbstract="false">
+													<UML:Association.connection>
+														<UML:AssociationEnd visibility="public" aggregation="none" isOrdered="false" isNavigable="true" type="EAID_452D29C1_7238_44cd_B01C_F282FC396AC7">
+															<UML:AssociationEnd.multiplicity>
+																<UML:Multiplicity>
+																	<UML:Multiplicity.range>
+																		<UML:MultiplicityRange lower="0" upper="1"/>
+																	</UML:Multiplicity.range>
+																</UML:Multiplicity>
+															</UML:AssociationEnd.multiplicity>
+															<UML:AssociationEnd.participant>
+																<UML:Class xmi.idref="EAID_452D29C1_7238_44cd_B01C_F282FC396AC7"/>
+															</UML:AssociationEnd.participant>
+														</UML:AssociationEnd>
+														<UML:AssociationEnd visibility="public" aggregation="none" isOrdered="false" isNavigable="false" type="EAID_544578D4_2C08_4037_A067_BCA976539776">
+															<UML:AssociationEnd.multiplicity>
+																<UML:Multiplicity>
+																	<UML:Multiplicity.range>
+																		<UML:MultiplicityRange lower="1" upper="1"/>
+																	</UML:Multiplicity.range>
+																</UML:Multiplicity>
+															</UML:AssociationEnd.multiplicity>
+															<UML:AssociationEnd.participant>
+																<UML:Class xmi.idref="EAID_544578D4_2C08_4037_A067_BCA976539776"/>
+															</UML:AssociationEnd.participant>
+														</UML:AssociationEnd>
+													</UML:Association.connection>
+												</UML:Association>
+												<UML:Association xmi.id="EAID_0E38BC45_B9CC_44a8_9E6E_125CC9D4A1E8" visibility="public" isRoot="false" isLeaf="false" isAbstract="false">
+													<UML:Association.connection>
+														<UML:AssociationEnd visibility="public" aggregation="none" isOrdered="false" isNavigable="true" type="EAID_DC707B1B_6058_4329_9744_2785998888DA">
+															<UML:AssociationEnd.multiplicity>
+																<UML:Multiplicity>
+																	<UML:Multiplicity.range>
+																		<UML:MultiplicityRange lower="0" upper="-1"/>
+																	</UML:Multiplicity.range>
+																</UML:Multiplicity>
+															</UML:AssociationEnd.multiplicity>
+															<UML:AssociationEnd.participant>
+																<UML:Class xmi.idref="EAID_DC707B1B_6058_4329_9744_2785998888DA"/>
+															</UML:AssociationEnd.participant>
+														</UML:AssociationEnd>
+														<UML:AssociationEnd visibility="public" aggregation="none" isOrdered="false" isNavigable="true" type="EAID_452D29C1_7238_44cd_B01C_F282FC396AC7">
+															<UML:AssociationEnd.multiplicity>
+																<UML:Multiplicity>
+																	<UML:Multiplicity.range>
+																		<UML:MultiplicityRange lower="1" upper="1"/>
+																	</UML:Multiplicity.range>
+																</UML:Multiplicity>
+															</UML:AssociationEnd.multiplicity>
+															<UML:AssociationEnd.participant>
+																<UML:Class xmi.idref="EAID_452D29C1_7238_44cd_B01C_F282FC396AC7"/>
+															</UML:AssociationEnd.participant>
+														</UML:AssociationEnd>
+													</UML:Association.connection>
+												</UML:Association>
+												<UML:Association xmi.id="EAID_7537F703_AEF4_4c7d_A42B_77EA117150A5" visibility="public" isRoot="false" isLeaf="false" isAbstract="false">
+													<UML:Association.connection>
+														<UML:AssociationEnd visibility="public" aggregation="none" isOrdered="false" isNavigable="true" type="EAID_D2A0EB48_35BE_489a_9F7A_99B1228BC5DD">
+															<UML:AssociationEnd.multiplicity>
+																<UML:Multiplicity>
+																	<UML:Multiplicity.range>
+																		<UML:MultiplicityRange lower="0" upper="-1"/>
+																	</UML:Multiplicity.range>
+																</UML:Multiplicity>
+															</UML:AssociationEnd.multiplicity>
+															<UML:AssociationEnd.participant>
+																<UML:Class xmi.idref="EAID_D2A0EB48_35BE_489a_9F7A_99B1228BC5DD"/>
+															</UML:AssociationEnd.participant>
+														</UML:AssociationEnd>
+														<UML:AssociationEnd visibility="public" aggregation="none" isOrdered="false" isNavigable="true" type="EAID_452D29C1_7238_44cd_B01C_F282FC396AC7">
+															<UML:AssociationEnd.multiplicity>
+																<UML:Multiplicity>
+																	<UML:Multiplicity.range>
+																		<UML:MultiplicityRange lower="0" upper="1"/>
+																	</UML:Multiplicity.range>
+																</UML:Multiplicity>
+															</UML:AssociationEnd.multiplicity>
+															<UML:AssociationEnd.participant>
+																<UML:Class xmi.idref="EAID_452D29C1_7238_44cd_B01C_F282FC396AC7"/>
+															</UML:AssociationEnd.participant>
+														</UML:AssociationEnd>
+													</UML:Association.connection>
+												</UML:Association>
+												<UML:Class name="MembreMoa" xmi.id="EAID_4686D515_4636_48fa_A2CF_43267A3E1762" visibility="public" isSpecification="false" isRoot="false" isLeaf="false" isAbstract="false" isActive="false">
+													<UML:Classifier.feature>
+														<UML:Attribute name="nomPrenom" xmi.id="EAID_66C77E9B_B4D7_44fe_B2F9_E046B81AE2B4" visibility="private" ownerScope="instance" changeability="changeable" ordering="unordered" targetScope="instance">
+															<UML:StructuralFeature.type>
+																<UML:DataType xmi.idref="eaxmiid1"/>
+															</UML:StructuralFeature.type>
+															<UML:StructuralFeature.multiplicity>
+																<UML:Multiplicity xmi.id="EAID_ED95E32E_D63D_405a_84BA_9E428A3A69AB">
+																	<UML:Multiplicity.range>
+																		<UML:MultiplicityRange xmi.id="EAID_B0FFF578_9289_4094_A187_C713F90BE37E" lower="1" upper="1"/>
+																	</UML:Multiplicity.range>
+																</UML:Multiplicity>
+															</UML:StructuralFeature.multiplicity>
+															<UML:Attribute.initialValue>
+																<UML:Expression xmi.id="EAID_9FEC33B3_758E_4df5_9C34_1881837B7BBB"/>
+															</UML:Attribute.initialValue>
+															<UML:ModelElement.taggedValue/>
+														</UML:Attribute>
+														<UML:Attribute name="role" xmi.id="EAID_64AF72C3_0434_4ee1_9893_4ED5CBC35199" visibility="private" ownerScope="instance" changeability="changeable" ordering="unordered" targetScope="instance">
+															<UML:StructuralFeature.type>
+																<UML:DataType xmi.idref="eaxmiid1"/>
+															</UML:StructuralFeature.type>
+															<UML:StructuralFeature.multiplicity>
+																<UML:Multiplicity xmi.id="EAID_A45B2418_7F9B_4710_B5EB_1565A71611AC">
+																	<UML:Multiplicity.range>
+																		<UML:MultiplicityRange xmi.id="EAID_DFD20EBD_2907_4dc4_BE6A_417CF4091067" lower="1" upper="1"/>
+																	</UML:Multiplicity.range>
+																</UML:Multiplicity>
+															</UML:StructuralFeature.multiplicity>
+															<UML:Attribute.initialValue>
+																<UML:Expression xmi.id="EAID_2AE917E7_696D_40d5_B364_C18AB8EB69EE"/>
+															</UML:Attribute.initialValue>
+															<UML:ModelElement.taggedValue/>
+														</UML:Attribute>
+													</UML:Classifier.feature>
+												</UML:Class>
+												<UML:Association xmi.id="EAID_209C6EDA_B5F0_4892_BD35_707B4730D856" visibility="public" isRoot="false" isLeaf="false" isAbstract="false">
+													<UML:Association.connection>
+														<UML:AssociationEnd visibility="public" aggregation="none" isOrdered="false" isNavigable="true" type="EAID_4686D515_4636_48fa_A2CF_43267A3E1762">
+															<UML:AssociationEnd.multiplicity>
+																<UML:Multiplicity>
+																	<UML:Multiplicity.range>
+																		<UML:MultiplicityRange lower="0" upper="-1"/>
+																	</UML:Multiplicity.range>
+																</UML:Multiplicity>
+															</UML:AssociationEnd.multiplicity>
+															<UML:AssociationEnd.participant>
+																<UML:Class xmi.idref="EAID_4686D515_4636_48fa_A2CF_43267A3E1762"/>
+															</UML:AssociationEnd.participant>
+														</UML:AssociationEnd>
+														<UML:AssociationEnd visibility="public" aggregation="none" isOrdered="false" isNavigable="true" type="EAID_544578D4_2C08_4037_A067_BCA976539776">
+															<UML:AssociationEnd.multiplicity>
+																<UML:Multiplicity>
+																	<UML:Multiplicity.range>
+																		<UML:MultiplicityRange lower="1" upper="1"/>
+																	</UML:Multiplicity.range>
+																</UML:Multiplicity>
+															</UML:AssociationEnd.multiplicity>
+															<UML:AssociationEnd.participant>
+																<UML:Class xmi.idref="EAID_544578D4_2C08_4037_A067_BCA976539776"/>
+															</UML:AssociationEnd.participant>
+														</UML:AssociationEnd>
+													</UML:Association.connection>
+												</UML:Association>
+												<UML:Class name="Projet" xmi.id="EAID_544578D4_2C08_4037_A067_BCA976539776" visibility="public" isSpecification="false" isRoot="false" isLeaf="false" isAbstract="false" isActive="false">
+													<UML:Classifier.feature>
+														<UML:Attribute name="code" xmi.id="EAID_2ADB59F3_591A_4bc5_BD32_E02C00B3F000" visibility="private" ownerScope="instance" changeability="changeable" ordering="unordered" targetScope="instance">
+															<UML:StructuralFeature.type>
+																<UML:DataType xmi.idref="eaxmiid1"/>
+															</UML:StructuralFeature.type>
+															<UML:StructuralFeature.multiplicity>
+																<UML:Multiplicity xmi.id="EAID_F41E7905_786B_4840_AD8B_C0F8986F584C">
+																	<UML:Multiplicity.range>
+																		<UML:MultiplicityRange xmi.id="EAID_8CE0E458_DC0F_4c17_B900_92E3978434BB" lower="1" upper="1"/>
+																	</UML:Multiplicity.range>
+																</UML:Multiplicity>
+															</UML:StructuralFeature.multiplicity>
+															<UML:Attribute.initialValue>
+																<UML:Expression xmi.id="EAID_C20988EC_9F91_48a2_BB11_D48177DFE06A"/>
+															</UML:Attribute.initialValue>
+															<UML:ModelElement.taggedValue/>
+														</UML:Attribute>
+														<UML:Attribute name="dateDebut" xmi.id="EAID_15E6DF7A_754F_41e2_A1A7_2D2A30A76CDB" visibility="private" ownerScope="instance" changeability="changeable" ordering="unordered" targetScope="instance">
+															<UML:StructuralFeature.type>
+																<UML:DataType xmi.idref="eaxmiid3"/>
+															</UML:StructuralFeature.type>
+															<UML:StructuralFeature.multiplicity>
+																<UML:Multiplicity xmi.id="EAID_D228B865_6B45_4329_BC6B_656EC93030A7">
+																	<UML:Multiplicity.range>
+																		<UML:MultiplicityRange xmi.id="EAID_9DE32528_2772_42d9_B070_BBB78B381BC8" lower="1" upper="1"/>
+																	</UML:Multiplicity.range>
+																</UML:Multiplicity>
+															</UML:StructuralFeature.multiplicity>
+															<UML:Attribute.initialValue>
+																<UML:Expression xmi.id="EAID_6E308BB9_6CB0_43a9_B156_D9BA030E5254"/>
+															</UML:Attribute.initialValue>
+															<UML:ModelElement.taggedValue/>
+														</UML:Attribute>
+														<UML:Attribute name="dateFin" xmi.id="EAID_594E9AB7_6690_4ad4_BBAB_B3041396BD76" visibility="private" ownerScope="instance" changeability="changeable" ordering="unordered" targetScope="instance">
+															<UML:StructuralFeature.type>
+																<UML:DataType xmi.idref="eaxmiid3"/>
+															</UML:StructuralFeature.type>
+															<UML:StructuralFeature.multiplicity>
+																<UML:Multiplicity xmi.id="EAID_CC4BCD44_CFAD_4894_859E_85F204B52A35">
+																	<UML:Multiplicity.range>
+																		<UML:MultiplicityRange xmi.id="EAID_35C05114_5EDC_4946_B6CB_2CD5CE2F49C9" lower="1" upper="1"/>
+																	</UML:Multiplicity.range>
+																</UML:Multiplicity>
+															</UML:StructuralFeature.multiplicity>
+															<UML:Attribute.initialValue>
+																<UML:Expression xmi.id="EAID_DB4AA0B9_061A_420a_9B9D_6E393ECD6DDC"/>
+															</UML:Attribute.initialValue>
+															<UML:ModelElement.taggedValue/>
+														</UML:Attribute>
+														<UML:Attribute name="directionBenificiaire" xmi.id="EAID_7A9AB0D3_2AED_4f05_9AAA_3360834B5F7F" visibility="private" ownerScope="instance" changeability="changeable" ordering="unordered" targetScope="instance">
+															<UML:StructuralFeature.type>
+																<UML:DataType xmi.idref="eaxmiid1"/>
+															</UML:StructuralFeature.type>
+															<UML:StructuralFeature.multiplicity>
+																<UML:Multiplicity xmi.id="EAID_B0B20DD5_7A73_427a_AE8F_1F8B93CD4576">
+																	<UML:Multiplicity.range>
+																		<UML:MultiplicityRange xmi.id="EAID_3BCA1DB9_A3DF_4caf_8D89_5DE033B11112" lower="1" upper="1"/>
+																	</UML:Multiplicity.range>
+																</UML:Multiplicity>
+															</UML:StructuralFeature.multiplicity>
+															<UML:Attribute.initialValue>
+																<UML:Expression xmi.id="EAID_41850F1F_4ABD_42ce_A5C5_8DED214037D5"/>
+															</UML:Attribute.initialValue>
+															<UML:ModelElement.taggedValue/>
+														</UML:Attribute>
+														<UML:Attribute name="intitule" xmi.id="EAID_8E1B5A17_899D_4497_92D3_EBAE1FE04E4B" visibility="private" ownerScope="instance" changeability="changeable" ordering="unordered" targetScope="instance">
+															<UML:StructuralFeature.type>
+																<UML:DataType xmi.idref="eaxmiid1"/>
+															</UML:StructuralFeature.type>
+															<UML:StructuralFeature.multiplicity>
+																<UML:Multiplicity xmi.id="EAID_10331FE5_3CF3_414f_A426_B0FB4A7624F5">
+																	<UML:Multiplicity.range>
+																		<UML:MultiplicityRange xmi.id="EAID_BC6BB580_7670_4876_852E_9EAE9885A8E0" lower="1" upper="1"/>
+																	</UML:Multiplicity.range>
+																</UML:Multiplicity>
+															</UML:StructuralFeature.multiplicity>
+															<UML:Attribute.initialValue>
+																<UML:Expression xmi.id="EAID_D0D0B53E_F52A_4645_B5BA_3EA0AB3C6E81"/>
+															</UML:Attribute.initialValue>
+															<UML:ModelElement.taggedValue/>
+														</UML:Attribute>
+														<UML:Attribute name="libelle" xmi.id="EAID_EA7703EB_F715_43d0_A99F_2DF85DA3D3D1" visibility="private" ownerScope="instance" changeability="changeable" ordering="unordered" targetScope="instance">
+															<UML:StructuralFeature.type>
+																<UML:DataType xmi.idref="eaxmiid1"/>
+															</UML:StructuralFeature.type>
+															<UML:StructuralFeature.multiplicity>
+																<UML:Multiplicity xmi.id="EAID_F8590C16_A72C_48c3_89E0_22EA30C1BC00">
+																	<UML:Multiplicity.range>
+																		<UML:MultiplicityRange xmi.id="EAID_FC320414_303B_40ca_BBF8_5A9426C1735A" lower="1" upper="1"/>
+																	</UML:Multiplicity.range>
+																</UML:Multiplicity>
+															</UML:StructuralFeature.multiplicity>
+															<UML:Attribute.initialValue>
+																<UML:Expression xmi.id="EAID_12069EEC_478E_4d7e_BDD0_F96FF7A63BDF"/>
+															</UML:Attribute.initialValue>
+															<UML:ModelElement.taggedValue/>
+														</UML:Attribute>
+														<UML:Attribute name="oportunites" xmi.id="EAID_F4836BB1_2BCC_4ab1_B1F4_E08D86C448F4" visibility="private" ownerScope="instance" changeability="changeable" ordering="unordered" targetScope="instance">
+															<UML:StructuralFeature.type>
+																<UML:DataType xmi.idref="eaxmiid1"/>
+															</UML:StructuralFeature.type>
+															<UML:StructuralFeature.multiplicity>
+																<UML:Multiplicity xmi.id="EAID_6BBC4F50_D2B0_4638_86ED_B18516DA2652">
+																	<UML:Multiplicity.range>
+																		<UML:MultiplicityRange xmi.id="EAID_1F470409_4BBB_473d_8536_1A3B78B9D763" lower="1" upper="1"/>
+																	</UML:Multiplicity.range>
+																</UML:Multiplicity>
+															</UML:StructuralFeature.multiplicity>
+															<UML:Attribute.initialValue>
+																<UML:Expression xmi.id="EAID_D663956A_F644_4cdb_807C_46CA30D19C92"/>
+															</UML:Attribute.initialValue>
+															<UML:ModelElement.taggedValue/>
+														</UML:Attribute>
+														<UML:Attribute name="priorite" xmi.id="EAID_C7D142EA_C21C_4b66_9067_33D289D838EE" visibility="private" ownerScope="instance" changeability="changeable" ordering="unordered" targetScope="instance">
+															<UML:StructuralFeature.type>
+																<UML:DataType xmi.idref="eaxmiid1"/>
+															</UML:StructuralFeature.type>
+															<UML:StructuralFeature.multiplicity>
+																<UML:Multiplicity xmi.id="EAID_0210426F_0007_48ab_A571_84FD4476A3E4">
+																	<UML:Multiplicity.range>
+																		<UML:MultiplicityRange xmi.id="EAID_6C9E07B5_0C13_4e2c_867E_EFD0D08A9FA5" lower="1" upper="1"/>
+																	</UML:Multiplicity.range>
+																</UML:Multiplicity>
+															</UML:StructuralFeature.multiplicity>
+															<UML:Attribute.initialValue>
+																<UML:Expression xmi.id="EAID_C5BB82D0_AEAE_4ab9_92F0_32371BBD4E99"/>
+															</UML:Attribute.initialValue>
+															<UML:ModelElement.taggedValue/>
+														</UML:Attribute>
+														<UML:Attribute name="status" xmi.id="EAID_5E7F80CE_5099_4e04_A54F_7489AA89EF76" visibility="private" ownerScope="instance" changeability="changeable" ordering="unordered" targetScope="instance">
+															<UML:StructuralFeature.type>
+																<UML:DataType xmi.idref="eaxmiid1"/>
+															</UML:StructuralFeature.type>
+															<UML:StructuralFeature.multiplicity>
+																<UML:Multiplicity xmi.id="EAID_8700C85E_429B_45ab_BC9E_0D363D8FE632">
+																	<UML:Multiplicity.range>
+																		<UML:MultiplicityRange xmi.id="EAID_049D7315_9A2F_4445_B77E_79C9BD7C9722" lower="1" upper="1"/>
+																	</UML:Multiplicity.range>
+																</UML:Multiplicity>
+															</UML:StructuralFeature.multiplicity>
+															<UML:Attribute.initialValue>
+																<UML:Expression xmi.id="EAID_877FC129_68EF_4f0c_A7B4_3C4C54987E6D"/>
+															</UML:Attribute.initialValue>
+															<UML:ModelElement.taggedValue/>
+														</UML:Attribute>
+													</UML:Classifier.feature>
+												</UML:Class>
+												<UML:Association xmi.id="EAID_0279B1DC_FCEC_4c11_A085_BEA998CD5C5A" visibility="public" isRoot="false" isLeaf="false" isAbstract="false">
+													<UML:Association.connection>
+														<UML:AssociationEnd visibility="public" aggregation="none" isOrdered="false" isNavigable="true" type="EAID_80CFE0F1_F0B5_4364_8410_1F07BFA6AD46">
+															<UML:AssociationEnd.multiplicity>
+																<UML:Multiplicity>
+																	<UML:Multiplicity.range>
+																		<UML:MultiplicityRange lower="0" upper="-1"/>
+																	</UML:Multiplicity.range>
+																</UML:Multiplicity>
+															</UML:AssociationEnd.multiplicity>
+															<UML:AssociationEnd.participant>
+																<UML:Class xmi.idref="EAID_80CFE0F1_F0B5_4364_8410_1F07BFA6AD46"/>
+															</UML:AssociationEnd.participant>
+														</UML:AssociationEnd>
+														<UML:AssociationEnd visibility="public" aggregation="none" isOrdered="false" isNavigable="true" type="EAID_544578D4_2C08_4037_A067_BCA976539776">
+															<UML:AssociationEnd.multiplicity>
+																<UML:Multiplicity>
+																	<UML:Multiplicity.range>
+																		<UML:MultiplicityRange lower="1" upper="1"/>
+																	</UML:Multiplicity.range>
+																</UML:Multiplicity>
+															</UML:AssociationEnd.multiplicity>
+															<UML:AssociationEnd.participant>
+																<UML:Class xmi.idref="EAID_544578D4_2C08_4037_A067_BCA976539776"/>
+															</UML:AssociationEnd.participant>
+														</UML:AssociationEnd>
+													</UML:Association.connection>
+												</UML:Association>
+												<UML:Association xmi.id="EAID_30313A12_C296_4591_A41B_871FE7EC6D86" visibility="public" isRoot="false" isLeaf="false" isAbstract="false">
+													<UML:Association.connection>
+														<UML:AssociationEnd visibility="public" aggregation="none" isOrdered="false" isNavigable="true" type="EAID_B81003DD_2376_4a73_B60C_1629DFE2AE4C">
+															<UML:AssociationEnd.multiplicity>
+																<UML:Multiplicity>
+																	<UML:Multiplicity.range>
+																		<UML:MultiplicityRange lower="0" upper="-1"/>
+																	</UML:Multiplicity.range>
+																</UML:Multiplicity>
+															</UML:AssociationEnd.multiplicity>
+															<UML:AssociationEnd.participant>
+																<UML:Class xmi.idref="EAID_B81003DD_2376_4a73_B60C_1629DFE2AE4C"/>
+															</UML:AssociationEnd.participant>
+														</UML:AssociationEnd>
+														<UML:AssociationEnd visibility="public" aggregation="none" isOrdered="false" isNavigable="true" type="EAID_544578D4_2C08_4037_A067_BCA976539776">
+															<UML:AssociationEnd.multiplicity>
+																<UML:Multiplicity>
+																	<UML:Multiplicity.range>
+																		<UML:MultiplicityRange lower="1" upper="1"/>
+																	</UML:Multiplicity.range>
+																</UML:Multiplicity>
+															</UML:AssociationEnd.multiplicity>
+															<UML:AssociationEnd.participant>
+																<UML:Class xmi.idref="EAID_544578D4_2C08_4037_A067_BCA976539776"/>
+															</UML:AssociationEnd.participant>
+														</UML:AssociationEnd>
+													</UML:Association.connection>
+												</UML:Association>
+												<UML:Association xmi.id="EAID_3F02A510_DF3F_405d_81ED_ED48FD339F24" visibility="public" isRoot="false" isLeaf="false" isAbstract="false">
+													<UML:Association.connection>
+														<UML:AssociationEnd visibility="public" aggregation="none" isOrdered="false" isNavigable="true" type="EAID_E02FD149_6B89_4913_AA67_DA11C915EDF9">
+															<UML:AssociationEnd.multiplicity>
+																<UML:Multiplicity>
+																	<UML:Multiplicity.range>
+																		<UML:MultiplicityRange lower="0" upper="-1"/>
+																	</UML:Multiplicity.range>
+																</UML:Multiplicity>
+															</UML:AssociationEnd.multiplicity>
+															<UML:AssociationEnd.participant>
+																<UML:Class xmi.idref="EAID_E02FD149_6B89_4913_AA67_DA11C915EDF9"/>
+															</UML:AssociationEnd.participant>
+														</UML:AssociationEnd>
+														<UML:AssociationEnd visibility="public" aggregation="none" isOrdered="false" isNavigable="true" type="EAID_544578D4_2C08_4037_A067_BCA976539776">
+															<UML:AssociationEnd.multiplicity>
+																<UML:Multiplicity>
+																	<UML:Multiplicity.range>
+																		<UML:MultiplicityRange lower="1" upper="1"/>
+																	</UML:Multiplicity.range>
+																</UML:Multiplicity>
+															</UML:AssociationEnd.multiplicity>
+															<UML:AssociationEnd.participant>
+																<UML:Class xmi.idref="EAID_544578D4_2C08_4037_A067_BCA976539776"/>
+															</UML:AssociationEnd.participant>
+														</UML:AssociationEnd>
+													</UML:Association.connection>
+												</UML:Association>
+												<UML:Association xmi.id="EAID_5E706C9C_0E05_4c45_A387_BE8F4C042866" visibility="public" isRoot="false" isLeaf="false" isAbstract="false">
+													<UML:Association.connection>
+														<UML:AssociationEnd visibility="public" aggregation="none" isOrdered="false" isNavigable="true" type="EAID_704E032D_B0E0_480c_B4F4_CAE803F19199">
+															<UML:AssociationEnd.multiplicity>
+																<UML:Multiplicity>
+																	<UML:Multiplicity.range>
+																		<UML:MultiplicityRange lower="0" upper="1"/>
+																	</UML:Multiplicity.range>
+																</UML:Multiplicity>
+															</UML:AssociationEnd.multiplicity>
+															<UML:AssociationEnd.participant>
+																<UML:Class xmi.idref="EAID_704E032D_B0E0_480c_B4F4_CAE803F19199"/>
+															</UML:AssociationEnd.participant>
+														</UML:AssociationEnd>
+														<UML:AssociationEnd visibility="public" aggregation="none" isOrdered="false" isNavigable="true" type="EAID_544578D4_2C08_4037_A067_BCA976539776">
+															<UML:AssociationEnd.multiplicity>
+																<UML:Multiplicity>
+																	<UML:Multiplicity.range>
+																		<UML:MultiplicityRange lower="0" upper="-1"/>
+																	</UML:Multiplicity.range>
+																</UML:Multiplicity>
+															</UML:AssociationEnd.multiplicity>
+															<UML:AssociationEnd.participant>
+																<UML:Class xmi.idref="EAID_544578D4_2C08_4037_A067_BCA976539776"/>
+															</UML:AssociationEnd.participant>
+														</UML:AssociationEnd>
+													</UML:Association.connection>
+												</UML:Association>
+												<UML:Association xmi.id="EAID_CFAABE15_8656_4a9e_89EF_E72F80947D7C" visibility="public" isRoot="false" isLeaf="false" isAbstract="false">
+													<UML:Association.connection>
+														<UML:AssociationEnd visibility="public" aggregation="none" isOrdered="false" isNavigable="true" type="EAID_E6E825C7_90DF_4009_B358_B0F55C6E5683">
+															<UML:AssociationEnd.multiplicity>
+																<UML:Multiplicity>
+																	<UML:Multiplicity.range>
+																		<UML:MultiplicityRange lower="0" upper="-1"/>
+																	</UML:Multiplicity.range>
+																</UML:Multiplicity>
+															</UML:AssociationEnd.multiplicity>
+															<UML:AssociationEnd.participant>
+																<UML:Class xmi.idref="EAID_E6E825C7_90DF_4009_B358_B0F55C6E5683"/>
+															</UML:AssociationEnd.participant>
+														</UML:AssociationEnd>
+														<UML:AssociationEnd visibility="public" aggregation="none" isOrdered="false" isNavigable="true" type="EAID_544578D4_2C08_4037_A067_BCA976539776">
+															<UML:AssociationEnd.multiplicity>
+																<UML:Multiplicity>
+																	<UML:Multiplicity.range>
+																		<UML:MultiplicityRange lower="1" upper="1"/>
+																	</UML:Multiplicity.range>
+																</UML:Multiplicity>
+															</UML:AssociationEnd.multiplicity>
+															<UML:AssociationEnd.participant>
+																<UML:Class xmi.idref="EAID_544578D4_2C08_4037_A067_BCA976539776"/>
+															</UML:AssociationEnd.participant>
+														</UML:AssociationEnd>
+													</UML:Association.connection>
+												</UML:Association>
+												<UML:Association xmi.id="EAID_DE10BCD7_8EE7_4c0d_B71B_B52F62892C34" visibility="public" isRoot="false" isLeaf="false" isAbstract="false">
+													<UML:Association.connection>
+														<UML:AssociationEnd visibility="public" aggregation="none" isOrdered="false" isNavigable="true" type="EAID_7FB65266_DE3A_4974_AE31_4055794B0DAC">
+															<UML:AssociationEnd.multiplicity>
+																<UML:Multiplicity>
+																	<UML:Multiplicity.range>
+																		<UML:MultiplicityRange lower="0" upper="-1"/>
+																	</UML:Multiplicity.range>
+																</UML:Multiplicity>
+															</UML:AssociationEnd.multiplicity>
+															<UML:AssociationEnd.participant>
+																<UML:Class xmi.idref="EAID_7FB65266_DE3A_4974_AE31_4055794B0DAC"/>
+															</UML:AssociationEnd.participant>
+														</UML:AssociationEnd>
+														<UML:AssociationEnd visibility="public" aggregation="none" isOrdered="false" isNavigable="true" type="EAID_544578D4_2C08_4037_A067_BCA976539776">
+															<UML:AssociationEnd.multiplicity>
+																<UML:Multiplicity>
+																	<UML:Multiplicity.range>
+																		<UML:MultiplicityRange lower="1" upper="1"/>
+																	</UML:Multiplicity.range>
+																</UML:Multiplicity>
+															</UML:AssociationEnd.multiplicity>
+															<UML:AssociationEnd.participant>
+																<UML:Class xmi.idref="EAID_544578D4_2C08_4037_A067_BCA976539776"/>
+															</UML:AssociationEnd.participant>
+														</UML:AssociationEnd>
+													</UML:Association.connection>
+												</UML:Association>
+												<UML:Association xmi.id="EAID_F03FCD4C_B84D_4ffe_9DDA_D7F2DE04E01D" visibility="public" isRoot="false" isLeaf="false" isAbstract="false">
+													<UML:Association.connection>
+														<UML:AssociationEnd visibility="public" aggregation="none" isOrdered="false" isNavigable="true" type="EAID_90CDA86C_96B6_4ebe_8414_811E289A93DA">
+															<UML:AssociationEnd.multiplicity>
+																<UML:Multiplicity>
+																	<UML:Multiplicity.range>
+																		<UML:MultiplicityRange lower="0" upper="-1"/>
+																	</UML:Multiplicity.range>
+																</UML:Multiplicity>
+															</UML:AssociationEnd.multiplicity>
+															<UML:AssociationEnd.participant>
+																<UML:Class xmi.idref="EAID_90CDA86C_96B6_4ebe_8414_811E289A93DA"/>
+															</UML:AssociationEnd.participant>
+														</UML:AssociationEnd>
+														<UML:AssociationEnd visibility="public" aggregation="none" isOrdered="false" isNavigable="true" type="EAID_544578D4_2C08_4037_A067_BCA976539776">
+															<UML:AssociationEnd.multiplicity>
+																<UML:Multiplicity>
+																	<UML:Multiplicity.range>
+																		<UML:MultiplicityRange lower="0" upper="-1"/>
+																	</UML:Multiplicity.range>
+																</UML:Multiplicity>
+															</UML:AssociationEnd.multiplicity>
+															<UML:AssociationEnd.participant>
+																<UML:Class xmi.idref="EAID_544578D4_2C08_4037_A067_BCA976539776"/>
+															</UML:AssociationEnd.participant>
+														</UML:AssociationEnd>
+													</UML:Association.connection>
+												</UML:Association>
+												<UML:Association xmi.id="EAID_FB1D4040_DB75_4e18_A29E_9363B3E4376E" visibility="public" isRoot="false" isLeaf="false" isAbstract="false">
+													<UML:Association.connection>
+														<UML:AssociationEnd visibility="public" aggregation="none" isOrdered="false" isNavigable="true" type="EAID_9960EA50_5FF3_4dfc_BE65_7F2DCC13FBED">
+															<UML:AssociationEnd.multiplicity>
+																<UML:Multiplicity>
+																	<UML:Multiplicity.range>
+																		<UML:MultiplicityRange lower="0" upper="-1"/>
+																	</UML:Multiplicity.range>
+																</UML:Multiplicity>
+															</UML:AssociationEnd.multiplicity>
+															<UML:AssociationEnd.participant>
+																<UML:Class xmi.idref="EAID_9960EA50_5FF3_4dfc_BE65_7F2DCC13FBED"/>
+															</UML:AssociationEnd.participant>
+														</UML:AssociationEnd>
+														<UML:AssociationEnd visibility="public" aggregation="none" isOrdered="false" isNavigable="true" type="EAID_544578D4_2C08_4037_A067_BCA976539776">
+															<UML:AssociationEnd.multiplicity>
+																<UML:Multiplicity>
+																	<UML:Multiplicity.range>
+																		<UML:MultiplicityRange lower="1" upper="1"/>
+																	</UML:Multiplicity.range>
+																</UML:Multiplicity>
+															</UML:AssociationEnd.multiplicity>
+															<UML:AssociationEnd.participant>
+																<UML:Class xmi.idref="EAID_544578D4_2C08_4037_A067_BCA976539776"/>
+															</UML:AssociationEnd.participant>
+														</UML:AssociationEnd>
+													</UML:Association.connection>
+												</UML:Association>
+												<UML:Class name="Utilisateur" xmi.id="EAID_58DBFEA3_C49C_46fc_95EB_EAC13748013D" visibility="public" isSpecification="false" isRoot="false" isLeaf="false" isAbstract="false" isActive="false">
+													<UML:Classifier.feature>
+														<UML:Attribute name="active" xmi.id="EAID_CDBDBDA5_B738_40ba_8C83_D8F15E816459" visibility="private" ownerScope="instance" changeability="changeable" ordering="unordered" targetScope="instance">
+															<UML:StructuralFeature.type>
+																<UML:DataType xmi.idref="eaxmiid4"/>
+															</UML:StructuralFeature.type>
+															<UML:StructuralFeature.multiplicity>
+																<UML:Multiplicity xmi.id="EAID_6500DB94_F129_4fb3_9C36_AFF116C85B51">
+																	<UML:Multiplicity.range>
+																		<UML:MultiplicityRange xmi.id="EAID_732108DB_77A8_4a52_8141_97851D6D4660" lower="1" upper="1"/>
+																	</UML:Multiplicity.range>
+																</UML:Multiplicity>
+															</UML:StructuralFeature.multiplicity>
+															<UML:Attribute.initialValue>
+																<UML:Expression xmi.id="EAID_01DACCA3_A8D5_49f0_BA15_BFA403078D14"/>
+															</UML:Attribute.initialValue>
+															<UML:ModelElement.taggedValue/>
+														</UML:Attribute>
+														<UML:Attribute name="email" xmi.id="EAID_EC425EE0_D8F5_435e_85DF_9E4F682A5252" visibility="private" ownerScope="instance" changeability="changeable" ordering="unordered" targetScope="instance">
+															<UML:StructuralFeature.type>
+																<UML:DataType xmi.idref="eaxmiid1"/>
+															</UML:StructuralFeature.type>
+															<UML:StructuralFeature.multiplicity>
+																<UML:Multiplicity xmi.id="EAID_8B6F6C7B_FF76_4034_9434_15FE2630BFFF">
+																	<UML:Multiplicity.range>
+																		<UML:MultiplicityRange xmi.id="EAID_6A2F1F5F_385F_407e_87A4_D7336DCC1882" lower="1" upper="1"/>
+																	</UML:Multiplicity.range>
+																</UML:Multiplicity>
+															</UML:StructuralFeature.multiplicity>
+															<UML:Attribute.initialValue>
+																<UML:Expression xmi.id="EAID_218CA4ED_4B1F_4511_8BF1_D386EF0C3016"/>
+															</UML:Attribute.initialValue>
+															<UML:ModelElement.taggedValue/>
+														</UML:Attribute>
+														<UML:Attribute name="login" xmi.id="EAID_98749FCB_B4B7_4a59_A648_7076B5AA7EBE" visibility="private" ownerScope="instance" changeability="changeable" ordering="unordered" targetScope="instance">
+															<UML:StructuralFeature.type>
+																<UML:DataType xmi.idref="eaxmiid1"/>
+															</UML:StructuralFeature.type>
+															<UML:StructuralFeature.multiplicity>
+																<UML:Multiplicity xmi.id="EAID_50E5D854_619B_4efc_81D1_D971D1CB5ED6">
+																	<UML:Multiplicity.range>
+																		<UML:MultiplicityRange xmi.id="EAID_4F3F7D5B_659D_4782_9282_E6633D55CEBB" lower="1" upper="1"/>
+																	</UML:Multiplicity.range>
+																</UML:Multiplicity>
+															</UML:StructuralFeature.multiplicity>
+															<UML:Attribute.initialValue>
+																<UML:Expression xmi.id="EAID_8480D4E5_25C6_43e1_BD24_453FDDDC4F32"/>
+															</UML:Attribute.initialValue>
+															<UML:ModelElement.taggedValue/>
+														</UML:Attribute>
+														<UML:Attribute name="nom" xmi.id="EAID_8AAA513D_7F5C_4492_942A_E945CC41CEB7" visibility="private" ownerScope="instance" changeability="changeable" ordering="unordered" targetScope="instance">
+															<UML:StructuralFeature.type>
+																<UML:DataType xmi.idref="eaxmiid1"/>
+															</UML:StructuralFeature.type>
+															<UML:StructuralFeature.multiplicity>
+																<UML:Multiplicity xmi.id="EAID_6C50803A_DB15_4092_9022_C8F913759FDF">
+																	<UML:Multiplicity.range>
+																		<UML:MultiplicityRange xmi.id="EAID_26907756_FD25_4775_8946_83D3CA77AFF3" lower="1" upper="1"/>
+																	</UML:Multiplicity.range>
+																</UML:Multiplicity>
+															</UML:StructuralFeature.multiplicity>
+															<UML:Attribute.initialValue>
+																<UML:Expression xmi.id="EAID_FA0A006F_B456_4a50_9284_C2BE428370BB"/>
+															</UML:Attribute.initialValue>
+															<UML:ModelElement.taggedValue/>
+														</UML:Attribute>
+														<UML:Attribute name="password" xmi.id="EAID_387D639F_BB4F_48d3_BF88_13614B7CD356" visibility="private" ownerScope="instance" changeability="changeable" ordering="unordered" targetScope="instance">
+															<UML:StructuralFeature.type>
+																<UML:DataType xmi.idref="eaxmiid1"/>
+															</UML:StructuralFeature.type>
+															<UML:StructuralFeature.multiplicity>
+																<UML:Multiplicity xmi.id="EAID_739D6ADC_345E_4069_B703_94D412B4CC7C">
+																	<UML:Multiplicity.range>
+																		<UML:MultiplicityRange xmi.id="EAID_46D055AE_DB16_47ec_833A_D4F01613CF2F" lower="1" upper="1"/>
+																	</UML:Multiplicity.range>
+																</UML:Multiplicity>
+															</UML:StructuralFeature.multiplicity>
+															<UML:Attribute.initialValue>
+																<UML:Expression xmi.id="EAID_AE017EBD_BFCF_441e_9C5D_5023187E774E"/>
+															</UML:Attribute.initialValue>
+															<UML:ModelElement.taggedValue/>
+														</UML:Attribute>
+														<UML:Attribute name="prenom" xmi.id="EAID_01298588_DC71_4a9b_86D9_F710DB518A51" visibility="private" ownerScope="instance" changeability="changeable" ordering="unordered" targetScope="instance">
+															<UML:StructuralFeature.type>
+																<UML:DataType xmi.idref="eaxmiid1"/>
+															</UML:StructuralFeature.type>
+															<UML:StructuralFeature.multiplicity>
+																<UML:Multiplicity xmi.id="EAID_3B9C51FB_2B02_4a14_A42A_2772CA7B3F9C">
+																	<UML:Multiplicity.range>
+																		<UML:MultiplicityRange xmi.id="EAID_5F82C63A_D7D0_4e23_A32C_89B0B2CD4B38" lower="1" upper="1"/>
+																	</UML:Multiplicity.range>
+																</UML:Multiplicity>
+															</UML:StructuralFeature.multiplicity>
+															<UML:Attribute.initialValue>
+																<UML:Expression xmi.id="EAID_8B7DCE2E_BD53_4c34_AC88_B85EF660D769"/>
+															</UML:Attribute.initialValue>
+															<UML:ModelElement.taggedValue/>
+														</UML:Attribute>
+													</UML:Classifier.feature>
+												</UML:Class>
+												<UML:Class name="Programme" xmi.id="EAID_704E032D_B0E0_480c_B4F4_CAE803F19199" visibility="public" isSpecification="false" isRoot="false" isLeaf="false" isAbstract="false" isActive="false">
+													<UML:Classifier.feature>
+														<UML:Attribute name="code" xmi.id="EAID_B0A774F0_5B69_4319_8181_4D8EE554996E" visibility="private" ownerScope="instance" changeability="changeable" ordering="unordered" targetScope="instance">
+															<UML:StructuralFeature.type>
+																<UML:DataType xmi.idref="eaxmiid1"/>
+															</UML:StructuralFeature.type>
+															<UML:StructuralFeature.multiplicity>
+																<UML:Multiplicity xmi.id="EAID_F50BC24C_3410_4871_BF51_FE098A326052">
+																	<UML:Multiplicity.range>
+																		<UML:MultiplicityRange xmi.id="EAID_714ADC3D_1961_4d67_8228_D41BD53523A0" lower="1" upper="1"/>
+																	</UML:Multiplicity.range>
+																</UML:Multiplicity>
+															</UML:StructuralFeature.multiplicity>
+															<UML:Attribute.initialValue>
+																<UML:Expression xmi.id="EAID_B56F1609_9915_4270_9522_53971595D5B6"/>
+															</UML:Attribute.initialValue>
+															<UML:ModelElement.taggedValue/>
+														</UML:Attribute>
+														<UML:Attribute name="intitule" xmi.id="EAID_4BD4782C_E558_48eb_81D9_05DBAB5682BD" visibility="private" ownerScope="instance" changeability="changeable" ordering="unordered" targetScope="instance">
+															<UML:StructuralFeature.type>
+																<UML:DataType xmi.idref="eaxmiid1"/>
+															</UML:StructuralFeature.type>
+															<UML:StructuralFeature.multiplicity>
+																<UML:Multiplicity xmi.id="EAID_09EB41A6_E186_493f_AD3D_95CC954896E4">
+																	<UML:Multiplicity.range>
+																		<UML:MultiplicityRange xmi.id="EAID_0FFA210B_A4EB_47fe_89B7_257E2235ED87" lower="1" upper="1"/>
+																	</UML:Multiplicity.range>
+																</UML:Multiplicity>
+															</UML:StructuralFeature.multiplicity>
+															<UML:Attribute.initialValue>
+																<UML:Expression xmi.id="EAID_3559BDC7_2859_4ed9_8F20_BA974F6D0ECF"/>
+															</UML:Attribute.initialValue>
+															<UML:ModelElement.taggedValue/>
+														</UML:Attribute>
+													</UML:Classifier.feature>
+												</UML:Class>
+												<UML:Class name="MembreMoe" xmi.id="EAID_7FB65266_DE3A_4974_AE31_4055794B0DAC" visibility="public" isSpecification="false" isRoot="false" isLeaf="false" isAbstract="false" isActive="false">
+													<UML:Classifier.feature>
+														<UML:Attribute name="nomPrenom" xmi.id="EAID_6A37638F_AD63_4564_8DF8_2DC5A5E433D3" visibility="private" ownerScope="instance" changeability="changeable" ordering="unordered" targetScope="instance">
+															<UML:StructuralFeature.type>
+																<UML:DataType xmi.idref="eaxmiid1"/>
+															</UML:StructuralFeature.type>
+															<UML:StructuralFeature.multiplicity>
+																<UML:Multiplicity xmi.id="EAID_240C12A0_DBA2_49cf_AAC0_AD1CC8BD8F02">
+																	<UML:Multiplicity.range>
+																		<UML:MultiplicityRange xmi.id="EAID_9DACD2E1_FCE0_4036_9BD0_16F62DF1D15A" lower="1" upper="1"/>
+																	</UML:Multiplicity.range>
+																</UML:Multiplicity>
+															</UML:StructuralFeature.multiplicity>
+															<UML:Attribute.initialValue>
+																<UML:Expression xmi.id="EAID_E7A1B09F_0966_47a7_A8A8_1175840F51BB"/>
+															</UML:Attribute.initialValue>
+															<UML:ModelElement.taggedValue/>
+														</UML:Attribute>
+														<UML:Attribute name="role" xmi.id="EAID_36DD0CC8_10AB_4d2a_8B68_4FF4D243AE35" visibility="private" ownerScope="instance" changeability="changeable" ordering="unordered" targetScope="instance">
+															<UML:StructuralFeature.type>
+																<UML:DataType xmi.idref="eaxmiid1"/>
+															</UML:StructuralFeature.type>
+															<UML:StructuralFeature.multiplicity>
+																<UML:Multiplicity xmi.id="EAID_CC7969C7_FDE8_4f57_9C9C_2A8DBB8DBA5D">
+																	<UML:Multiplicity.range>
+																		<UML:MultiplicityRange xmi.id="EAID_C2CE8683_32A2_4ff0_AF64_B0637B21F34C" lower="1" upper="1"/>
+																	</UML:Multiplicity.range>
+																</UML:Multiplicity>
+															</UML:StructuralFeature.multiplicity>
+															<UML:Attribute.initialValue>
+																<UML:Expression xmi.id="EAID_BA96A666_1698_4840_BC7D_7733E3E2E565"/>
+															</UML:Attribute.initialValue>
+															<UML:ModelElement.taggedValue/>
+														</UML:Attribute>
+													</UML:Classifier.feature>
+												</UML:Class>
+												<UML:Class name="RubriqueBudgetaire" xmi.id="EAID_80CFE0F1_F0B5_4364_8410_1F07BFA6AD46" visibility="public" isSpecification="false" isRoot="false" isLeaf="false" isAbstract="false" isActive="false">
+													<UML:Classifier.feature>
+														<UML:Attribute name="commentaire" xmi.id="EAID_6E2694E1_6223_4615_9D30_93F1813EEE06" visibility="private" ownerScope="instance" changeability="changeable" ordering="unordered" targetScope="instance">
+															<UML:StructuralFeature.type>
+																<UML:DataType xmi.idref="eaxmiid1"/>
+															</UML:StructuralFeature.type>
+															<UML:StructuralFeature.multiplicity>
+																<UML:Multiplicity xmi.id="EAID_298AEA0D_47CF_4ed5_9DA1_038D44285F44">
+																	<UML:Multiplicity.range>
+																		<UML:MultiplicityRange xmi.id="EAID_4FC3286F_8405_40a9_9032_810F764432E6" lower="1" upper="1"/>
+																	</UML:Multiplicity.range>
+																</UML:Multiplicity>
+															</UML:StructuralFeature.multiplicity>
+															<UML:Attribute.initialValue>
+																<UML:Expression xmi.id="EAID_9C23A7CB_CFD3_4ae2_8C86_6975436B816A"/>
+															</UML:Attribute.initialValue>
+															<UML:ModelElement.taggedValue/>
+														</UML:Attribute>
+														<UML:Attribute name="cout" xmi.id="EAID_D0061801_A067_467d_9C1B_104C404600C3" visibility="private" ownerScope="instance" changeability="changeable" ordering="unordered" targetScope="instance">
+															<UML:StructuralFeature.type>
+																<UML:DataType xmi.idref="eaxmiid0"/>
+															</UML:StructuralFeature.type>
+															<UML:StructuralFeature.multiplicity>
+																<UML:Multiplicity xmi.id="EAID_128949B2_7F57_4315_B8B4_D822647620AF">
+																	<UML:Multiplicity.range>
+																		<UML:MultiplicityRange xmi.id="EAID_9988465A_925E_4b83_A923_D6B39AA5E511" lower="1" upper="1"/>
+																	</UML:Multiplicity.range>
+																</UML:Multiplicity>
+															</UML:StructuralFeature.multiplicity>
+															<UML:Attribute.initialValue>
+																<UML:Expression xmi.id="EAID_E8A8A7DC_D8DF_4eb6_8EA0_E873F273CB55"/>
+															</UML:Attribute.initialValue>
+															<UML:ModelElement.taggedValue/>
+														</UML:Attribute>
+														<UML:Attribute name="intitule" xmi.id="EAID_1361FFBA_EC91_417f_9B42_7B386DE54171" visibility="private" ownerScope="instance" changeability="changeable" ordering="unordered" targetScope="instance">
+															<UML:StructuralFeature.type>
+																<UML:DataType xmi.idref="eaxmiid1"/>
+															</UML:StructuralFeature.type>
+															<UML:StructuralFeature.multiplicity>
+																<UML:Multiplicity xmi.id="EAID_1D56ABF0_FD76_4e95_B8E5_40D90B20F18D">
+																	<UML:Multiplicity.range>
+																		<UML:MultiplicityRange xmi.id="EAID_77DC7E65_D645_40ad_8C87_FD488F1314F9" lower="1" upper="1"/>
+																	</UML:Multiplicity.range>
+																</UML:Multiplicity>
+															</UML:StructuralFeature.multiplicity>
+															<UML:Attribute.initialValue>
+																<UML:Expression xmi.id="EAID_A08D0A62_FEE2_49db_A496_F08EEFFA2244"/>
+															</UML:Attribute.initialValue>
+															<UML:ModelElement.taggedValue/>
+														</UML:Attribute>
+													</UML:Classifier.feature>
+												</UML:Class>
+												<UML:Class name="Opportunite" xmi.id="EAID_90CDA86C_96B6_4ebe_8414_811E289A93DA" visibility="public" isSpecification="false" isRoot="false" isLeaf="false" isAbstract="false" isActive="false"/>
+												<UML:Class name="DroitUtilisateur" xmi.id="EAID_9902BA32_8C09_4b3d_8B00_773D28AA328F" visibility="public" isSpecification="false" isRoot="false" isLeaf="false" isAbstract="false" isActive="false">
+													<UML:Classifier.feature>
+														<UML:Attribute name="intitule" xmi.id="EAID_798E0B47_F529_4a32_88F1_0436F1E051D9" visibility="private" ownerScope="instance" changeability="changeable" ordering="unordered" targetScope="instance">
+															<UML:StructuralFeature.type>
+																<UML:DataType xmi.idref="eaxmiid1"/>
+															</UML:StructuralFeature.type>
+															<UML:StructuralFeature.multiplicity>
+																<UML:Multiplicity xmi.id="EAID_0D76D8E5_16F1_44cc_8D45_340B897FECC7">
+																	<UML:Multiplicity.range>
+																		<UML:MultiplicityRange xmi.id="EAID_34333DC0_FC6E_475b_B1CB_7C1F298997F2" lower="1" upper="1"/>
+																	</UML:Multiplicity.range>
+																</UML:Multiplicity>
+															</UML:StructuralFeature.multiplicity>
+															<UML:Attribute.initialValue>
+																<UML:Expression xmi.id="EAID_1D466DAC_DC5F_4bfd_9EC5_9CA22BB9B4BA"/>
+															</UML:Attribute.initialValue>
+															<UML:ModelElement.taggedValue/>
+														</UML:Attribute>
+													</UML:Classifier.feature>
+												</UML:Class>
+												<UML:Class name="Risque" xmi.id="EAID_9960EA50_5FF3_4dfc_BE65_7F2DCC13FBED" visibility="public" isSpecification="false" isRoot="false" isLeaf="false" isAbstract="false" isActive="false">
+													<UML:Classifier.feature>
+														<UML:Attribute name="approcheMitigation" xmi.id="EAID_C52904AD_6442_4318_8013_588E9C0E4D43" visibility="private" ownerScope="instance" changeability="changeable" ordering="unordered" targetScope="instance">
+															<UML:StructuralFeature.type>
+																<UML:DataType xmi.idref="eaxmiid1"/>
+															</UML:StructuralFeature.type>
+															<UML:StructuralFeature.multiplicity>
+																<UML:Multiplicity xmi.id="EAID_608EB553_80B2_462d_AE86_8859BBDE32C4">
+																	<UML:Multiplicity.range>
+																		<UML:MultiplicityRange xmi.id="EAID_6EF9073E_29D1_4c12_9B5B_880F8ED6951E" lower="1" upper="1"/>
+																	</UML:Multiplicity.range>
+																</UML:Multiplicity>
+															</UML:StructuralFeature.multiplicity>
+															<UML:Attribute.initialValue>
+																<UML:Expression xmi.id="EAID_E4AF87C7_BF38_4a71_9E00_035A0DAA2840"/>
+															</UML:Attribute.initialValue>
+															<UML:ModelElement.taggedValue/>
+														</UML:Attribute>
+														<UML:Attribute name="categorie" xmi.id="EAID_A36C6F92_23DF_43a5_B880_9F6E46E6A5BF" visibility="private" ownerScope="instance" changeability="changeable" ordering="unordered" targetScope="instance">
+															<UML:StructuralFeature.type>
+																<UML:DataType xmi.idref="eaxmiid1"/>
+															</UML:StructuralFeature.type>
+															<UML:StructuralFeature.multiplicity>
+																<UML:Multiplicity xmi.id="EAID_0A55DE2F_82CA_49cc_A8B6_F476D61A5583">
+																	<UML:Multiplicity.range>
+																		<UML:MultiplicityRange xmi.id="EAID_CB8DE707_E5AB_4525_A088_C0315257EA25" lower="1" upper="1"/>
+																	</UML:Multiplicity.range>
+																</UML:Multiplicity>
+															</UML:StructuralFeature.multiplicity>
+															<UML:Attribute.initialValue>
+																<UML:Expression xmi.id="EAID_0882BAC3_F7E0_4697_AA9F_AA4EB1744AEE"/>
+															</UML:Attribute.initialValue>
+															<UML:ModelElement.taggedValue/>
+														</UML:Attribute>
+														<UML:Attribute name="intitule" xmi.id="EAID_737E2858_C2F3_4869_9F78_687672582BAD" visibility="private" ownerScope="instance" changeability="changeable" ordering="unordered" targetScope="instance">
+															<UML:StructuralFeature.type>
+																<UML:DataType xmi.idref="eaxmiid1"/>
+															</UML:StructuralFeature.type>
+															<UML:StructuralFeature.multiplicity>
+																<UML:Multiplicity xmi.id="EAID_FB95BB91_5CFF_4318_8102_581F233227AD">
+																	<UML:Multiplicity.range>
+																		<UML:MultiplicityRange xmi.id="EAID_3D86708B_C234_42b5_AC81_2B06584BE042" lower="1" upper="1"/>
+																	</UML:Multiplicity.range>
+																</UML:Multiplicity>
+															</UML:StructuralFeature.multiplicity>
+															<UML:Attribute.initialValue>
+																<UML:Expression xmi.id="EAID_C3BBCF25_AD1A_4d4b_8729_2EA05A089930"/>
+															</UML:Attribute.initialValue>
+															<UML:ModelElement.taggedValue/>
+														</UML:Attribute>
+														<UML:Attribute name="probabilite" xmi.id="EAID_D3615F96_8555_4e91_944E_F17956D95B9B" visibility="private" ownerScope="instance" changeability="changeable" ordering="unordered" targetScope="instance">
+															<UML:StructuralFeature.type>
+																<UML:DataType xmi.idref="eaxmiid1"/>
+															</UML:StructuralFeature.type>
+															<UML:StructuralFeature.multiplicity>
+																<UML:Multiplicity xmi.id="EAID_61EA7F33_F1D7_4d60_B07C_A121293C6928">
+																	<UML:Multiplicity.range>
+																		<UML:MultiplicityRange xmi.id="EAID_7F1F951A_D1DB_425c_AD61_A2CD465FBE8C" lower="1" upper="1"/>
+																	</UML:Multiplicity.range>
+																</UML:Multiplicity>
+															</UML:StructuralFeature.multiplicity>
+															<UML:Attribute.initialValue>
+																<UML:Expression xmi.id="EAID_EDE2DA88_6206_420d_B7BC_B07FBFF5BFA3"/>
+															</UML:Attribute.initialValue>
+															<UML:ModelElement.taggedValue/>
+														</UML:Attribute>
+													</UML:Classifier.feature>
+												</UML:Class>
+												<UML:Class name="JoursChomes" xmi.id="EAID_AA15CDDB_054F_4372_8B68_BB2128EB7946" visibility="public" isSpecification="false" isRoot="false" isLeaf="false" isAbstract="false" isActive="false">
+													<UML:Classifier.feature>
+														<UML:Attribute name="dateDebut" xmi.id="EAID_FEBF4757_883B_489d_9223_F2A585C1CAD2" visibility="private" ownerScope="instance" changeability="changeable" ordering="unordered" targetScope="instance">
+															<UML:StructuralFeature.type>
+																<UML:DataType xmi.idref="eaxmiid3"/>
+															</UML:StructuralFeature.type>
+															<UML:StructuralFeature.multiplicity>
+																<UML:Multiplicity xmi.id="EAID_18471340_0DAB_48c2_8302_8BA07F32ECEA">
+																	<UML:Multiplicity.range>
+																		<UML:MultiplicityRange xmi.id="EAID_874FAD29_9EC3_4276_8E38_51A529C9CE8E" lower="1" upper="1"/>
+																	</UML:Multiplicity.range>
+																</UML:Multiplicity>
+															</UML:StructuralFeature.multiplicity>
+															<UML:Attribute.initialValue>
+																<UML:Expression xmi.id="EAID_6914D268_D253_4945_9539_40F1C3972E19"/>
+															</UML:Attribute.initialValue>
+															<UML:ModelElement.taggedValue/>
+														</UML:Attribute>
+														<UML:Attribute name="dateFin" xmi.id="EAID_1BFBB68A_5AED_4dc8_8572_B1884AA6D4FC" visibility="private" ownerScope="instance" changeability="changeable" ordering="unordered" targetScope="instance">
+															<UML:StructuralFeature.type>
+																<UML:DataType xmi.idref="eaxmiid3"/>
+															</UML:StructuralFeature.type>
+															<UML:StructuralFeature.multiplicity>
+																<UML:Multiplicity xmi.id="EAID_BEA569AF_F105_4cdf_A081_F3359FC0F718">
+																	<UML:Multiplicity.range>
+																		<UML:MultiplicityRange xmi.id="EAID_53F29EC5_456D_4766_881E_C6FB85271361" lower="1" upper="1"/>
+																	</UML:Multiplicity.range>
+																</UML:Multiplicity>
+															</UML:StructuralFeature.multiplicity>
+															<UML:Attribute.initialValue>
+																<UML:Expression xmi.id="EAID_6DB9F824_C42B_454c_9533_912896D2649C"/>
+															</UML:Attribute.initialValue>
+															<UML:ModelElement.taggedValue/>
+														</UML:Attribute>
+														<UML:Attribute name="intitule" xmi.id="EAID_4C171F3B_979F_4f7b_80F2_14781B78FE87" visibility="private" ownerScope="instance" changeability="changeable" ordering="unordered" targetScope="instance">
+															<UML:StructuralFeature.type>
+																<UML:DataType xmi.idref="eaxmiid1"/>
+															</UML:StructuralFeature.type>
+															<UML:StructuralFeature.multiplicity>
+																<UML:Multiplicity xmi.id="EAID_2CAD233F_45AF_44be_999F_070E66FD1191">
+																	<UML:Multiplicity.range>
+																		<UML:MultiplicityRange xmi.id="EAID_363531F4_6AE4_43a2_AFA7_B6C9FBC34A3D" lower="1" upper="1"/>
+																	</UML:Multiplicity.range>
+																</UML:Multiplicity>
+															</UML:StructuralFeature.multiplicity>
+															<UML:Attribute.initialValue>
+																<UML:Expression xmi.id="EAID_F19B4B9C_3264_49b0_A21F_97AAAA3E6EA2"/>
+															</UML:Attribute.initialValue>
+															<UML:ModelElement.taggedValue/>
+														</UML:Attribute>
+													</UML:Classifier.feature>
+												</UML:Class>
+												<UML:Class name="MembreComitePilotage" xmi.id="EAID_B81003DD_2376_4a73_B60C_1629DFE2AE4C" visibility="public" isSpecification="false" isRoot="false" isLeaf="false" isAbstract="false" isActive="false">
+													<UML:Classifier.feature>
+														<UML:Attribute name="nomPrenom" xmi.id="EAID_59FEDB00_8775_4104_95B6_5671B2914854" visibility="private" ownerScope="instance" changeability="changeable" ordering="unordered" targetScope="instance">
+															<UML:StructuralFeature.type>
+																<UML:DataType xmi.idref="eaxmiid1"/>
+															</UML:StructuralFeature.type>
+															<UML:StructuralFeature.multiplicity>
+																<UML:Multiplicity xmi.id="EAID_B98147CF_9498_4a38_AD7D_2486C176D6CD">
+																	<UML:Multiplicity.range>
+																		<UML:MultiplicityRange xmi.id="EAID_67447ECA_694A_4ca0_BCBE_C0B5AF64BE9E" lower="1" upper="1"/>
+																	</UML:Multiplicity.range>
+																</UML:Multiplicity>
+															</UML:StructuralFeature.multiplicity>
+															<UML:Attribute.initialValue>
+																<UML:Expression xmi.id="EAID_94EE9EBF_7535_4319_8AF5_CBF234E0F968"/>
+															</UML:Attribute.initialValue>
+															<UML:ModelElement.taggedValue/>
+														</UML:Attribute>
+														<UML:Attribute name="role" xmi.id="EAID_5593B638_4FE2_41c0_8B33_7CD9F8DD1366" visibility="private" ownerScope="instance" changeability="changeable" ordering="unordered" targetScope="instance">
+															<UML:StructuralFeature.type>
+																<UML:DataType xmi.idref="eaxmiid1"/>
+															</UML:StructuralFeature.type>
+															<UML:StructuralFeature.multiplicity>
+																<UML:Multiplicity xmi.id="EAID_8CC3762B_7E8A_4cd9_8905_11CAB0BD90C6">
+																	<UML:Multiplicity.range>
+																		<UML:MultiplicityRange xmi.id="EAID_A1150516_223B_4f27_8610_EE522456E1B3" lower="1" upper="1"/>
+																	</UML:Multiplicity.range>
+																</UML:Multiplicity>
+															</UML:StructuralFeature.multiplicity>
+															<UML:Attribute.initialValue>
+																<UML:Expression xmi.id="EAID_63A340DA_9D42_4f7e_B833_E77E86CEAE11"/>
+															</UML:Attribute.initialValue>
+															<UML:ModelElement.taggedValue/>
+														</UML:Attribute>
+													</UML:Classifier.feature>
+												</UML:Class>
+												<UML:Class name="GroupeRessource" xmi.id="EAID_D2A0EB48_35BE_489a_9F7A_99B1228BC5DD" visibility="public" isSpecification="false" isRoot="false" isLeaf="false" isAbstract="false" isActive="false">
+													<UML:Classifier.feature>
+														<UML:Attribute name="coutUtilisation" xmi.id="EAID_4EC31165_475B_40eb_AF8D_26AAAD1EE64E" visibility="private" ownerScope="instance" changeability="changeable" ordering="unordered" targetScope="instance">
+															<UML:StructuralFeature.type>
+																<UML:DataType xmi.idref="eaxmiid0"/>
+															</UML:StructuralFeature.type>
+															<UML:StructuralFeature.multiplicity>
+																<UML:Multiplicity xmi.id="EAID_C57EF258_9107_4963_A903_F101D17DA13D">
+																	<UML:Multiplicity.range>
+																		<UML:MultiplicityRange xmi.id="EAID_8F029842_564C_41b9_B75C_390274887EDB" lower="1" upper="1"/>
+																	</UML:Multiplicity.range>
+																</UML:Multiplicity>
+															</UML:StructuralFeature.multiplicity>
+															<UML:Attribute.initialValue>
+																<UML:Expression xmi.id="EAID_35A6C0C6_17F1_42d9_9FCB_D6C1204DC13E"/>
+															</UML:Attribute.initialValue>
+															<UML:ModelElement.taggedValue/>
+														</UML:Attribute>
+														<UML:Attribute name="intitule" xmi.id="EAID_34766BC4_32D6_4b64_BE81_CC65071B8CCF" visibility="private" ownerScope="instance" changeability="changeable" ordering="unordered" targetScope="instance">
+															<UML:StructuralFeature.type>
+																<UML:DataType xmi.idref="eaxmiid1"/>
+															</UML:StructuralFeature.type>
+															<UML:StructuralFeature.multiplicity>
+																<UML:Multiplicity xmi.id="EAID_D1CAC496_99A1_4d06_B206_AFAAEB85C664">
+																	<UML:Multiplicity.range>
+																		<UML:MultiplicityRange xmi.id="EAID_E59A034C_C332_4cbc_8885_9EF21B137446" lower="1" upper="1"/>
+																	</UML:Multiplicity.range>
+																</UML:Multiplicity>
+															</UML:StructuralFeature.multiplicity>
+															<UML:Attribute.initialValue>
+																<UML:Expression xmi.id="EAID_3AF10ED4_F510_4250_999A_35D25A6F92F8"/>
+															</UML:Attribute.initialValue>
+															<UML:ModelElement.taggedValue/>
+														</UML:Attribute>
+														<UML:Attribute name="tauxTravail" xmi.id="EAID_B3C117CB_4D5B_4085_9445_3D6E462F00E4" visibility="private" ownerScope="instance" changeability="changeable" ordering="unordered" targetScope="instance">
+															<UML:StructuralFeature.type>
+																<UML:DataType xmi.idref="eaxmiid0"/>
+															</UML:StructuralFeature.type>
+															<UML:StructuralFeature.multiplicity>
+																<UML:Multiplicity xmi.id="EAID_B5748D09_40BE_4083_82D5_EC858672F9D0">
+																	<UML:Multiplicity.range>
+																		<UML:MultiplicityRange xmi.id="EAID_EFB83429_CBE7_4734_BBD9_DD412B6DBD28" lower="1" upper="1"/>
+																	</UML:Multiplicity.range>
+																</UML:Multiplicity>
+															</UML:StructuralFeature.multiplicity>
+															<UML:Attribute.initialValue>
+																<UML:Expression xmi.id="EAID_7C1F227B_9B71_427b_ACF9_47E62A7203FC"/>
+															</UML:Attribute.initialValue>
+															<UML:ModelElement.taggedValue/>
+														</UML:Attribute>
+														<UML:Attribute name="type" xmi.id="EAID_8251D002_F59E_4b55_A3F1_64D9C72063A8" visibility="private" ownerScope="instance" changeability="changeable" ordering="unordered" targetScope="instance">
+															<UML:StructuralFeature.type>
+																<UML:DataType xmi.idref="eaxmiid1"/>
+															</UML:StructuralFeature.type>
+															<UML:StructuralFeature.multiplicity>
+																<UML:Multiplicity xmi.id="EAID_4315D92F_3F31_4d4b_82C3_D17B71A0C41A">
+																	<UML:Multiplicity.range>
+																		<UML:MultiplicityRange xmi.id="EAID_C171A5B8_88FF_4cbc_9D1A_371668084A29" lower="1" upper="1"/>
+																	</UML:Multiplicity.range>
+																</UML:Multiplicity>
+															</UML:StructuralFeature.multiplicity>
+															<UML:Attribute.initialValue>
+																<UML:Expression xmi.id="EAID_187B92A6_243A_4b98_B473_2FB16C29BF9D"/>
+															</UML:Attribute.initialValue>
+															<UML:ModelElement.taggedValue/>
+														</UML:Attribute>
+													</UML:Classifier.feature>
+												</UML:Class>
+												<UML:Class name="JourSemaineOuvre" xmi.id="EAID_DC707B1B_6058_4329_9744_2785998888DA" visibility="public" isSpecification="false" isRoot="false" isLeaf="false" isAbstract="false" isActive="false">
+													<UML:Classifier.feature>
+														<UML:Attribute name="intitule" xmi.id="EAID_61B66DA5_E29F_4f3e_B628_D7285800D328" visibility="private" ownerScope="instance" changeability="changeable" ordering="unordered" targetScope="instance">
+															<UML:StructuralFeature.type>
+																<UML:DataType xmi.idref="eaxmiid1"/>
+															</UML:StructuralFeature.type>
+															<UML:StructuralFeature.multiplicity>
+																<UML:Multiplicity xmi.id="EAID_CB024044_8E11_4ab8_8C62_BD65738B0CE7">
+																	<UML:Multiplicity.range>
+																		<UML:MultiplicityRange xmi.id="EAID_EFD8D0C4_A09E_4325_9804_ACD16875A679" lower="1" upper="1"/>
+																	</UML:Multiplicity.range>
+																</UML:Multiplicity>
+															</UML:StructuralFeature.multiplicity>
+															<UML:Attribute.initialValue>
+																<UML:Expression xmi.id="EAID_C2C39E1F_5508_4954_AF47_78FA58D94F98"/>
+															</UML:Attribute.initialValue>
+															<UML:ModelElement.taggedValue/>
+														</UML:Attribute>
+													</UML:Classifier.feature>
+												</UML:Class>
+												<UML:Class name="Opportunite" xmi.id="EAID_E02FD149_6B89_4913_AA67_DA11C915EDF9" visibility="public" isSpecification="false" isRoot="false" isLeaf="false" isAbstract="false" isActive="false">
+													<UML:Classifier.feature>
+														<UML:Attribute name="description" xmi.id="EAID_67BF9B7D_411C_4d38_8475_CBA3ABD3878A" visibility="private" ownerScope="instance" changeability="changeable" ordering="unordered" targetScope="instance">
+															<UML:StructuralFeature.type>
+																<UML:DataType xmi.idref="eaxmiid1"/>
+															</UML:StructuralFeature.type>
+															<UML:StructuralFeature.multiplicity>
+																<UML:Multiplicity xmi.id="EAID_77C30982_EB9B_439f_804C_AE8EC25927A6">
+																	<UML:Multiplicity.range>
+																		<UML:MultiplicityRange xmi.id="EAID_1AEA61BC_EF00_4774_A477_41F5CE700DB6" lower="1" upper="1"/>
+																	</UML:Multiplicity.range>
+																</UML:Multiplicity>
+															</UML:StructuralFeature.multiplicity>
+															<UML:Attribute.initialValue>
+																<UML:Expression xmi.id="EAID_83026A29_7559_45e1_8ED9_E8F232FE8E93"/>
+															</UML:Attribute.initialValue>
+															<UML:ModelElement.taggedValue/>
+														</UML:Attribute>
+														<UML:Attribute name="intitule" xmi.id="EAID_00111788_CA66_4650_865D_3B2F7E2BF88D" visibility="private" ownerScope="instance" changeability="changeable" ordering="unordered" targetScope="instance">
+															<UML:StructuralFeature.type>
+																<UML:DataType xmi.idref="eaxmiid1"/>
+															</UML:StructuralFeature.type>
+															<UML:StructuralFeature.multiplicity>
+																<UML:Multiplicity xmi.id="EAID_BC95C578_74E5_4e21_B6AC_FD4DF04AD6E0">
+																	<UML:Multiplicity.range>
+																		<UML:MultiplicityRange xmi.id="EAID_A0964A2E_5E4B_473b_B9C0_AC83693679DE" lower="1" upper="1"/>
+																	</UML:Multiplicity.range>
+																</UML:Multiplicity>
+															</UML:StructuralFeature.multiplicity>
+															<UML:Attribute.initialValue>
+																<UML:Expression xmi.id="EAID_6BF75E3E_434F_4290_9691_C4FC69FC6E2A"/>
+															</UML:Attribute.initialValue>
+															<UML:ModelElement.taggedValue/>
+														</UML:Attribute>
+													</UML:Classifier.feature>
+												</UML:Class>
+												<UML:Class name="Livrable" xmi.id="EAID_E6E825C7_90DF_4009_B358_B0F55C6E5683" visibility="public" isSpecification="false" isRoot="false" isLeaf="false" isAbstract="false" isActive="false">
+													<UML:Classifier.feature>
+														<UML:Attribute name="dateLivraison" xmi.id="EAID_0B07D826_C1F2_464f_BC32_BDDBC79F7E57" visibility="private" ownerScope="instance" changeability="changeable" ordering="unordered" targetScope="instance">
+															<UML:StructuralFeature.type>
+																<UML:DataType xmi.idref="eaxmiid3"/>
+															</UML:StructuralFeature.type>
+															<UML:StructuralFeature.multiplicity>
+																<UML:Multiplicity xmi.id="EAID_D4B365A1_1A43_45b5_A97D_41578CF80C2D">
+																	<UML:Multiplicity.range>
+																		<UML:MultiplicityRange xmi.id="EAID_81BEC796_5AFF_472e_9C20_26D3FE11FB0F" lower="1" upper="1"/>
+																	</UML:Multiplicity.range>
+																</UML:Multiplicity>
+															</UML:StructuralFeature.multiplicity>
+															<UML:Attribute.initialValue>
+																<UML:Expression xmi.id="EAID_9221D335_3F85_4dd8_84FE_364EC0C8CD4F"/>
+															</UML:Attribute.initialValue>
+															<UML:ModelElement.taggedValue/>
+														</UML:Attribute>
+														<UML:Attribute name="description" xmi.id="EAID_1B39AEF9_FC96_4333_A7D0_6894524FE910" visibility="private" ownerScope="instance" changeability="changeable" ordering="unordered" targetScope="instance">
+															<UML:StructuralFeature.type>
+																<UML:DataType xmi.idref="eaxmiid1"/>
+															</UML:StructuralFeature.type>
+															<UML:StructuralFeature.multiplicity>
+																<UML:Multiplicity xmi.id="EAID_8A9F2729_D251_455e_8079_54E75E6CFA92">
+																	<UML:Multiplicity.range>
+																		<UML:MultiplicityRange xmi.id="EAID_CE765D8F_9037_4d66_940C_B8B1499F47F6" lower="1" upper="1"/>
+																	</UML:Multiplicity.range>
+																</UML:Multiplicity>
+															</UML:StructuralFeature.multiplicity>
+															<UML:Attribute.initialValue>
+																<UML:Expression xmi.id="EAID_893291E2_D054_42c6_A8EB_06B042B95D8E"/>
+															</UML:Attribute.initialValue>
+															<UML:ModelElement.taggedValue/>
+														</UML:Attribute>
+														<UML:Attribute name="intitule" xmi.id="EAID_77B29740_5ED8_41a2_B924_942C3938525F" visibility="private" ownerScope="instance" changeability="changeable" ordering="unordered" targetScope="instance">
+															<UML:StructuralFeature.type>
+																<UML:DataType xmi.idref="eaxmiid1"/>
+															</UML:StructuralFeature.type>
+															<UML:StructuralFeature.multiplicity>
+																<UML:Multiplicity xmi.id="EAID_1988ADB2_1644_421d_B501_6B03381D26AD">
+																	<UML:Multiplicity.range>
+																		<UML:MultiplicityRange xmi.id="EAID_3E998130_D88D_482c_8F7F_B7B18AAD24C0" lower="1" upper="1"/>
+																	</UML:Multiplicity.range>
+																</UML:Multiplicity>
+															</UML:StructuralFeature.multiplicity>
+															<UML:Attribute.initialValue>
+																<UML:Expression xmi.id="EAID_37F80548_9BB4_4f01_9086_11CD66D8E20B"/>
+															</UML:Attribute.initialValue>
+															<UML:ModelElement.taggedValue/>
+														</UML:Attribute>
+													</UML:Classifier.feature>
+												</UML:Class>
+											</UML:Namespace.ownedElement>
+										</UML:Package>
+									</UML:Namespace.ownedElement>
+								</UML:Package>
+							</UML:Namespace.ownedElement>
+						</UML:Package>
+					</UML:Namespace.ownedElement>
+				</UML:Package>
+				<UML:DataType xmi.id="eaxmiid1" name="String" visibility="private" isRoot="false" isLeaf="false" isAbstract="false"/>
+				<UML:DataType xmi.id="eaxmiid0" name="Double" visibility="private" isRoot="false" isLeaf="false" isAbstract="false"/>
+				<UML:DataType xmi.id="eaxmiid4" name="Boolean" visibility="private" isRoot="false" isLeaf="false" isAbstract="false"/>
+				<UML:DataType xmi.id="eaxmiid2" name="Integer" visibility="private" isRoot="false" isLeaf="false" isAbstract="false"/>
+				<UML:DataType xmi.id="eaxmiid3" name="Date" visibility="private" isRoot="false" isLeaf="false" isAbstract="false"/>
+			</UML:Namespace.ownedElement>
+		</UML:Model>
+	</XMI.content>
+	<XMI.extensions xmi.extender="Enterprise Architect 2.5"/>
+</XMI>

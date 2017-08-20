@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?init class="org.zkoss.zkplus.databind.AnnotateDataBinderInit" ?>
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+
+<zk xmlns="http://www.zkoss.org/2005/zul"
+    xmlns:h="http://www.w3.org/1999/xhtml"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+	
+<window id="loginWnd" title="Authentification" border="normal" height="300px" width="600px"  style="margin:auto;margin-top:50px;">
+    <caption image="/images/skin/cle.png" label="Veuillez vous identifiez!"/>
+    <h:form method="post" action="/_PROJECT_NAME_/j_spring_security_check" id='loginForm'>
+    <grid style="width:50%;margin-top:80px;margin-left:25%">
+        <rows>
+            <row><label id="lusername"  value="Login:"/>
+                <textbox focus="true" id="j_username" name="j_username" constraint="no empty: Indiquez le username" width="95%" />
+            </row>
+            <row><label id="lpassword"  value="Password:"/>
+                <textbox name="j_password" id="j_password" type="password" constraint="no empty: Indiquez le mot de passe" width="95%" />
+            </row>
+            <row>
+                <checkbox id="remember_me" name="_spring_security_remember_me" label="Rester connecté" />
+                <h:input type="submit" value="Submit" class="z-button" style="width:95%"/>
+            </row>            
+        </rows>
+    </grid>
+    <grid style="width:50%;margin-left:25%" visible="${param.login_error}">
+        <rows>
+            <row>
+                <label id="message" style="color:red;" value="Login et/ou mot de passe incorrect(s)" visible="${param.login_error}" />
+            </row>
+        </rows>
+    </grid>
+    </h:form>
+</window>    
+</zk>

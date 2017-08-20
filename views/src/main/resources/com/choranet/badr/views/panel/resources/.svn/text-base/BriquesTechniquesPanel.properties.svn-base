@@ -1,0 +1,98 @@
+# ================= IMPORTANT - READ CAREFULLY BEFORE USING =====================
+# THE SOFTWARE PRODUCT. The SOFTWARE PRODUCT is owned by CHORA INFORMATIQUE and
+# is copyrighted and licensed, not sold. The SOFTWARE PRODUCT is protected by
+# copyright law and international copyright treaties, as well as other
+# intellectual property laws and treaties. By installing, copying or otherwise
+# using this SOFTWARE PRODUCT, you agree to be bound by the terms of CHORA
+# INFORMATIQUE's General Terms and Conditions in relation to the type of license
+# you have acquired. (See your Contract Administrator for complete details of
+# your license agreement with CHORA INFORMATIQUE).
+# If you do not agree to the terms of CHORA INFORMATIQUE's License Agreement,
+# do not install or use the SOFTWARE PRODUCT. The term "SOFTWARE PRODUCT" means
+# the original program and all whole or partial copies of it. A Program consists
+# of machine-readable instructions, its associated media, printed materials, and
+# "online" or electronic documentation and related licensed materials
+# ("SOFTWARE PRODUCT").
+# COPYRIGHT. All title and copyrights in and to this SOFTWARE PRODUCT (including
+# but not limited to any images, photographs, video, audio, text and "applets"
+# incorporated into the SOFTWARE PRODUCT), the accompanying printed materials,
+# and any copies of the SOFTWARE PRODUCT are owned by CHORA INFORMATIQUE or its
+# suppliers. The SOFTWARE PRODUCT is protected by copyright law and international
+# treaty provisions. Therefore, you must treat the SOFTWARE PRODUCT like any
+# other copyrighted material except that you may install the SOFTWARE PRODUCT
+# on a single computer provided you keep the original solely for backup or
+# archival purposes. Should you have any questions, please contact your local
+# CHORA INFORMATIQUE Office or Distributor.
+jPanelView.TabConstraints.tabTitle=Couche vue
+jPanelSecurity.TabConstraints.tabTitle=Securit\u00e9
+jPanelRichClient.TabConstraints.tabTitle=Client riche
+jPanelWs.TabConstraints.tabTitle=Web service
+jPanelUtilitairesBdD.TabConstraints.tabTitle=Utilitaires Bdd
+jPanelCharting.TabConstraints.tabTitle=Charts
+jPanelTestingUtilites.TabConstraints.tabTitle=Utilitaires de tests
+jPanelReporting.TabConstraints.tabTitle=Reporting
+jPanelWorkflow.TabConstraints.tabTitle=Workflow
+jPanelAudit.TabConstraints.tabTitle=Audit
+jPanelUml.TabConstraints.tabTitle=Uml
+jPanelUtilitaires.TabConstraints.tabTitle=Utilitaires
+jPanelRecherche.TabConstraints.tabTitle=Engins recherche
+jPanelArchitectureDistribue.TabConstraints.tabTitle=Architecture distribu\u00e9e
+jRadioButtonGSP.text=GSP
+jRadioButtonOpenLaszlo.text=OpenLaszlo
+jRadioButtonFLEX.text=FLEX
+jRadioButtonZK.text=ZK
+jRadioButtonAcegi.text=ACEGI
+jCheckBoxLdap.text=LDAP
+jCheckBoxEncryption.text=Encryption
+jRadioButtonSpringSecurityCore.text=Spring Security Core
+jRadioButtonJsecurity.text=JSecurity
+jCheckBoxYahooui.text=YUI
+jCheckBoxImagezoom.text=Imagezoom
+jCheckBoxWebcamSnaps.text=Webcam Snaps
+jCheckBoxFCKeditor.text=FCKeditor
+jCheckBoxFormHelper.text=Form Helper
+jCheckBoxCaptcha.text=Simple Captcha
+jCheckBoxFileUploader.text=File Uploader
+jCheckBoxRichUi.text=RichUI
+jCheckBoxApplet.text=Applet
+jCheckBoxWsClient.text=WSClient
+jRadioButtonApacheAxis2.text=Apache Axis2
+jRadioButtonSpringWs.text=Spring WS
+jRadioButtonCxf.text=CXF
+jCheckBoxRestClient.text=REST Client
+jCheckBoxDynamicDomainClass.text=Dynamic Domain Class
+jCheckBoxDbUtil.text=DbUtil
+jRadioButtonGoogleChart.text=Google Chart
+jRadioButtonJfreeChart.text=JFreeChart
+jRadioButtonOpenFlashChart.text=Open Flash Chart
+jRadioButtonWebtest.text=Webtest
+jCheckBoxDbUnit.text=DBUnit
+jCheckBoxFitnesse.text=Fitnesse
+jCheckBoxSelenium.text=Selenium
+jRadioButtonFunctionalTesting.text=Functional Testing
+jCheckBoxExport.text=Export (pdf, csv, rtf, xml, ods)
+jRadioButtonDynamicJasperReport.text=Dynamic Jasper report
+jRadioButtonJasper.text=Jasper
+jRadioButtonActivitiBpm.text=Activiti BPM
+jRadioButtonOsWorkflow.text=OSWorkflow
+jRadioButtonGrailsFlow.text=GrailsFlow
+jRadioButtonAjaxflox.text=Ajaxflow
+jCheckBoxAuditTrail.text=Audit Trail
+jCheckBoxAudit.text=Audit Loggin
+jCheckBoxClassDiagram.text=Class diagram
+jCheckBoxCreateDomainUml.text=Create Domain UML
+jCheckBoxLicence.text=License
+jCheckBoxI18nTemplates.text=I18n Templates
+jCheckBoxExcelImport.text=Excel Import
+jCheckBoxCsvParser.text=CSV Parser
+jCheckBoxMail.text=Mail
+jCheckBoxOsgi.text=OSGI
+jCheckBoxClamAv.text=ClamAV
+jCheckBoxApplicationInfo.text=Application Info
+jCheckBoxReverseEngineering.text=Reverse Engineering
+jCheckBoxQuartz.text=Quartz
+jCheckBoxSearchable.text=Searchable
+jCheckBoxWebSearch.text=Web Search
+jCheckBoxJms.text=JMS
+jCheckBoxJmx.text=JMX
+jCheckBoxActiveMQ.text=ActiveMQ

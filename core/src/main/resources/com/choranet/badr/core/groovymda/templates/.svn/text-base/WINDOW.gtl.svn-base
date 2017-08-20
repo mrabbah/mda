@@ -1,0 +1,467 @@
+<% if (getPackageName(currentModelElement) != "") { %>
+package ${getPackageName(currentModelElement)}
+<% } %>
+
+import org.zkoss.zul.*
+import org.zkoss.zkplus.databind.*
+import org.apache.commons.logging.Log 
+import org.apache.commons.logging.LogFactory
+
+<%
+    def chars = currentModelElement.name.toCharArray()
+    chars[0] = Character.toLowerCase(chars[0])
+    def lowerNomClass = new String(chars)
+%>
+/**
+ * ${currentModelElement.name} Window Object
+ **/
+class ${currentModelElement.name}Window extends Window {
+        /**
+        * Service pour la gestion de l'objet ${currentModelElement.name}
+        **/
+        def ${lowerNomClass}Service
+	/**
+	* Logger de la class ${currentModelElement.name}Window
+	**/
+	private Log logger = LogFactory.getLog(${currentModelElement.name}Window.class)
+
+	/**
+	* liste de ${lowerNomClass}
+	**/
+	def ${lowerNomClass}s
+	/**
+	* ${lowerNomClass} selectionn�
+	**/
+	def ${lowerNomClass}Selected
+	/**
+	* un nouveau element de ${lowerNomClass}  
+	**/
+	def ${lowerNomClass}
+	
+	<%
+	getAssociationEnds(model, currentModelElement).each { sourceEnd ->
+		def association = sourceEnd.association
+		def targetEnd = association.connection.find { end -> end != sourceEnd }
+		if (targetEnd.isNavigable()) {			
+			def targetName = getEndName(targetEnd)
+			if (isOneToOne(sourceEnd, targetEnd)) {  								
+	%>
+	/**
+	* liste de ${targetName}
+	**/
+	def ${targetName}s	
+	/**
+	* ${targetName}  selectionn�
+	**/
+	def ${targetName}Selected	
+	<%
+			}                 
+			else if (isOneToMany(sourceEnd, targetEnd)) {   				
+	%>
+	/**
+	* liste de ${targetName}
+	**/
+	def ${targetName}	
+	/**
+	* ${targetName}  selectionn�
+	**/
+	def ${targetName}Selected
+	<%			
+			}                 
+			else if (isManyToOne(sourceEnd, targetEnd)) { 
+	%>
+	/**
+	* liste de ${targetName}
+	**/	
+	def ${targetName}s	
+	/**
+	* ${targetName}  selectionn�
+	**/
+	def ${targetName}Selected
+	<%			
+			}
+			else if (isManyToMany(sourceEnd, targetEnd)) {   
+	%>
+	/**
+	* liste de ${targetName}
+	**/
+	def ${targetName}
+	/**
+	* ${targetName} selectionn�
+	**/
+	def ${targetName}Selected
+	<%			
+			}
+		} 
+	}
+	%>
+	/**
+	* Constructeur
+	**/
+	public ${currentModelElement.name}Window () {
+        ${lowerNomClass}s = ${currentModelElement.name}.list()
+        ${lowerNomClass}Selected = null
+        ${lowerNomClass} = new ${currentModelElement.name}()
+		initialiserAssociation()
+    }   
+    /**
+	*  Cette fonction est appel�e lorsque un �l�ment de la liste est selectionn�
+	**/
+	def select() {                    
+        ${lowerNomClass} = ${lowerNomClass}Selected	
+		afficherValeurAssociation()
+        //${lowerNomClass}.lock()  //Ne peut etre utilis� que pour le base de donn�e qui accepte le veruillage des enregisterments
+        rafraichirField()
+        activerBoutons(true)
+    }
+	/**
+	* Fonction qui se charge de sauveguarder un nouveau �l�ment de ${lowerNomClass}
+	**/
+    def add() {
+	actualiserValeurAssociation()
+        try {
+            ${lowerNomClass}Service.save(${lowerNomClass})
+        } catch(Exception ex) {
+            logger.error "Error: \${ex.message}", ex
+            Messagebox.show("Echec lors de la transaction\\n" + ex.message, "Erreur", Messagebox.OK, Messagebox.ERROR)
+        } finally {
+            ${lowerNomClass} = new ${currentModelElement.name}()
+            rafraichirField()
+            rafraichirList()
+            activerBoutons(false)
+        }
+        //reinitialiserAssociation()
+    }
+	/**
+	* Pour annuler la modification ou la supression et pour basculer en mode ajout d'un nouveau �l�ment
+	**/
+    def cancel() {        
+        ${lowerNomClass} = new ${currentModelElement.name}()
+	reinitialiserAssociation(false)
+        rafraichirField()
+        activerBoutons(false)
+        annulerSelection()
+    }
+	/**
+	* Fonction qui se charge de mettre � jour un �l�ment selectionn� de ${lowerNomClass}
+	**/
+    def update() {
+	actualiserValeurAssociation()
+        try {
+            ${lowerNomClass}Service.update(${lowerNomClass})
+        }
+        catch(Exception e) {
+            logger.error "Error: \${e.message}", e
+            Messagebox.show("Probleme lors de la mise à jour", "Erreur", Messagebox.OK, Messagebox.ERROR)
+        }
+        finally {
+            activerBoutons(false)
+            ${lowerNomClass} = new ${currentModelElement.name}()
+            rafraichirField()
+            rafraichirList()
+        }
+        //reinitialiserAssociation()
+    }
+	/**
+	* Fonction qui se charge de supprimer un �l�ment selectinn� de ${lowerNomClass}
+	**/
+    def delete() {
+        ${lowerNomClass}Service.delete(${lowerNomClass})
+        activerBoutons(false)
+        ${lowerNomClass} = new ${currentModelElement.name}()
+        rafraichirField()
+        rafraichirList()
+		reinitialiserAssociation(true)
+    }
+	/**
+	* Permet d'afficher l'anglet d'ajout d'un nouveau ${lowerNomClass}
+	**/
+    def newRecord(){
+        this.getFellow("westPanel").open = visible
+    }
+	/**
+	* Activer ou d�sactiver les boutons d'ajout, suppression, modfication
+	**/
+    def activerBoutons(visible) {
+        this.getFellow("btnUpdate").visible = visible
+        this.getFellow("btnDelete").visible = visible
+        this.getFellow("btnCancel").visible = visible
+        this.getFellow("btnSave").visible = !visible
+        this.getFellow("btnNew").visible = !visible
+        this.getFellow("westPanel").open = visible        
+    }
+	/**
+	* R�initialiser les champs du formulaire
+	**/
+    def rafraichirField() {
+        this.getFellows().each { co ->
+            if(co.getId() != null && co.getId().startsWith("field")) {
+                def binder = new AnnotateDataBinder(co)
+                binder.loadAll()
+            }
+        }
+    }
+	/**
+	* Rafrichier la liste des ${lowerNomClass}
+	**/
+    def rafraichirList() {
+        ${lowerNomClass}s = ${lowerNomClass}Service.list()
+        def binder = new AnnotateDataBinder(this.getFellow("lst${currentModelElement.name}"))
+        binder.loadAll()		
+		<%
+		getAssociationEnds(model, currentModelElement).each { sourceEnd ->
+			def association = sourceEnd.association
+			def targetEnd = association.connection.find { end -> end != sourceEnd }
+			if (targetEnd.isNavigable()) {
+				def attributeTypes = getEndType(targetEnd).tokenize('.')
+				def targetType = attributeTypes[attributeTypes.size() - 1]
+				def targetName = getEndName(targetEnd)				
+				if (isOneToOne(sourceEnd, targetEnd)) {  								
+		%>		
+		<%
+				}                 
+				if (isOneToMany(sourceEnd, targetEnd)) {   
+					def nomClassDest1 = (firstCharUpper(targetName) + 'oso') - 'soso'
+		%>
+		${targetName} = ${nomClassDest1}.list()		
+		<%			
+				}                 
+				if (isManyToOne(sourceEnd, targetEnd)) { 
+					def typeClassDest_tab = targetType.tokenize('.')
+		%>		
+		<%			
+				}
+				if (isManyToMany(sourceEnd, targetEnd)) {   
+					def nomClassDest2 = (firstCharUpper(targetName) + 'oso') - 'soso'
+		%>
+		${targetName} = ${nomClassDest2}.list()
+		<%				
+				}
+			} 
+		}
+		%>		
+        annulerSelection()
+    }
+	/**
+	* Basculer en mode saisi d'un nouveau �l�ment
+	**/
+    def annulerSelection() {
+        this.getFellow("lst${currentModelElement.name}").clearSelection()
+        ${lowerNomClass}Selected = null
+    }
+	
+	/**
+	* Fonction qui g�re l'initialisation des listes d'associations au niveau du constructeur
+	**/
+	def initialiserAssociation() {
+		<%
+		getAssociationEnds(model, currentModelElement).each { sourceEnd ->
+			def association = sourceEnd.association
+			def targetEnd = association.connection.find { end -> end != sourceEnd }
+			if (targetEnd.isNavigable()) {
+				def attributeTypes = getEndType(targetEnd).tokenize('.')
+				def targetType = attributeTypes[attributeTypes.size() - 1]
+				def targetName = getEndName(targetEnd)				
+				if (isOneToOne(sourceEnd, targetEnd)) {  								
+		%>
+		${targetName}s = ${targetType}.list()		
+		if(${targetName}s.size() > 0)
+			${targetName}Selected = ${targetName}s.get(0)
+		else
+			${targetName}Selected = null
+		<%
+				}                 
+				if (isOneToMany(sourceEnd, targetEnd)) {   
+					def nomClassDest1 = (firstCharUpper(targetName) + 'oso') - 'soso'
+		%>
+		${targetName} = ${nomClassDest1}.list()
+		${targetName}Selected = null// = new ArrayList()
+		<%			
+				}                 
+				if (isManyToOne(sourceEnd, targetEnd)) { 
+					def typeClassDest_tab = targetType.tokenize('.')
+		%>
+		${targetName}s = ${typeClassDest_tab[typeClassDest_tab.size() - 1]}.list()		
+		if(${targetName}s.size() > 0)
+			${targetName}Selected = ${targetName}s.get(0)
+		else
+			${targetName}Selected = null
+		<%			
+				}
+				if (isManyToMany(sourceEnd, targetEnd)) {   
+					def nomClassDest2 = (firstCharUpper(targetName) + 'oso') - 'soso'
+		%>
+		${targetName} = ${nomClassDest2}.list()
+		${targetName}Selected = null// = new ArrayList()
+		<%				
+				}
+			} 
+		}
+		%>
+	}
+	/**
+	* Fonction qui permet de r�-initaliser l'association au niveau de l'interface
+	* @param del si c'est une r�initionalisation apr�s une suppression ou non
+	**/
+	def reinitialiserAssociation(del) {
+		<%
+		getAssociationEnds(model, currentModelElement).each { sourceEnd ->
+			def association = sourceEnd.association
+			def targetEnd = association.connection.find { end -> end != sourceEnd }
+			if (targetEnd.isNavigable()) {
+				def attributeTypes = getEndType(targetEnd).tokenize('.')
+				def targetType = attributeTypes[attributeTypes.size() - 1]
+				def targetName = getEndName(targetEnd)				
+				if (isOneToOne(sourceEnd, targetEnd)) {  								
+		%>
+		if(del) {
+			${targetName}s = ${targetType}.list()
+		}		
+		if(${targetName}s.size() > 0)
+			${targetName}Selected = ${targetName}s.get(0)
+		else
+			${targetName}Selected = null
+		<%
+				}                 
+				if (isOneToMany(sourceEnd, targetEnd)) {   
+					def nomClassDest1 = (firstCharUpper(targetName) + 'oso') - 'soso'
+		%>
+		if(del) {
+			${targetName} = ${nomClassDest1}.list()
+		}
+		this.getFellow("lst${targetName}").clearSelection()
+		${targetName}Selected = null// = new ArrayList()
+		<%			
+				}                 
+				if (isManyToOne(sourceEnd, targetEnd)) { 
+					def typeClassDest_tab = targetType.tokenize('.')
+		%>	
+		if(del) {
+			${targetName}s = ${targetType}.list()
+		}	
+		if(${targetName}s.size() > 0)
+			${targetName}Selected = ${targetName}s.get(0)
+		else
+			${targetName}Selected = null
+		<%			
+				}
+				if (isManyToMany(sourceEnd, targetEnd)) {   
+					def nomClassDest2 = (firstCharUpper(targetName) + 'oso') - 'soso'
+		%>	
+		if(del) {
+			${targetName} = ${nomClassDest2}.list()
+		}
+		this.getFellow("lst${targetName}").clearSelection()
+		${targetName}Selected = null// = new ArrayList()
+		<%				
+				}
+			} 
+		}
+		%>
+	}
+	/**
+	* Fonction qui copie la valeur de l'association � l'�l�ment courant
+	**/
+	def actualiserValeurAssociation() {
+		<%
+		getAssociationEnds(model, currentModelElement).each { sourceEnd ->
+			def association = sourceEnd.association
+			def targetEnd = association.connection.find { end -> end != sourceEnd }
+			if (targetEnd.isNavigable()) {
+				def attributeTypes = getEndType(targetEnd).tokenize('.')
+				def targetType = attributeTypes[attributeTypes.size() - 1]
+				def targetName = getEndName(targetEnd)				
+				if (isOneToOne(sourceEnd, targetEnd)) {  								
+		%>		
+		${lowerNomClass}.${targetName} = ${targetName}Selected
+		if(${targetName}s.size() > 0) {
+			def binder${targetName} = new AnnotateDataBinder(this.getFellow("co${targetName}s"))
+			${targetName}Selected = ${targetName}s.get(0)
+			binder${targetName}.loadAll()
+		}
+		else
+			${targetName}Selected = null
+		<%
+				}                 
+				if (isOneToMany(sourceEnd, targetEnd)) {   
+					def nomClassDest1 = (firstCharUpper(targetName) + 'oso') - 'soso'
+		%>
+		${lowerNomClass}.${targetName} = ${targetName}Selected
+		this.getFellow("lst${targetName}").clearSelection()
+		${targetName}Selected = null// = new ArrayList()
+		<%			
+				}                 
+				if (isManyToOne(sourceEnd, targetEnd)) { 
+					def typeClassDest_tab = targetType.tokenize('.')
+		%>		
+		${lowerNomClass}.${targetName} = ${targetName}Selected
+		if(${targetName}s.size() > 0) {
+			def binder${targetName} = new AnnotateDataBinder(this.getFellow("co${targetName}s"))
+			${targetName}Selected = ${targetName}s.get(0)
+			binder${targetName}.loadAll()
+		}
+		else
+			${targetName}Selected = null
+		<%			
+				}
+				if (isManyToMany(sourceEnd, targetEnd)) {   
+					def nomClassDest2 = (firstCharUpper(targetName) + 'oso') - 'soso'
+		%>	
+		${lowerNomClass}.${targetName} = ${targetName}Selected
+		this.getFellow("lst${targetName}").clearSelection()
+		${targetName}Selected = null// = new ArrayList()
+		<%				
+				}
+			} 
+		}
+		%>
+	}
+	/**
+	* Fonction qui fait la liaison entre l'association l'�l�ment selectionn� et la liste dans le crud
+	**/
+	def afficherValeurAssociation() {
+		<%
+		getAssociationEnds(model, currentModelElement).each { sourceEnd ->
+			def association = sourceEnd.association
+			def targetEnd = association.connection.find { end -> end != sourceEnd }
+			if (targetEnd.isNavigable()) {
+				def attributeTypes = getEndType(targetEnd).tokenize('.')
+				def targetType = attributeTypes[attributeTypes.size() - 1]
+				def targetName = getEndName(targetEnd)				
+				if (isOneToOne(sourceEnd, targetEnd)) {  								
+		%>						
+		def binder${targetName} = new AnnotateDataBinder(this.getFellow("co${targetName}s"))
+		${targetName}Selected = ${targetName}s.find{ it.id == ${currentModelElement.name}.findById(${lowerNomClass}.id).${targetName}.id }
+        binder${targetName}.loadAll()
+		<%
+				}                 
+				if (isOneToMany(sourceEnd, targetEnd)) {   
+					def nomClassDest1 = (firstCharUpper(targetName) + 'oso') - 'soso'
+		%>
+		def binder${targetName} = new AnnotateDataBinder(this.getFellow("lst${targetName}"))
+		${targetName}Selected = ${lowerNomClass}Selected.${targetName}
+        binder${targetName}.loadAll()
+		<%			
+				}                 
+				if (isManyToOne(sourceEnd, targetEnd)) { 
+					def typeClassDest_tab = targetType.tokenize('.')
+		%>		
+		def binder${targetName} = new AnnotateDataBinder(this.getFellow("co${targetName}s"))
+		${targetName}Selected = ${targetName}s.find{ it.id == ${currentModelElement.name}.findById(${lowerNomClass}.id).${targetName}.id }
+        binder${targetName}.loadAll()
+		<%			
+				}
+				if (isManyToMany(sourceEnd, targetEnd)) {   
+					def nomClassDest2 = (firstCharUpper(targetName) + 'oso') - 'soso'
+		%>
+		def binder${targetName} = new AnnotateDataBinder(this.getFellow("lst${targetName}"))
+		${targetName}Selected = ${lowerNomClass}Selected.${targetName}
+        binder${targetName}.loadAll()		
+		<%				
+				}
+			} 
+		}
+		%>
+	}
+}
+

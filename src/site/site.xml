@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<project name="FrameworkChora">
+    <bannerLeft>
+        <name>CMDA</name>
+        <src>images/banner.png</src>
+        <href>http://www.choranet.com</href>
+    </bannerLeft>
+    <publishDate format="dd MMM yyyy"/>
+    <skin>
+        <groupId>org.apache.tapestry</groupId>
+        <artifactId>maven-skin</artifactId>
+        <version>1.1</version>
+    </skin>
+    <body>
+        <links>
+            <item name="Français" href="/fr/index.html" />
+        </links>
+        <menu ref="modules"/>
+        ${reports}
+    </body>
+</project>
+

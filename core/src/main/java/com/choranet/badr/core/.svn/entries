@@ -1,0 +1,77 @@
+10
+
+dir
+45
+svn://10.10.0.9/chora_projets/CMDA/badr/core/src/main/java/com/choranet/badr/core
+svn://10.10.0.9/chora_projets
+
+
+
+2011-03-10T14:54:01.373003Z
+42
+mrabbah
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+85497299-3097-4a10-9830-32a8a73eb50e
+
+model
+dir
+
+transformer
+dir
+
+dto
+dir
+
+groovymda
+dir
+
+commandrunner
+dir
+
+Controlleur.java
+file
+70
+
+
+
+2011-04-03T21:14:01.436546Z
+6ecfc417fd430a88d7a0829e40501d57
+2011-04-04T11:55:19.767194Z
+70
+mrabbah
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+16146
+

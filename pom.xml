@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.choranet</groupId>
+    <artifactId>badr</artifactId>
+    <packaging>pom</packaging>
+    <version>1.0-SNAPSHOT</version>
+    <name>CHORA MODELING DRIVEN ARCHITECTURE FRAMEWORK</name>
+    <url>http://www.choranet.com</url>
+    <description>CHORA MODELING DRIVEN ARCHITECTURE FRAMEWORK</description>
+    <inceptionYear>2010-2011</inceptionYear>
+<!--    <scm>
+        <connection>scm:svn:file://choraserver/chora_projets/cmda</connection>
+        <developerConnection>scm:svn:file://choraserver/chora_projets/cmda</developerConnection>
+        <url>svn:file://choraserver/chora_projets/cmda</url>
+    </scm>-->
+    <developers>
+        <developer>
+            <id>mrabbah</id>
+            <name>RABBAH Mahmoud Almostafa</name>
+            <email>mrabbah@choranet.com</email>
+            <roles>
+                <role>Project Manager</role>
+                <role>Developer</role>
+            </roles>
+        </developer>
+        <developer>
+            <id>mchahdi</id>
+            <name>CHAHDI Mohamed</name>
+            <email>mchahdi@choranet.com</email>
+            <roles>
+                <role>Developer</role>
+            </roles>
+        </developer>
+        <developer>
+            <id>sbentaja</id>
+            <name>BENTAJA Soufiane</name>
+            <email>sbentaja@choranet.com</email>
+            <roles>
+                <role>Developer</role>
+            </roles>
+        </developer>
+    </developers>
+
+    <build>
+        <defaultGoal>install</defaultGoal>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+<!--                <version>2.0.2</version>-->
+                <configuration>
+                    <source>1.5</source>
+                    <target>1.5</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <issueManagement>
+        <system>mantis</system>
+        <url>http://www.choranet.com/mantis/</url>
+    </issueManagement>
+    
+    <licenses>
+        <license>
+            <name>Copyright CHORA INFORMATIQUE</name>
+            <comments>CHORA INFORMATIQUE ALL RIGHTS RESERVED</comments>
+        </license>
+    </licenses>
+    
+    <repositories>
+        <repository>
+            <id>central</id>
+            <url>http://repo1.maven.org/maven2</url>
+        </repository>
+        <repository>
+            <id>codehause</id>
+            <url>http://repository.codehaus.org</url>
+        </repository>
+        <repository>
+            <id>internal</id>
+            <name>Groovy MDA Repo</name>
+            <url>http://groovy-mda.sourceforge.net/maven2</url>
+        </repository>
+    </repositories>
+
+    <reporting>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-site-plugin</artifactId>
+                <version>2.0.1</version>
+                <configuration>
+                    <locales>en,fr</locales>
+                </configuration>
+            </plugin>
+<!--            <plugin>
+                <artifactId>maven-changelog-plugin</artifactId>
+            </plugin>-->
+            <plugin>
+                <artifactId>maven-changes-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <artifactId>maven-checkstyle-plugin</artifactId>
+                <version>2.5</version>
+            </plugin>
+            <plugin>
+                <artifactId>maven-javadoc-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <artifactId>maven-jxr-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <artifactId>maven-pmd-plugin</artifactId>
+                <configuration>
+                    <linkXref>true</linkXref>
+                    <targetJdk>1.5</targetJdk>
+                </configuration>
+            </plugin>
+            <plugin>
+                <artifactId>maven-surefire-report-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </reporting>
+
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>3.8.1</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+    
+    <modules>
+        <module>core</module>
+        <module>views</module>
+    </modules>
+</project>

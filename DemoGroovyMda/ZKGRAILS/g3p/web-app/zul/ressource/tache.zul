@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?init class="org.zkoss.zkplus.databind.AnnotateDataBinderInit" ?>
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+<?page zscriptLanguage="GroovyGrails"?>
+
+<zk xmlns="http://www.zkoss.org/2005/zul"
+    xmlns:h="http://www.w3.org/1999/xhtml"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+
+    <window id="tacheWin" border="normal" height="550px" width="800px" style="margin:auto;" use="${tacheWindow}">
+    <!-- <zscript src="/zs/tache.zs"/> -->
+        <borderlayout>
+            <north size="40px" flex="true">
+                
+            </north>
+            <west id="westPanel" title="CRUD" size="40%" flex="true" splittable="true" collapsible="true" open="false">
+                <groupbox id="gbCrud" width="100%" height="100%">
+                    <grid fixedLayout="true">
+                        <rows>
+						
+							<row>
+                                <label value="AvancementP"/>
+								 
+								<doublebox id="fieldAvancementP" constraint="" value="@{tacheWin.tache.avancementP, save-when='triggerBtn.onClick'}" onBindingSave='if(self.value == null)throw new WrongValueException(self, "Vous devriez indiquer une valeur");'/>
+                            </row>												
+						
+							<row>
+                                <label value="AvancementR"/>
+								 
+								<doublebox id="fieldAvancementR" constraint="" value="@{tacheWin.tache.avancementR, save-when='triggerBtn.onClick'}" onBindingSave='if(self.value == null)throw new WrongValueException(self, "Vous devriez indiquer une valeur");'/>
+                            </row>												
+						
+							<row>
+                                <label value="ChargeP"/>
+								 
+								<doublebox id="fieldChargeP" constraint="" value="@{tacheWin.tache.chargeP, save-when='triggerBtn.onClick'}" onBindingSave='if(self.value == null)throw new WrongValueException(self, "Vous devriez indiquer une valeur");'/>
+                            </row>												
+						
+							<row>
+                                <label value="ChargeR"/>
+								 
+								<doublebox id="fieldChargeR" constraint="" value="@{tacheWin.tache.chargeR, save-when='triggerBtn.onClick'}" onBindingSave='if(self.value == null)throw new WrongValueException(self, "Vous devriez indiquer une valeur");'/>
+                            </row>												
+						
+							<row>
+                                <label value="DateDebutP"/>
+								 
+								<datebox id="fieldDateDebutP" constraint="" format="dd/MM/yyyy" value="@{tacheWin.tache.dateDebutP, save-when='triggerBtn.onClick'}" onBindingSave='if(self.value == null)throw new WrongValueException(self, "Vous devriez indiquer une valeur");'/>
+                            </row>												
+						
+							<row>
+                                <label value="DateDebutR"/>
+								 
+								<datebox id="fieldDateDebutR" constraint="" format="dd/MM/yyyy" value="@{tacheWin.tache.dateDebutR, save-when='triggerBtn.onClick'}" onBindingSave='if(self.value == null)throw new WrongValueException(self, "Vous devriez indiquer une valeur");'/>
+                            </row>												
+						
+							<row>
+                                <label value="DateFinP"/>
+								 
+								<datebox id="fieldDateFinP" constraint="" format="dd/MM/yyyy" value="@{tacheWin.tache.dateFinP, save-when='triggerBtn.onClick'}" onBindingSave='if(self.value == null)throw new WrongValueException(self, "Vous devriez indiquer une valeur");'/>
+                            </row>												
+						
+							<row>
+                                <label value="DateFinR"/>
+								 
+								<doublebox id="fieldDateFinR" constraint="" value="@{tacheWin.tache.dateFinR, save-when='triggerBtn.onClick'}" onBindingSave='if(self.value == null)throw new WrongValueException(self, "Vous devriez indiquer une valeur");'/>
+                            </row>												
+						
+							<row>
+                                <label value="Description"/>
+								 
+								<textbox id="fieldDescription" constraint="" value="@{tacheWin.tache.description, save-when='triggerBtn.onClick'}" onBindingSave='if(self.value == null)throw new WrongValueException(self, "Vous devriez indiquer une valeur");'/>
+                            </row>												
+						
+							<row>
+                                <label value="Intitule"/>
+								 
+								<textbox id="fieldIntitule" constraint="" value="@{tacheWin.tache.intitule, save-when='triggerBtn.onClick'}" onBindingSave='if(self.value == null)throw new WrongValueException(self, "Vous devriez indiquer une valeur");'/>
+                            </row>												
+						
+							<row>
+                                <label value="Priorite"/>
+								 
+								<textbox id="fieldPriorite" constraint="" value="@{tacheWin.tache.priorite, save-when='triggerBtn.onClick'}" onBindingSave='if(self.value == null)throw new WrongValueException(self, "Vous devriez indiquer une valeur");'/>
+                            </row>												
+						
+							<row>
+                                <label value="Status"/>
+								 
+								<textbox id="fieldStatus" constraint="" value="@{tacheWin.tache.status, save-when='triggerBtn.onClick'}" onBindingSave='if(self.value == null)throw new WrongValueException(self, "Vous devriez indiquer une valeur");'/>
+                            </row>												
+						                              
+                        </rows>
+                    </grid>					
+					
+					<separator />
+					<panel open="true" title="Ressources" border="normal" collapsible="true" width="100%" > 
+						<panelchildren>
+							<listbox id="lstressources" model="@{tacheWin.ressources}" selectedItem="@{tacheWin.ressourcesSelected, converter=util.SelectedItemsConverterV3}" fixedLayout="true" multiple="true" checkmark="true">
+								<listhead>
+									<listheader label=""/>							
+								</listhead>
+								<listitem self="@{each=elementressources}">
+									<listcell label="@{elementressources}"/>							
+								</listitem>								
+							</listbox>	
+						</panelchildren>
+					</panel>
+					
+					<separator />
+					<combobox id="cochefProjets" model="@{tacheWin.chefProjets}" selectedItem="@{tacheWin.chefProjetSelected}">
+						<comboitem self="@{each=elementchefProjet}" label="@{elementchefProjet}"/>
+					</combobox>
+					
+					<separator />
+					<combobox id="cophases" model="@{tacheWin.phases}" selectedItem="@{tacheWin.phaseSelected}">
+						<comboitem self="@{each=elementphase}" label="@{elementphase}"/>
+					</combobox>
+					
+					<separator />
+					<combobox id="cotaches" model="@{tacheWin.taches}" selectedItem="@{tacheWin.tacheSelected}">
+						<comboitem self="@{each=elementtache}" label="@{elementtache}"/>
+					</combobox>
+					
+					<separator />
+					<panel open="true" title="Taches" border="normal" collapsible="true" width="100%" > 
+						<panelchildren>
+							<listbox id="lsttaches" model="@{tacheWin.taches}" selectedItem="@{tacheWin.tachesSelected, converter=util.SelectedItemsConverterV3}" fixedLayout="true" multiple="true" checkmark="true">
+								<listhead>
+									<listheader label=""/>							
+								</listhead>
+								<listitem self="@{each=elementtaches}">
+									<listcell label="@{elementtaches}"/>							
+								</listitem>								
+							</listbox>	
+						</panelchildren>
+					</panel>
+					
+					<separator />
+					<panel open="true" title="Taches" border="normal" collapsible="true" width="100%" > 
+						<panelchildren>
+							<listbox id="lsttaches" model="@{tacheWin.taches}" selectedItem="@{tacheWin.tachesSelected, converter=util.SelectedItemsConverterV3}" fixedLayout="true" multiple="true" checkmark="true">
+								<listhead>
+									<listheader label=""/>							
+								</listhead>
+								<listitem self="@{each=elementtaches}">
+									<listcell label="@{elementtaches}"/>							
+								</listitem>								
+							</listbox>	
+						</panelchildren>
+					</panel>
+					
+                    <separator />
+                    <button id="btnSave" onClick="Events.sendEvent(new Event(Events.ON_CLICK,triggerBtn));tacheWin.add()" label="Sauveguarder" image="/images/skin/database_save.png"/>
+                    <button id="btnUpdate" onClick="Events.sendEvent(new Event(Events.ON_CLICK,triggerBtn));tacheWin.update()" label="Modifier" image="/images/skin/database_edit.png" visible="false"/>
+                    <button id="btnDelete" onClick="Events.sendEvent(new Event(Events.ON_CLICK,triggerBtn));tacheWin.delete()" label="Supprimer" image="/images/skin/database_delete.png" visible="false"/>
+                    <!-- <button id="btnNew" onClick="tacheWin.newRecord()" label="Nouveau enregistrement" image="/images/skin/database_add.png"/> -->
+                    <button id="btnCancel" onClick="tacheWin.cancel()" label="Annuler" image="/images/skin/cancel.png" visible="false"/>
+                    <button visible="false" id="triggerBtn" onBindingValidate=""/>
+                </groupbox>
+            </west>
+            <center border="none" flex="true">
+                <groupbox width="100%" height="100%">
+                    <listbox id="lstTache" onSelect="tacheWin.select()" model="@{tacheWin.taches}" selectedItem="@{tacheWin.tacheSelected}"  width="100%" height="100%" mold="paging" pageSize="25">
+                        <listhead sizable="true">
+                            <listheader label="ID" sort="auto(id)"/>
+							
+							<listheader label="AvancementP" sort="auto(avancementP)"/>	
+							
+							<listheader label="AvancementR" sort="auto(avancementR)"/>	
+							
+							<listheader label="ChargeP" sort="auto(chargeP)"/>	
+							
+							<listheader label="ChargeR" sort="auto(chargeR)"/>	
+							
+							<listheader label="DateDebutP" sort="auto(dateDebutP)"/>	
+							
+							<listheader label="DateDebutR" sort="auto(dateDebutR)"/>	
+							
+							<listheader label="DateFinP" sort="auto(dateFinP)"/>	
+							
+							<listheader label="DateFinR" sort="auto(dateFinR)"/>	
+							
+							<listheader label="Description" sort="auto(description)"/>	
+							
+							<listheader label="Intitule" sort="auto(intitule)"/>	
+							
+							<listheader label="Priorite" sort="auto(priorite)"/>	
+							
+							<listheader label="Status" sort="auto(status)"/>	
+							                                 
+                        </listhead>
+                        <listitem self="@{each=element}">
+                            <listcell label="@{element.id}"/>                            
+                            
+							<listcell label="@{element.avancementP}"/>
+							
+							<listcell label="@{element.avancementR}"/>
+							
+							<listcell label="@{element.chargeP}"/>
+							
+							<listcell label="@{element.chargeR}"/>
+							
+							<listcell label="@{element.dateDebutP}"/>
+							
+							<listcell label="@{element.dateDebutR}"/>
+							
+							<listcell label="@{element.dateFinP}"/>
+							
+							<listcell label="@{element.dateFinR}"/>
+							
+							<listcell label="@{element.description}"/>
+							
+							<listcell label="@{element.intitule}"/>
+							
+							<listcell label="@{element.priorite}"/>
+							
+							<listcell label="@{element.status}"/>
+							     
+                        </listitem>
+                    </listbox>
+                    <separator/>
+                    <button id="btnNew" onClick="tacheWin.newRecord()" label="Nouveau" image="/images/skin/database_add.png"/>
+                </groupbox>
+            </center>
+            <south size="40px" flex="true">
+            </south>
+        </borderlayout>
+    </window>
+</zk>

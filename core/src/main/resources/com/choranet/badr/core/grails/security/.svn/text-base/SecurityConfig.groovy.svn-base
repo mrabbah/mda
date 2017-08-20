@@ -1,0 +1,16 @@
+security {
+
+    // see DefaultSecurityConfig.groovy for all settable/overridable properties
+
+    active = true
+
+    loginUserDomainClass = "com.choranet.pmcatalogue.Utilisateur"
+    authorityDomainClass = "com.choranet.pmcatalogue.GroupeUtilisateur"
+    requestMapClass = "com.choranet.pmcatalogue.DroitUtilisateur"
+        
+    authenticationFailureUrl = '/login.zul?login_error=true'
+    loginFormUrl = '/login.zul'
+    cookieName = 'pmcatalogue_remember_me'
+    errorPage = '/denied.zul'
+    defaultTargetUrl = '/zul/main.zul'
+}

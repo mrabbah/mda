@@ -1,0 +1,294 @@
+<%
+	def chars = currentModelElement.name.toCharArray()
+	chars[0] = Character.toLowerCase(chars[0])
+	def lowerNomClass = new String(chars)
+%>
+<?xml version="1.0" encoding="UTF-8"?>
+<?init class="org.zkoss.zkplus.databind.AnnotateDataBinderInit" arg0="./${lowerNomClass}Win" ?>
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+
+
+<zk xmlns="http://www.zkoss.org/2005/zul"
+    xmlns:h="http://www.w3.org/1999/xhtml"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+
+    <window id="${lowerNomClass}Win" height="100%" width="100%" style="margin:auto;" use="\${${lowerNomClass}Window}">
+    <!-- <zscript src="/zs/${lowerNomClass}.zs"/> -->
+        <borderlayout>
+            <north id="eastPanel" size="65px" open="false"  title="Recherche avancée" flex="true" splittable="true"  collapsible="true"  >
+                <hlayout spacing="10px" style="margin-top:9px;margin-left:10px">
+					<%
+					getAssociationEnds(model, currentModelElement).each { sourceEnd ->
+						def association = sourceEnd.association
+						def targetEnd = association.connection.find { end -> end != sourceEnd }
+						if (targetEnd.isNavigable()) {
+							def sourceName = getEndName(sourceEnd)
+							def attributeTypes = getEndType(targetEnd).tokenize('.')
+							def targetType = attributeTypes[attributeTypes.size() - 1]
+							def targetName = getEndName(targetEnd)
+							def targetTags = taggedValues(targetEnd)
+							if (isOneToOne(sourceEnd, targetEnd)) {  								
+					%>
+					<label value="${targetName} :" />
+                    <combobox id="filter${targetName}" model="@{${lowerNomClass}Win.${targetName}s}" selectedItem="@{${lowerNomClass}Win.filtre.${targetName}}" autocomplete="true" autodrop="true" mold="rounded" onSelect="${lowerNomClass}Win.ofs=0;${lowerNomClass}Win.filtrer()" onOK="${lowerNomClass}Win.ofs=0;${lowerNomClass}Win.filtrer()">
+                        <comboitem self="@{each=elementfiltre${targetName}}" label="@{elementfiltre${targetName}}"/>
+                    </combobox>
+					<%
+							}                 
+							if (isOneToMany(sourceEnd, targetEnd)) {   
+								def nomClassDest1 = (firstCharUpper(targetName) + 'oso') - 'soso'
+					%>
+					<label value="${targetName} :" />
+                    <bandbox    autodrop="true" mold="rounded">
+                        <bandpopup>
+                            <listbox id="filter${targetName}" model="@{${lowerNomClass}Win.${targetName}s}" 
+                        selectedItem="@{${lowerNomClass}Win.filtre.${targetName}s, converter=com.choranet.zk.SelectedItemsConverterV3}"
+                        onSelect="${lowerNomClass}Win.ofs=0;${lowerNomClass}Win.filtrer();"
+                        fixedLayout="true" multiple="true" checkmark="true">
+                                <listhead>
+                                    <listheader label=""/>							
+                                </listhead>
+                                <listitem self="@{each=elementfiltre${targetName}}">
+                                    <listcell label="@{elementfiltre${targetName}}"/>							
+                                </listitem>								
+                            </listbox>
+                        </bandpopup>
+                    </bandbox>
+					<%
+							}                 
+							if (isManyToOne(sourceEnd, targetEnd)) { 
+								def typeClassDest_tab = targetType.tokenize('.')
+					%>
+					<label value="${targetName} :" />
+                    <combobox id="filter${targetName}" model="@{${lowerNomClass}Win.${targetName}s}" selectedItem="@{${lowerNomClass}Win.filtre.${targetName}}" autocomplete="true" autodrop="true" mold="rounded" onSelect="${lowerNomClass}Win.ofs=0;${lowerNomClass}Win.filtrer()" onOK="${lowerNomClass}Win.ofs=0;${lowerNomClass}Win.filtrer()">
+                        <comboitem self="@{each=elementfiltre${targetName}}" label="@{elementfiltre${targetName}}"/>
+                    </combobox>
+					<%			  
+							}
+							if (isManyToMany(sourceEnd, targetEnd)) {   
+								def nomClassDest2 = (firstCharUpper(targetName) + 'oso') - 'soso'
+					%>
+					<label value="${targetName} :" />
+                    <bandbox    autodrop="true" mold="rounded">
+                        <bandpopup>
+                            <listbox id="filter${targetName}" model="@{${lowerNomClass}Win.${targetName}s}" 
+                        selectedItem="@{${lowerNomClass}Win.filtre.${targetName}s, converter=com.choranet.zk.SelectedItemsConverterV3}"
+                        onSelect="${lowerNomClass}Win.ofs=0;${lowerNomClass}Win.filtrer();"
+                        fixedLayout="true" multiple="true" checkmark="true">
+                                <listhead>
+                                    <listheader label=""/>							
+                                </listhead>
+                                <listitem self="@{each=elementfiltre${targetName}}">
+                                    <listcell label="@{elementfiltre${targetName}}"/>							
+                                </listitem>								
+                            </listbox>
+                        </bandpopup>
+                    </bandbox>
+					<%			
+							}
+						} 
+					}
+					%>					                    
+                </hlayout>
+            </north>
+            <west id="westPanel" title="CRUD" size="40%" flex="true" splittable="true" collapsible="true" open="false">
+                <groupbox id="gbCrud" width="100%" height="100%">
+                    <grid fixedLayout="true">
+                        <rows>
+						<%		
+						getAttributes(currentModelElement).each { attribute ->
+							def attributeName = attribute.name
+							def upperAttributeName = attributeName[0].toUpperCase() + attributeName[1..-1]
+							def attributeTypes = javaType(attribute.type).tokenize('.')
+							def attributeType = attributeTypes[attributeTypes.size() - 1]
+							def attributeTags = taggedValues(attribute)							
+						%>
+							<row>
+                                <label value="${upperAttributeName}"/>
+								<%
+								def fields = ""
+								switch(attributeType) {
+									case "Date":
+									fields='<datebox id="field'+upperAttributeName+'" constraint="no empty: Veillez indiquez une valeur" format="dd/MM/yyyy" value="@{'+lowerNomClass+'Win.objet.'+attributeName+', save-when=\'triggerBtn.onClick\'}" onBindingSave=\'if(self.value == null)throw new WrongValueException(self, "Vous devriez indiquer une valeur");\'/>'
+									break
+									case "Double":
+									fields='<doublebox id="field'+upperAttributeName+'" constraint="no empty: Veillez indiquez une valeur" value="@{'+lowerNomClass+'Win.objet.'+attributeName+', save-when=\'triggerBtn.onClick\'}" onBindingSave=\'if(self.value == null)throw new WrongValueException(self, "Vous devriez indiquer une valeur");\'/>'
+									break
+									case "Long":
+									fields='<decimalbox id="field'+upperAttributeName+'" constraint="no empty: Veillez indiquez une valeur" format="#,##0.##" value="@{'+lowerNomClass+'Win.objet.'+attributeName+', save-when=\'triggerBtn.onClick\'}" onBindingSave=\'if(self.value == null)throw new WrongValueException(self, "Vous devriez indiquer une valeur");\'/>'
+									break
+									case "Float":
+									fields='<decimalbox id="field'+upperAttributeName+'" constraint="no empty: Veillez indiquez une valeur" format="#,##0.##" value="@{'+lowerNomClass+'Win.objet.'+attributeName+', save-when=\'triggerBtn.onClick\'}" onBindingSave=\'if(self.value == null)throw new WrongValueException(self, "Vous devriez indiquer une valeur");\'/>'
+									break
+									case "Integer":
+									fields='<intbox id="field'+upperAttributeName+'" constraint="no empty: Veillez indiquez une valeur" value="@{'+lowerNomClass+'Win.objet.'+attributeName+', save-when=\'triggerBtn.onClick\'}" onBindingSave=\'if(self.value == null)throw new WrongValueException(self, "Vous devriez indiquer une valeur");\'/>'
+									break
+									case "Boolean":
+									fields='<checkbox id="field'+upperAttributeName+'" label="?" checked="@{'+lowerNomClass+'Win.objet.'+attributeName+', save-when=\'triggerBtn.onClick\'}"/>'
+									break
+									default:
+									fields='<textbox id="field'+upperAttributeName+'" constraint="no empty: Veillez indiquez une valeur" value="@{'+lowerNomClass+'Win.objet.'+attributeName+', save-when=\'triggerBtn.onClick\'}" onBindingSave=\'if(self.value == null)throw new WrongValueException(self, "Vous devriez indiquer une valeur");\'/>'
+								}
+								%> 
+								${fields}
+                            </row>												
+						<% 
+						} 
+						%>                              
+                        </rows>
+                    </grid>					
+					<%
+					getAssociationEnds(model, currentModelElement).each { sourceEnd ->
+						def association = sourceEnd.association
+						def targetEnd = association.connection.find { end -> end != sourceEnd }
+						if (targetEnd.isNavigable()) {
+							def sourceName = getEndName(sourceEnd)
+							def attributeTypes = getEndType(targetEnd).tokenize('.')
+							def targetType = attributeTypes[attributeTypes.size() - 1]
+							def targetName = getEndName(targetEnd)
+							def targetTags = taggedValues(targetEnd)
+							if (isOneToOne(sourceEnd, targetEnd)) {  								
+					%>
+					<separator />
+					<combobox id="co${targetName}s" model="@{${lowerNomClass}Win.${targetName}s}" selectedItem="@{${lowerNomClass}Win.${targetName}Selected}">
+						<comboitem self="@{each=element${targetName}}" label="@{element${targetName}}"/>
+					</combobox>
+					<%
+							}                 
+							if (isOneToMany(sourceEnd, targetEnd)) {   
+								def nomClassDest1 = (firstCharUpper(targetName) + 'oso') - 'soso'
+					%>
+					<separator />
+					<panel open="true" title="${firstCharUpper(targetName)}" border="normal" collapsible="true" width="100%" > 
+						<panelchildren>
+							<listbox id="lst${targetName}" model="@{${lowerNomClass}Win.${targetName}}" selectedItem="@{${lowerNomClass}Win.${targetName}Selected, converter=com.choranet.zk.SelectedItemsConverterV3}" fixedLayout="true" multiple="true" checkmark="true">
+								<listhead>
+									<listheader label=""/>							
+								</listhead>
+								<listitem self="@{each=element${targetName}}">
+									<listcell label="@{element${targetName}}"/>							
+								</listitem>								
+							</listbox>	
+						</panelchildren>
+					</panel>
+					<%
+							}                 
+							if (isManyToOne(sourceEnd, targetEnd)) { 
+								def typeClassDest_tab = targetType.tokenize('.')
+					%>
+					<separator />
+					<combobox id="co${targetName}s" model="@{${lowerNomClass}Win.${targetName}s}" selectedItem="@{${lowerNomClass}Win.${targetName}Selected}">
+						<comboitem self="@{each=element${targetName}}" label="@{element${targetName}}"/>
+					</combobox>
+					<%			  
+							}
+							if (isManyToMany(sourceEnd, targetEnd)) {   
+								def nomClassDest2 = (firstCharUpper(targetName) + 'oso') - 'soso'
+					%>
+					<separator />
+					<panel open="true" title="${firstCharUpper(targetName)}" border="normal" collapsible="true" width="100%" > 
+						<panelchildren>
+							<listbox id="lst${targetName}" model="@{${lowerNomClass}Win.${targetName}}" selectedItem="@{${lowerNomClass}Win.${targetName}Selected}, converter=com.choranet.zk.SelectedItemsConverterV3" fixedLayout="true" multiple="true" checkmark="true">
+								<listhead>
+									<listheader label=""/>							
+								</listhead>
+								<listitem self="@{each=element${targetName}}">
+									<listcell label="@{element${targetName}}"/>							
+								</listitem>								
+							</listbox>	
+						</panelchildren>
+					</panel>
+					<%			
+							}
+						} 
+					}
+					%>
+                    <separator />
+                    <button id="btnSave" onClick="Events.sendEvent(new Event(Events.ON_CLICK,triggerBtn));${lowerNomClass}Win.add()" label="Sauveguarder" image="/images/skin/database_save.png"/>
+                    <button id="btnUpdate" onClick="Events.sendEvent(new Event(Events.ON_CLICK,triggerBtn));${lowerNomClass}Win.update()" label="Modifier" image="/images/skin/database_edit.png" visible="false"/>
+                    <button id="btnDelete" onClick="Events.sendEvent(new Event(Events.ON_CLICK,triggerBtn));${lowerNomClass}Win.delete()" label="Supprimer" image="/images/skin/database_delete.png" visible="false"/>
+                    <!-- <button id="btnNew" onClick="${lowerNomClass}Win.newRecord()" label="Nouveau enregistrement" image="/images/skin/database_add.png"/> -->
+                    <button id="btnCancel" onClick="${lowerNomClass}Win.cancel()" label="Annuler" image="/images/skin/cancel.png" visible="false"/>
+                    <button visible="false" id="triggerBtn" onBindingValidate=""/>
+                </groupbox>
+            </west>
+            <center border="none" flex="true">
+                <groupbox width="100%" height="100%">
+                    <listbox id="lstObjet" onSelect="${lowerNomClass}Win.select()" model="@{${lowerNomClass}Win.listeObjets}" selectedItem="@{${lowerNomClass}Win.objetSelected}"  width="100%" height="100%" mold="paging" paginal="\${paging}">
+                        <auxhead sclass="category-center">
+							<%		
+						getAttributes(currentModelElement).each { attribute ->
+							def attributeName = attribute.name
+							def upperAttributeName = attributeName[0].toUpperCase() + attributeName[1..-1]
+							def attributeTypes = javaType(attribute.type).tokenize('.')
+							def attributeType = attributeTypes[attributeTypes.size() - 1]
+							def attributeTags = taggedValues(attribute)							
+								def auxs = ""
+								switch(attributeType) {
+									case "Date":
+									auxs='<datebox id="filter'+upperAttributeName+'" format="dd/MM/yyyy" value="@{'+lowerNomClass+'Win.filtre.'+attributeName+'}" onChanging="'+lowerNomClass+'Win.ofs; '+lowerNomClass+'Win.filtre."'+attributeName+'=event.value; '+lowerNomClass+'Win.filtrer(); self.focus(); self.setSelectionRange(self.value.length(), self.value.length())" width="100%"/>'
+									break
+									case "Double":
+									auxs='<doublebox id="filter'+upperAttributeName+'" value="@{'+lowerNomClass+'Win.filtre.'+attributeName+'}" onChanging="'+lowerNomClass+'Win.ofs; '+lowerNomClass+'Win.filtre."'+attributeName+'=event.value; '+lowerNomClass+'Win.filtrer(); self.focus(); self.setSelectionRange(self.value.length(), self.value.length())" width="100%"/>'
+									break
+									case "Long":
+									auxs='<decimalbox id="filter'+upperAttributeName+'" format="#,##0.##" value="@{'+lowerNomClass+'Win.filtre.'+attributeName+'}" onChanging="'+lowerNomClass+'Win.ofs; '+lowerNomClass+'Win.filtre."'+attributeName+'=event.value; '+lowerNomClass+'Win.filtrer(); self.focus(); self.setSelectionRange(self.value.length(), self.value.length())" width="100%"/>'
+									break
+									case "Float":
+									auxs='<decimalbox id="filter'+upperAttributeName+'" format="#,##0.##" value="@{'+lowerNomClass+'Win.filtre.'+attributeName+'}" onChanging="'+lowerNomClass+'Win.ofs; '+lowerNomClass+'Win.filtre."'+attributeName+'=event.value; '+lowerNomClass+'Win.filtrer(); self.focus(); self.setSelectionRange(self.value.length(), self.value.length())" width="100%"/>'
+									break
+									case "Integer":
+									auxs='<intbox id="filter'+upperAttributeName+'" value="@{'+lowerNomClass+'Win.filtre.'+attributeName+'}" onChanging="'+lowerNomClass+'Win.ofs; '+lowerNomClass+'Win.filtre."'+attributeName+'=event.value; '+lowerNomClass+'Win.filtrer(); self.focus(); self.setSelectionRange(self.value.length(), self.value.length())" width="100%"/>'
+									break
+									case "Boolean":
+									auxs='<checkbox id="filter'+upperAttributeName+'" onCheck="'+lowerNomClass+'Win.ofs=0;'+lowerNomClass+'Win.filtre.'+attributeName+'=self.checked; '+lowerNomClass+'Win.filtrer()" />'
+									break
+									default:
+									auxs='<textbox id="filter'+upperAttributeName+'" value="@{'+lowerNomClass+'Win.filtre.'+attributeName+'}" onChanging="'+lowerNomClass+'Win.ofs; '+lowerNomClass+'Win.filtre."'+attributeName+'=event.value; '+lowerNomClass+'Win.filtrer(); self.focus(); self.setSelectionRange(self.value.length(), self.value.length())" width="100%"/>'
+								}
+								%> 
+							<auxheader colspan="1">
+                                <image src="/images/skin/funnel.png" width="10px" height="10px" />
+                                ${auxs}
+                            </auxheader>												
+						<% 
+						} 
+						%> 
+                        </auxhead>
+						<listhead sizable="true">
+							<%		
+							getAttributes(currentModelElement).each { attribute ->
+								def attributeName = attribute.name
+								def upperAttributeName = attributeName[0].toUpperCase() + attributeName[1..-1]
+								def attributeTypes = javaType(attribute.type).tokenize('.')
+								def attributeType = attributeTypes[attributeTypes.size() - 1]
+								def attributeTags = taggedValues(attribute)
+							%>
+							<listheader label="${upperAttributeName}" sort="auto(${attributeName})" onSort="${lowerNomClass}Win.sort(event)"/>	
+							<% 
+							} 
+							%>                                 
+                        </listhead>
+                        <listitem self="@{each=element}">                         
+                            <%		
+							getAttributes(currentModelElement).each { attribute ->
+								def attributeName = attribute.name
+								def attributeTypes = javaType(attribute.type).tokenize('.')
+								def attributeType = attributeTypes[attributeTypes.size() - 1]
+								def attributeTags = taggedValues(attribute)
+							%>
+							<listcell label="@{element.${attributeName}}"/>
+							<% 
+							} 
+							%>     
+                        </listitem>
+                    </listbox>
+					<paging id="paging" totalSize="@{${lowerNomClass}Win.tailleListe}" pageSize="@{${lowerNomClass}Win.maxNb}" onPaging="${lowerNomClass}Win.getNextElements(event);" />
+                    <separator/>
+                    <button id="btnNew" onClick="${lowerNomClass}Win.newRecord()" label="Nouveau" image="/images/skin/database_add.png"/>
+                </groupbox>
+            </center>
+        </borderlayout>
+    </window>
+</zk>

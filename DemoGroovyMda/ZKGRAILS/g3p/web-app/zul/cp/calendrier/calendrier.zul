@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?init class="org.zkoss.zkplus.databind.AnnotateDataBinderInit" ?>
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+<?page zscriptLanguage="GroovyGrails"?>
+
+<zk xmlns="http://www.zkoss.org/2005/zul"
+    xmlns:h="http://www.w3.org/1999/xhtml"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+
+    <window id="calendrierWin" border="normal" height="550px" width="800px" style="margin:auto;" use="${calendrierWindow}">
+    <!-- <zscript src="/zs/calendrier.zs"/> -->
+        <borderlayout>
+            <north size="40px" flex="true">
+                
+            </north>
+            <west id="westPanel" title="CRUD" size="40%" flex="true" splittable="true" collapsible="true" open="false">
+                <groupbox id="gbCrud" width="100%" height="100%">
+                    <grid fixedLayout="true">
+                        <rows>
+						
+							<row>
+                                <label value="HeuresParJour"/>
+								 
+								<intbox id="fieldHeuresParJour" constraint="" value="@{calendrierWin.calendrier.heuresParJour, save-when='triggerBtn.onClick'}" onBindingSave='if(self.value == null)throw new WrongValueException(self, "Vous devriez indiquer une valeur");'/>
+                            </row>												
+						
+							<row>
+                                <label value="HeuresParSemaines"/>
+								 
+								<intbox id="fieldHeuresParSemaines" constraint="" value="@{calendrierWin.calendrier.heuresParSemaines, save-when='triggerBtn.onClick'}" onBindingSave='if(self.value == null)throw new WrongValueException(self, "Vous devriez indiquer une valeur");'/>
+                            </row>												
+						
+							<row>
+                                <label value="Intitule"/>
+								 
+								<textbox id="fieldIntitule" constraint="" value="@{calendrierWin.calendrier.intitule, save-when='triggerBtn.onClick'}" onBindingSave='if(self.value == null)throw new WrongValueException(self, "Vous devriez indiquer une valeur");'/>
+                            </row>												
+						
+							<row>
+                                <label value="JoursParMois"/>
+								 
+								<intbox id="fieldJoursParMois" constraint="" value="@{calendrierWin.calendrier.joursParMois, save-when='triggerBtn.onClick'}" onBindingSave='if(self.value == null)throw new WrongValueException(self, "Vous devriez indiquer une valeur");'/>
+                            </row>												
+						                              
+                        </rows>
+                    </grid>					
+					
+					<separator />
+					<panel open="true" title="Ressources" border="normal" collapsible="true" width="100%" > 
+						<panelchildren>
+							<listbox id="lstressources" model="@{calendrierWin.ressources}" selectedItem="@{calendrierWin.ressourcesSelected, converter=util.SelectedItemsConverterV3}" fixedLayout="true" multiple="true" checkmark="true">
+								<listhead>
+									<listheader label=""/>							
+								</listhead>
+								<listitem self="@{each=elementressources}">
+									<listcell label="@{elementressources}"/>							
+								</listitem>								
+							</listbox>	
+						</panelchildren>
+					</panel>
+					
+					<separator />
+					<panel open="true" title="JoursChomess" border="normal" collapsible="true" width="100%" > 
+						<panelchildren>
+							<listbox id="lstjoursChomess" model="@{calendrierWin.joursChomess}" selectedItem="@{calendrierWin.joursChomessSelected, converter=util.SelectedItemsConverterV3}" fixedLayout="true" multiple="true" checkmark="true">
+								<listhead>
+									<listheader label=""/>							
+								</listhead>
+								<listitem self="@{each=elementjoursChomess}">
+									<listcell label="@{elementjoursChomess}"/>							
+								</listitem>								
+							</listbox>	
+						</panelchildren>
+					</panel>
+					
+					<separator />
+					<panel open="true" title="JourSemaineOuvres" border="normal" collapsible="true" width="100%" > 
+						<panelchildren>
+							<listbox id="lstjourSemaineOuvres" model="@{calendrierWin.jourSemaineOuvres}" selectedItem="@{calendrierWin.jourSemaineOuvresSelected, converter=util.SelectedItemsConverterV3}" fixedLayout="true" multiple="true" checkmark="true">
+								<listhead>
+									<listheader label=""/>							
+								</listhead>
+								<listitem self="@{each=elementjourSemaineOuvres}">
+									<listcell label="@{elementjourSemaineOuvres}"/>							
+								</listitem>								
+							</listbox>	
+						</panelchildren>
+					</panel>
+					
+					<separator />
+					<panel open="true" title="GroupeRessources" border="normal" collapsible="true" width="100%" > 
+						<panelchildren>
+							<listbox id="lstgroupeRessources" model="@{calendrierWin.groupeRessources}" selectedItem="@{calendrierWin.groupeRessourcesSelected, converter=util.SelectedItemsConverterV3}" fixedLayout="true" multiple="true" checkmark="true">
+								<listhead>
+									<listheader label=""/>							
+								</listhead>
+								<listitem self="@{each=elementgroupeRessources}">
+									<listcell label="@{elementgroupeRessources}"/>							
+								</listitem>								
+							</listbox>	
+						</panelchildren>
+					</panel>
+					
+                    <separator />
+                    <button id="btnSave" onClick="Events.sendEvent(new Event(Events.ON_CLICK,triggerBtn));calendrierWin.add()" label="Sauveguarder" image="/images/skin/database_save.png"/>
+                    <button id="btnUpdate" onClick="Events.sendEvent(new Event(Events.ON_CLICK,triggerBtn));calendrierWin.update()" label="Modifier" image="/images/skin/database_edit.png" visible="false"/>
+                    <button id="btnDelete" onClick="Events.sendEvent(new Event(Events.ON_CLICK,triggerBtn));calendrierWin.delete()" label="Supprimer" image="/images/skin/database_delete.png" visible="false"/>
+                    <!-- <button id="btnNew" onClick="calendrierWin.newRecord()" label="Nouveau enregistrement" image="/images/skin/database_add.png"/> -->
+                    <button id="btnCancel" onClick="calendrierWin.cancel()" label="Annuler" image="/images/skin/cancel.png" visible="false"/>
+                    <button visible="false" id="triggerBtn" onBindingValidate=""/>
+                </groupbox>
+            </west>
+            <center border="none" flex="true">
+                <groupbox width="100%" height="100%">
+                    <listbox id="lstCalendrier" onSelect="calendrierWin.select()" model="@{calendrierWin.calendriers}" selectedItem="@{calendrierWin.calendrierSelected}"  width="100%" height="100%" mold="paging" pageSize="25">
+                        <listhead sizable="true">
+                            <listheader label="ID" sort="auto(id)"/>
+							
+							<listheader label="HeuresParJour" sort="auto(heuresParJour)"/>	
+							
+							<listheader label="HeuresParSemaines" sort="auto(heuresParSemaines)"/>	
+							
+							<listheader label="Intitule" sort="auto(intitule)"/>	
+							
+							<listheader label="JoursParMois" sort="auto(joursParMois)"/>	
+							                                 
+                        </listhead>
+                        <listitem self="@{each=element}">
+                            <listcell label="@{element.id}"/>                            
+                            
+							<listcell label="@{element.heuresParJour}"/>
+							
+							<listcell label="@{element.heuresParSemaines}"/>
+							
+							<listcell label="@{element.intitule}"/>
+							
+							<listcell label="@{element.joursParMois}"/>
+							     
+                        </listitem>
+                    </listbox>
+                    <separator/>
+                    <button id="btnNew" onClick="calendrierWin.newRecord()" label="Nouveau" image="/images/skin/database_add.png"/>
+                </groupbox>
+            </center>
+            <south size="40px" flex="true">
+            </south>
+        </borderlayout>
+    </window>
+</zk>

@@ -1,0 +1,29 @@
+/*
+Copyright CHORA INFORMATIQUE 2010-2011
+ */
+package com.choranet.badr.core.model;
+
+/**
+ * @Description Contrainte
+ * @version 1.0-SNAPSHOT
+ * @date 17 févr. 2011
+ * @author rabbah
+ */
+public abstract class Contrainte {
+
+    private String nom;
+    private String valeur;
+
+    public void setNom(String nom) {
+        this.nom = nom;
+    }
+
+    public void setValeur(String valeur) {
+        this.valeur = valeur;
+    }
+
+    @Override
+    public String toString() {
+        return (nom + " : " + valeur);
+    }
+}

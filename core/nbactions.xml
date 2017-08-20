@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<actions>
+        <action>
+            <actionName>CUSTOM-clean test</actionName>
+            <displayName>clean test</displayName>
+            <goals>
+                <goal>clean</goal>
+                <goal>test</goal>
+            </goals>
+        </action>
+        <action>
+            <actionName>CUSTOM-clean compile</actionName>
+            <displayName>clean compile</displayName>
+            <goals>
+                <goal>clean</goal>
+                <goal>compile</goal>
+            </goals>
+        </action>
+        <action>
+            <actionName>CUSTOM-clean build skip tests</actionName>
+            <displayName>clean build skip tests</displayName>
+            <goals>
+                <goal>clean</goal>
+                <goal>build</goal>
+            </goals>
+            <properties>
+                <maven.test.skip>true</maven.test.skip>
+            </properties>
+        </action>
+        <action>
+            <actionName>CUSTOM-clean install skip tests</actionName>
+            <displayName>clean install skip tests</displayName>
+            <goals>
+                <goal>clean</goal>
+                <goal>install</goal>
+            </goals>
+            <properties>
+                <maven.test.skip>true</maven.test.skip>
+            </properties>
+        </action>
+        <action>
+            <actionName>CUSTOM-compile</actionName>
+            <displayName>compile</displayName>
+            <goals>
+                <goal>compile</goal>
+            </goals>
+        </action>
+    </actions>

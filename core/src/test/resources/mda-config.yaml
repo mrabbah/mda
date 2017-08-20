@@ -1,0 +1,22 @@
+modelPath: jar:file:./src/test/resources/addressbook.zargo!/addressbook.xmi
+scriptPath: ./src/main/resources/processors/GroovyModelProcessor.groovy
+templateFile: ./templates/JpaEntity.gtl
+outputDirectory: ./target/test-classes/config-generation
+
+tablePrefix: my_
+columnPrefix: col_
+
+licenses:
+   gpl2: GPL version 2 text would go in here.
+   bsd: BSD license text would go in here.
+nestingTest:
+   nested1: Nested1 content
+   nested2: |
+      Nested2 wrapped 
+      content
+   nested3:
+      nested4: Nested4 content
+      nested5: |
+         Nested5 
+         content wrapped
+

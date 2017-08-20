@@ -1,0 +1,223 @@
+
+<% if (getPackageName(currentModelElement) != "") { %>
+package ${getPackageName(currentModelElement)};
+<% } %>
+
+import java.io.Serializable;
+import java.util.Date;
+import java.util.HashSet;
+import java.util.Set;
+import javax.persistence.CascadeType;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.FetchType;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.Lob;
+import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
+import javax.persistence.NamedQueries;
+import javax.persistence.NamedQuery;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
+/**
+ * ${currentModelElement.name} Domain Object
+ */
+@Entity
+@Table(name = "t_${javaToSql(currentModelElement.name)}")
+@NamedQueries({
+   @NamedQuery(name = "${currentModelElement.name}.findAll", query = "from ${currentModelElement.name}")
+})
+public class ${currentModelElement.name} implements Serializable {
+   
+   @Id
+   @GeneratedValue(strategy = GenerationType.AUTO)
+   @Column(name = "pk_id")
+   private Long id;
+   
+   <%
+   getAttributes(currentModelElement).each { attribute ->
+       def attributeName = attribute.name
+       def attributeType = javaType(attribute.type)
+       def attributeTags = taggedValues(attribute)%>
+       <%if (attributeTags.lob) {%>
+           @Lob
+       <%}%>
+       <%if (attributeType == "java.util.Date") {%>
+           @Temporal(value = TemporalType.TIMESTAMP)
+       <%}%>
+       @Column(name = "c_${javaToSql(attributeName)}")
+       private ${attributeType} ${attributeName};
+       
+   <% } %>
+   
+   <%
+   getAssociationEnds(model, currentModelElement).each { sourceEnd ->
+       def association = sourceEnd.association
+       def targetEnd = association.connection.find { end -> end != sourceEnd }
+       if (targetEnd.isNavigable()) {
+           def sourceName = getEndName(sourceEnd)
+           def targetType = getEndType(targetEnd)
+           def targetName = getEndName(targetEnd)
+           def targetTags = taggedValues(targetEnd)
+           if (isOneToOne(sourceEnd, targetEnd)) {
+               def owner = isOwner(association, sourceEnd)
+               if (owner) {
+               %>
+                   @OneToOne
+                   @JoinTable(
+                       name = "j_${javaToSql(sourceEnd.participant.name)}_${javaToSql(targetEnd.participant.name)}",
+                       joinColumns = {@JoinColumn(name = "fk_${javaToSql(sourceEnd.participant.name)}_id")},
+                       inverseJoinColumns = {@JoinColumn(name = "fk_${javaToSql(targetEnd.participant.name)}_id")}
+                   )
+               <%} else {%>
+                   @OneToOne(
+                       mappedBy = "${sourceName}",
+                       cascade = {CascadeType.PERSIST, CascadeType.MERGE}
+                   )
+               <%}%>
+           <%}
+           if (isOneToMany(sourceEnd, targetEnd)) {%>
+               @OneToMany(
+                   mappedBy = "${sourceName}",
+                   cascade = {CascadeType.PERSIST, CascadeType.MERGE}
+               )
+           <%}
+           if (isManyToOne(sourceEnd, targetEnd)) {%>
+               @ManyToOne
+               @JoinColumn(name = "fk_${javaToSql(targetEnd.participant.name)}_id")
+           <%}
+           if (isManyToMany(sourceEnd, targetEnd)) {
+               def owner = isOwner(association, sourceEnd)
+               if (owner) {
+               %>
+                   @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+                   @JoinTable(
+                       name = "j_${javaToSql(sourceEnd.participant.name)}_${javaToSql(targetEnd.participant.name)}",
+                       joinColumns = {@JoinColumn(name = "fk_${javaToSql(sourceEnd.participant.name)}_id")},
+                       inverseJoinColumns = {@JoinColumn(name = "fk_${javaToSql(targetEnd.participant.name)}_id")}
+                   )
+               <%} else {%>
+                   @ManyToMany(
+                       mappedBy = "${sourceName}",
+                       cascade = {CascadeType.PERSIST, CascadeType.MERGE}
+                   )
+               <%}%>
+           <%}%>
+               private ${targetType} ${targetName};
+               
+       <%}
+   } %>
+   
+   <%
+   getAttributes(currentModelElement).each { attribute ->
+       def attributeName = attribute.name
+       def attributeType = javaType(attribute.type)%>
+       
+       public ${attributeType} get${firstCharUpper(attributeName)}() {
+           return ${attributeName};
+       }
+       
+       public void set${firstCharUpper(attributeName)}(${attributeType} ${attributeName}) {
+           this.${attributeName} = ${attributeName};
+       }
+       
+   <% } %>
+   
+   <%
+   getAssociationEnds(model, currentModelElement).each { sourceEnd ->
+       def association = sourceEnd.association
+       def targetEnd = association.connection.find { end -> end != sourceEnd }
+       if (targetEnd.isNavigable()) {
+           def sourceName = getEndName(sourceEnd)
+           def targetType = getEndType(targetEnd)
+           def targetName = getEndName(targetEnd)
+           def targetParticipantName = targetEnd.participant.name
+           if (isOneToOne(sourceEnd, targetEnd) || isManyToOne(sourceEnd, targetEnd)) {%>
+               
+               public ${targetType} get${firstCharUpper(targetName)}() {
+                   return ${targetName};
+               }
+               
+               public void set${firstCharUpper(targetName)}(${targetType} ${targetName}) {
+                   this.${targetName} = ${targetName};
+               }
+               
+           <%}
+           if (isOneToMany(sourceEnd, targetEnd) || isManyToMany(sourceEnd, targetEnd)) {%>
+               
+               public ${targetType} get${firstCharUpper(targetName)}() {
+                   return ${targetName};
+               }
+               
+               public void set${firstCharUpper(targetName)}(${targetType} ${targetName}) {
+                   ${targetParticipantName}[] temp${firstCharUpper(targetName)} = (${targetParticipantName}[]) get${firstCharUpper(targetName)}().toArray(new ${targetParticipantName}[get${firstCharUpper(targetName)}().size()]);
+                   for (${targetParticipantName} ${firstCharLower(targetParticipantName)} : temp${firstCharUpper(targetName)}) {
+                       removeFrom${firstCharUpper(targetName)}(${firstCharLower(targetParticipantName)});
+                   }
+                   if (${targetName} != null) {
+                       for (${targetParticipantName} ${firstCharLower(targetParticipantName)} : ${targetName}) {
+                           addTo${firstCharUpper(targetName)}(${firstCharLower(targetParticipantName)});
+                       }
+                   }
+               }
+               
+               public void addTo${firstCharUpper(targetName)}(${targetParticipantName} ${firstCharLower(targetParticipantName)}) {
+                   if (${firstCharLower(targetParticipantName)} != null) {
+                       <%if (isCollection(sourceEnd)) {%>
+                           ${firstCharLower(targetParticipantName)}.get${firstCharUpper(sourceName)}().add(this);
+                       <%} else {%>
+                           ${firstCharLower(targetParticipantName)}.set${firstCharUpper(sourceName)}(this);
+                       <%}%>
+                       get${firstCharUpper(targetName)}().add(${firstCharLower(targetParticipantName)});
+                   }
+               }
+               
+               public void removeFrom${firstCharUpper(targetName)}(${targetParticipantName} ${firstCharLower(targetParticipantName)}) {
+                   if (${firstCharLower(targetParticipantName)} != null) {
+                       <%if (isCollection(sourceEnd)) {%>
+                           ${firstCharLower(targetParticipantName)}.get${firstCharUpper(sourceName)}().remove(this);
+                       <%} else {%>
+                           ${firstCharLower(targetParticipantName)}.set${firstCharUpper(sourceName)}(null);
+                       <%}%>
+                       get${firstCharUpper(targetName)}().remove(${firstCharLower(targetParticipantName)});
+                   }
+               }
+               
+           <%}
+       }
+   }%>
+   
+   public int hashCode() {
+       int hashCode;
+       if (id != null) {
+           hashCode = 29 * id.hashCode();
+       } else {
+           hashCode = super.hashCode();
+       }
+       return hashCode;
+   }
+   
+   public boolean equals(Object o) {
+       if (this == o) {
+           return true;
+       }
+       if (!(o instanceof ${currentModelElement.name})) {
+           return false;
+       }
+       final ${currentModelElement.name} other${currentModelElement.name} = (${currentModelElement.name}) o;
+       if (hashCode() != other${currentModelElement.name}.hashCode()) {
+           return false;
+       }
+       return true;
+   }
+   
+}
+

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?init class="org.zkoss.zkplus.databind.AnnotateDataBinderInit" ?>
+<?variable-resolver class="org.zkoss.zkplus.spring.DelegatingVariableResolver"?>
+<?page zscriptLanguage="GroovyGrails"?>
+
+<zk xmlns="http://www.zkoss.org/2005/zul"
+    xmlns:h="http://www.w3.org/1999/xhtml"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.zkoss.org/2005/zul http://www.zkoss.org/2005/zul/zul.xsd">
+
+    <window id="programmeWin" border="normal" height="550px" width="800px" style="margin:auto;" use="${programmeWindow}">
+    <!-- <zscript src="/zs/programme.zs"/> -->
+        <borderlayout>
+            <north size="40px" flex="true">
+                
+            </north>
+            <west id="westPanel" title="CRUD" size="40%" flex="true" splittable="true" collapsible="true" open="false">
+                <groupbox id="gbCrud" width="100%" height="100%">
+                    <grid fixedLayout="true">
+                        <rows>
+						
+							<row>
+                                <label value="Code"/>
+								 
+								<textbox id="fieldCode" constraint="" value="@{programmeWin.programme.code, save-when='triggerBtn.onClick'}" onBindingSave='if(self.value == null)throw new WrongValueException(self, "Vous devriez indiquer une valeur");'/>
+                            </row>												
+						
+							<row>
+                                <label value="Intitule"/>
+								 
+								<textbox id="fieldIntitule" constraint="" value="@{programmeWin.programme.intitule, save-when='triggerBtn.onClick'}" onBindingSave='if(self.value == null)throw new WrongValueException(self, "Vous devriez indiquer une valeur");'/>
+                            </row>												
+						                              
+                        </rows>
+                    </grid>					
+					
+					<separator />
+					<combobox id="coportefeuilles" model="@{programmeWin.portefeuilles}" selectedItem="@{programmeWin.portefeuilleSelected}">
+						<comboitem self="@{each=elementportefeuille}" label="@{elementportefeuille}"/>
+					</combobox>
+					
+					<separator />
+					<panel open="true" title="Projets" border="normal" collapsible="true" width="100%" > 
+						<panelchildren>
+							<listbox id="lstprojets" model="@{programmeWin.projets}" selectedItem="@{programmeWin.projetsSelected, converter=util.SelectedItemsConverterV3}" fixedLayout="true" multiple="true" checkmark="true">
+								<listhead>
+									<listheader label=""/>							
+								</listhead>
+								<listitem self="@{each=elementprojets}">
+									<listcell label="@{elementprojets}"/>							
+								</listitem>								
+							</listbox>	
+						</panelchildren>
+					</panel>
+					
+                    <separator />
+                    <button id="btnSave" onClick="Events.sendEvent(new Event(Events.ON_CLICK,triggerBtn));programmeWin.add()" label="Sauveguarder" image="/images/skin/database_save.png"/>
+                    <button id="btnUpdate" onClick="Events.sendEvent(new Event(Events.ON_CLICK,triggerBtn));programmeWin.update()" label="Modifier" image="/images/skin/database_edit.png" visible="false"/>
+                    <button id="btnDelete" onClick="Events.sendEvent(new Event(Events.ON_CLICK,triggerBtn));programmeWin.delete()" label="Supprimer" image="/images/skin/database_delete.png" visible="false"/>
+                    <!-- <button id="btnNew" onClick="programmeWin.newRecord()" label="Nouveau enregistrement" image="/images/skin/database_add.png"/> -->
+                    <button id="btnCancel" onClick="programmeWin.cancel()" label="Annuler" image="/images/skin/cancel.png" visible="false"/>
+                    <button visible="false" id="triggerBtn" onBindingValidate=""/>
+                </groupbox>
+            </west>
+            <center border="none" flex="true">
+                <groupbox width="100%" height="100%">
+                    <listbox id="lstProgramme" onSelect="programmeWin.select()" model="@{programmeWin.programmes}" selectedItem="@{programmeWin.programmeSelected}"  width="100%" height="100%" mold="paging" pageSize="25">
+                        <listhead sizable="true">
+                            <listheader label="ID" sort="auto(id)"/>
+							
+							<listheader label="Code" sort="auto(code)"/>	
+							
+							<listheader label="Intitule" sort="auto(intitule)"/>	
+							                                 
+                        </listhead>
+                        <listitem self="@{each=element}">
+                            <listcell label="@{element.id}"/>                            
+                            
+							<listcell label="@{element.code}"/>
+							
+							<listcell label="@{element.intitule}"/>
+							     
+                        </listitem>
+                    </listbox>
+                    <separator/>
+                    <button id="btnNew" onClick="programmeWin.newRecord()" label="Nouveau" image="/images/skin/database_add.png"/>
+                </groupbox>
+            </center>
+            <south size="40px" flex="true">
+            </south>
+        </borderlayout>
+    </window>
+</zk>

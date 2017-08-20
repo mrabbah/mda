@@ -1,0 +1,41 @@
+<gmda>
+	<licenses>
+		<gpl2>
+			<![CDATA[
+			GPL version 2 text would go in here.
+			]]>
+		</gpl2>
+		<bsd>
+			<![CDATA[
+			BSD license text would go in here.
+			]]>
+		</bsd>
+	</licenses>
+	
+	<tablePrefix>my_</tablePrefix>
+	<columnPrefix>col_</columnPrefix>
+			
+	<nestingTest>
+		<nested1>Nested1 content</nested1>
+		<nested2>Nested2 wrapped 
+		content</nested2>
+		<nested3>
+			<nested4>
+			Nested4 
+			content
+			</nested4>
+			<nested5>
+			Nested5 
+			content 1 wrapped
+			</nested5>
+			<nested5>
+			Nested5 content 2
+			</nested5>
+		</nested3>
+	</nestingTest>
+	
+	<modelPath>jar:file:./src/test/resources/addressbook.zargo!/addressbook.xmi</modelPath>
+	<scriptPath>./src/main/resources/processors/GroovyModelProcessor.groovy</scriptPath>
+	<templateFile>./templates/JpaEntity.gtl</templateFile>
+	<outputDirectory>./target/test-classes/config-generation</outputDirectory>
+</gmda>

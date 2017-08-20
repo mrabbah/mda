@@ -1,0 +1,60 @@
+package _PACKAGE_
+
+
+class SuperService {
+
+    static transactional = true
+
+    def list(Class clazz) throws Exception {
+        try {
+            return clazz.list()
+        }
+        catch(Exception e) {
+            throw e
+        }
+    }
+    def update(Object object) throws Exception {
+        object.validate()
+        if(!object.hasErrors()) {
+            try {
+                object.merge(flush:true)
+            }
+            catch(Exception e) {
+                throw e;
+            }
+        } else {
+            message erreurs = "Les erreur(s) suivante(s) son a corriger :"
+            object.errors.each { error ->
+                erreurs += error
+            }
+            throw new Exception(erreurs)
+        }        
+    }
+
+    def save(Object object) throws Exception {
+        object.validate()
+        if(!object.hasErrors()) {
+            try {
+                object.save(flush:true)
+            }
+            catch(Exception e) {
+                throw e;
+            }
+        } else {
+            message erreurs = "Les erreur(s) suivante(s) son a corriger :"
+            object.errors.each { error ->
+                erreurs += error
+            }
+            throw new Exception(erreurs)
+        }
+    }
+
+    def delete(Object object) throws Exception {
+        try {
+            object.delete(flush:true)
+        }
+        catch(Exception e) {
+            throw e;
+        }
+    }
+}

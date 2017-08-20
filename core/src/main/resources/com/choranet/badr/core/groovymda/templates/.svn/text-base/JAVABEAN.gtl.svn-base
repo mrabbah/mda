@@ -1,0 +1,76 @@
+<% if (getPackageName(currentModelElement) != "") { %>
+package ${getPackageName(currentModelElement)};
+<% } %>
+
+/**
+ * ${currentModelElement.name} Domain Object
+ */
+public class ${currentModelElement.name} {
+
+        <%
+        getAttributes(currentModelElement).each { attribute ->
+                def attributeName = attribute.name
+                def attributeType = javaType(attribute.type)
+                %>
+                private ${attributeType} ${attributeName};
+                <%
+        }
+        %>
+
+        <%
+        getAssociationEnds(model, currentModelElement).each { sourceEnd ->
+                def association = sourceEnd.association
+                def targetEnd = association.connection.find { end -> end != sourceEnd }
+                if (targetEnd.isNavigable()) {
+                        def targetType = getEndType(targetEnd)
+                        def targetName = getEndName(targetEnd)
+                        %>
+                private ${targetType} ${targetName};
+                        <%
+                }
+        }
+        %>
+
+        <%
+        getAttributes(currentModelElement).each { attribute ->
+                def attributeName = attribute.name
+                def attributeType = javaType(attribute.type)
+                %>
+
+                public ${attributeType} get${firstCharUpper(attributeName)}() {
+                        return ${attributeName};
+                }
+
+                public void set${firstCharUpper(attributeName)}(${attributeType} ${attributeName}) {
+                        this.${attributeName} = ${attributeName};
+                }
+
+                <%
+        }
+        %>
+
+        <%
+        getAssociationEnds(model, currentModelElement).each { sourceEnd ->
+                def association = sourceEnd.association
+                def targetEnd = association.connection.find { end -> end != sourceEnd }
+                if (targetEnd.isNavigable()) {
+                        def sourceName = getEndName(sourceEnd)
+                        def targetType = getEndType(targetEnd)
+                        def targetName = getEndName(targetEnd)
+                        %>
+
+                public ${targetType} get${firstCharUpper(targetName)}() {
+                        return ${targetName};
+                }
+
+                public void set${firstCharUpper(targetName)}(${targetType} ${targetName}) {
+                        this.${targetName} = ${targetName};
+                }
+
+                        <%
+
+                }
+        }
+        %>
+
+}

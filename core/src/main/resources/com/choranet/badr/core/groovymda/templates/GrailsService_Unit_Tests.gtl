@@ -1,0 +1,21 @@
+<% if (getPackageName(currentModelElement) != "") { %>
+package ${getPackageName(currentModelElement)}
+<% } %>
+import grails.test.*
+/**
+ * ${currentModelElement.name} Service Unit Test Object
+ */
+class ${currentModelElement.name}ServiceTests extends GrailsUnitTestCase {
+    protected void setUp() {
+        super.setUp()
+    }
+
+    protected void tearDown() {
+        super.tearDown()
+    }
+
+    void testSomething() {
+
+    }
+}
+
